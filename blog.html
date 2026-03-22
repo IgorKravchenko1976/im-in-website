@@ -802,17 +802,25 @@
         }
         function truncate(t, m) { return (!t || t.length <= m) ? (t||'') : t.slice(0,m).replace(/\s+\S*$/,'') + '\u2026'; }
         function escHtml(s) { var e = document.createElement('span'); e.textContent = s; return e.innerHTML; }
-        function mapUrl(lat, lon, name) { return 'https://www.google.com/maps/search/?api=1&query=' + (name ? encodeURIComponent(name) : lat+','+lon); }
 
-        function buildCard(post) {
+        function getTranslated(post, lang, field) {
+            if (lang === 'uk') return post[field === 'title' ? 'title' : 'content_raw'] || '';
+            var tr = post.translations;
+            if (tr && tr[lang] && tr[lang][field]) return tr[lang][field];
+            return post[field === 'title' ? 'title' : 'content_raw'] || '';
+        }
+
+        function buildCard(post, lang) {
+            var title = getTranslated(post, lang, 'title');
+            var content = getTranslated(post, lang, 'content');
             var a = document.createElement('a');
             a.className = 'blog-card'; a.href = 'blog/post-' + post.id + '.html';
             a.style.textDecoration = 'none'; a.style.color = 'inherit';
             var h = '';
             if (post.image_url) h += '<img class="blog-card-img" src="' + escHtml(post.image_url) + '" alt="" loading="lazy" onerror="this.style.display=\'none\'">';
             h += '<div class="blog-card-body"><div class="blog-card-date">' + escHtml(fmtDate(post.published_at||post.created_at)) + '</div>';
-            if (post.title) h += '<h3>' + escHtml(post.title) + '</h3>';
-            h += '<div class="blog-card-text">' + escHtml(truncate(post.content_raw,280)) + '</div><div class="blog-card-meta">';
+            if (title) h += '<h3>' + escHtml(title) + '</h3>';
+            h += '<div class="blog-card-text">' + escHtml(truncate(content,280)) + '</div><div class="blog-card-meta">';
             if (post.place_name && post.latitude && post.longitude) h += '<span class="blog-card-badge badge-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg>' + escHtml(post.place_name) + '</span>';
             if (post.source_url) { var d=''; try{d=new URL(post.source_url).hostname.replace('www.','');}catch(e){d='source';} h += '<span class="blog-card-badge badge-source"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>' + escHtml(d) + '</span>'; }
             h += '</div></div>';
@@ -822,7 +830,13 @@
 
         function showEmpty(s) { LANGS.forEach(function(l){ var e=document.getElementById('blog-empty-'+l); if(e)e.style.display=s?'block':'none'; }); }
         function showButtons(s) { LANGS.forEach(function(l){ var b=document.getElementById('blog-more-'+l); if(b)b.style.display=s?'inline-block':'none'; }); }
-        function appendPosts(posts) { LANGS.forEach(function(l){ var g=document.getElementById('blog-grid-'+l); if(!g)return; posts.forEach(function(p){g.appendChild(buildCard(p));}); }); }
+        function appendPosts(posts) {
+            LANGS.forEach(function(l){
+                var g=document.getElementById('blog-grid-'+l);
+                if(!g)return;
+                posts.forEach(function(p){ g.appendChild(buildCard(p, l)); });
+            });
+        }
 
         async function tryLoadLocal() { try { var r=await fetch(LOCAL_INDEX); if(!r.ok)return false; allPosts=await r.json(); useLocalData=true; return allPosts.length>0; } catch(e){ return false; } }
         function renderLocalPage() { var p=allPosts.slice(offset,offset+PAGE_SIZE); if(!p.length&&!offset){showEmpty(true);return;} appendPosts(p); offset+=p.length; if(offset>=allPosts.length){allDone=true;showButtons(false);}else{showButtons(true);} }
