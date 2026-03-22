@@ -101,7 +101,7 @@
             justify-content: space-between;
         }
         .blog-header-left { display: flex; align-items: center; gap: 1.5rem; }
-        .blog-logo { height: 36px; border-radius: 6px; }
+        .blog-logo { height: 44px; width: 44px; border-radius: 50%; object-fit: cover; }
         .blog-title-text { color: var(--white); }
         .blog-title-text h1 { font-size: 1.5rem; font-weight: 800; }
         .blog-title-text p { font-size: 0.85rem; opacity: 0.7; }
@@ -414,10 +414,6 @@
             line-height: 1.6;
             margin-bottom: 0.75rem;
             flex: 1;
-            display: -webkit-box;
-            -webkit-line-clamp: 4;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
         }
 
         .blog-card-meta {
@@ -874,7 +870,7 @@
             if (post.image_url) h += '<img class="blog-card-img" src="' + escHtml(post.image_url) + '" alt="" loading="lazy" onerror="this.style.display=\'none\'">';
             h += '<div class="blog-card-body"><div class="blog-card-date">' + escHtml(fmtDate(post.published_at||post.created_at)) + '</div>';
             if (title) h += '<h3>' + escHtml(title) + '</h3>';
-            h += '<div class="blog-card-text">' + escHtml(truncate(content,280)) + '</div><div class="blog-card-meta">';
+            h += '<div class="blog-card-text">' + escHtml(truncate(content,500)) + '</div><div class="blog-card-meta">';
             if (post.place_name && post.latitude && post.longitude) h += '<span class="blog-card-badge badge-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg>' + escHtml(post.place_name) + '</span>';
             if (post.source_url) { var d=''; try{d=new URL(post.source_url).hostname.replace('www.','');}catch(e){d='source';} h += '<span class="blog-card-badge badge-source"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>' + escHtml(d) + '</span>'; }
             h += '</div></div>';
