@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'M IN — Блог / Новини</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="128x128" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #7C3AED;
+            --primary-dark: #6D28D9;
+            --primary-light: #EDE9FE;
+            --primary-lighter: #F5F3FF;
+            --accent: #F97316;
+            --bg-lavender: #E8DEF8;
+            --text-dark: #1C1B1F;
+            --text-muted: #5F5E63;
+            --text-light: #9391A0;
+            --white: #ffffff;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background: var(--white);
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+        .blog-header {
+            background: var(--primary);
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .blog-header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 60% 50% at 30% 50%, rgba(139, 92, 246, 0.5) 0%, transparent 60%);
+        }
+        .blog-header .container {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .blog-header-left { display: flex; align-items: center; gap: 1.5rem; }
+        .blog-logo { height: 36px; border-radius: 6px; }
+        .blog-title-text { color: var(--white); }
+        .blog-title-text h1 { font-size: 1.5rem; font-weight: 800; }
+        .blog-title-text p { font-size: 0.85rem; opacity: 0.7; }
+        .blog-back {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .blog-back:hover { color: var(--white); }
+        .blog-back svg { width: 18px; height: 18px; }
+
+        .lang-bar {
+            background: var(--primary-light);
+            padding: 0.6rem 0;
+            text-align: center;
+        }
+        .lang-bar button {
+            background: none;
+            border: 1px solid transparent;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        .lang-bar button.active {
+            background: var(--primary);
+            color: var(--white);
+        }
+        .lang-bar button:hover:not(.active) {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* ── Section Tabs ─────────────────────────────────── */
+        .section-tabs {
+            background: var(--white);
+            border-bottom: 2px solid #f0ecf5;
+            padding: 0;
+            text-align: center;
+        }
+        .section-tabs button {
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            padding: 0.9rem 1.5rem;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-light);
+            transition: all 0.25s;
+            font-family: inherit;
+            margin: 0 0.25rem;
+        }
+        .section-tabs button.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+        .section-tabs button:hover:not(.active) {
+            color: var(--text-dark);
+        }
+        .section-tabs button svg { width: 18px; height: 18px; vertical-align: -3px; margin-right: 0.35rem; }
+
+        .blog-content { padding: 3rem 0 4rem; }
+
+        [data-tab-content] { display: none; }
+        [data-tab-content].tab-visible { display: block; }
+
+        /* ── Roadmap ─────────────────────────────────── */
+        .roadmap { margin-bottom: 3rem; }
+        .roadmap h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+        .roadmap > p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .roadmap-timeline {
+            position: relative;
+            padding-left: 36px;
+        }
+        .roadmap-timeline::before {
+            content: '';
+            position: absolute;
+            left: 12px;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: var(--primary-light);
+            border-radius: 1px;
+        }
+
+        .roadmap-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--primary-lighter);
+            border-radius: 16px;
+            border-left: 3px solid var(--primary-light);
+        }
+        .roadmap-item.active { border-left-color: var(--primary); }
+        .roadmap-item.completed { border-left-color: #10B981; }
+
+        .roadmap-item::before {
+            content: '';
+            position: absolute;
+            left: -32px;
+            top: 1.7rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary-light);
+            border: 2px solid var(--white);
+        }
+        .roadmap-item.active::before { background: var(--primary); box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.2); }
+        .roadmap-item.completed::before { background: #10B981; }
+
+        .roadmap-phase {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+        .roadmap-item.completed .roadmap-phase { color: #10B981; }
+
+        .roadmap-item h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.4rem; }
+        .roadmap-item p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.65; }
+        .roadmap-status {
+            display: inline-block;
+            margin-top: 0.6rem;
+            padding: 0.2rem 0.7rem;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+        .roadmap-status--done { background: #D1FAE5; color: #059669; }
+        .roadmap-status--current { background: var(--primary-light); color: var(--primary); }
+        .roadmap-status--planned { background: #F3F4F6; color: var(--text-light); }
+
+        .roadmap-hidden { display: none; }
+        .roadmap-hidden.expanded { display: block; }
+
+        .roadmap-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: none;
+            border: 1px solid var(--primary-light);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
+            font-family: inherit;
+            margin-top: 0.5rem;
+            transition: all 0.2s;
+        }
+        .roadmap-toggle:hover { background: var(--primary-light); }
+        .roadmap-toggle svg { width: 16px; height: 16px; transition: transform 0.3s; }
+        .roadmap-toggle.expanded svg { transform: rotate(180deg); }
+
+        /* ── News Cards ─────────────────────────────────── */
+        .news-section h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        .news-section > p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .news-list { display: flex; flex-direction: column; gap: 1.25rem; }
+        .news-card {
+            display: flex;
+            gap: 1.25rem;
+            padding: 1.5rem;
+            background: var(--primary-lighter);
+            border-radius: 16px;
+            transition: all 0.3s;
+        }
+        .news-card:hover { box-shadow: 0 4px 20px rgba(124, 58, 237, 0.1); transform: translateY(-2px); }
+        .news-date {
+            flex-shrink: 0;
+            width: 60px;
+            text-align: center;
+        }
+        .news-date-day { font-size: 1.8rem; font-weight: 800; color: var(--primary); line-height: 1; }
+        .news-date-month { font-size: 0.7rem; font-weight: 600; color: var(--text-light); text-transform: uppercase; }
+        .news-body h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.35rem; }
+        .news-body p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.65; }
+        .news-tag {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.15rem 0.6rem;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            background: var(--primary-light);
+            color: var(--primary);
+        }
+
+        .blog-footer {
+            background: var(--text-dark);
+            padding: 2rem 0;
+            text-align: center;
+            color: rgba(255,255,255,0.4);
+            font-size: 0.85rem;
+        }
+        .blog-footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+        .blog-footer a:hover { color: var(--white); }
+
+        @media (max-width: 768px) {
+            .blog-header .container { flex-direction: column; gap: 1rem; text-align: center; }
+            .blog-header-left { flex-direction: column; gap: 0.75rem; }
+            .news-card { flex-direction: column; gap: 0.75rem; }
+            .news-date { width: auto; text-align: left; display: flex; align-items: baseline; gap: 0.5rem; }
+            .roadmap-timeline { padding-left: 28px; }
+            .section-tabs button { padding: 0.75rem 0.8rem; font-size: 0.85rem; }
+        }
+
+        [data-lang] { display: none; }
+        [data-lang].visible { display: block; }
+
+        /* ── Travel News Cards ─────────────────────────────────── */
+        .travel-news h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        .travel-news > p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .blog-card {
+            background: var(--primary-lighter);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+        }
+        .blog-card:hover {
+            box-shadow: 0 8px 30px rgba(124, 58, 237, 0.12);
+            transform: translateY(-3px);
+        }
+
+        .blog-card-img {
+            width: 90px;
+            min-height: 90px;
+            object-fit: cover;
+            background: var(--primary-light);
+            flex-shrink: 0;
+            border-radius: 16px 0 0 16px;
+        }
+
+        .blog-card-body {
+            padding: 1rem 1.25rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+
+        .blog-card-date {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-light);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-card-body h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .blog-card-text {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+            flex: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .blog-card-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: auto;
+        }
+
+        .blog-card-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+        .blog-card-badge:hover { opacity: 0.8; }
+        .blog-card-badge svg { width: 12px; height: 12px; flex-shrink: 0; }
+
+        .badge-location { background: #DBEAFE; color: #2563EB; }
+        .badge-source { background: #FEF3C7; color: #D97706; }
+
+        .blog-load-more {
+            display: block;
+            margin: 2rem auto 0;
+            padding: 0.7rem 2rem;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+            transition: background 0.2s;
+        }
+        .blog-load-more:hover { background: var(--primary-dark); }
+        .blog-load-more:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        .blog-empty {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .blog-grid { grid-template-columns: 1fr; }
+            .blog-card-img { width: 72px; min-height: 72px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="blog-header">
+        <div class="container">
+            <div class="blog-header-left">
+                <a href="index.html"><img src="logo-imin.png" alt="I'M IN" class="blog-logo"></a>
+                <div class="blog-title-text">
+                    <h1 id="page-title">Блог / Новини</h1>
+                    <p id="page-subtitle">Новини подорожей та оновлення продукту</p>
+                </div>
+            </div>
+            <a href="index.html" class="blog-back">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                <span id="back-text">На головну</span>
+            </a>
+        </div>
+    </header>
+
+    <div class="lang-bar">
+        <button data-lang-btn="uk" class="active">UK</button>
+        <button data-lang-btn="en">EN</button>
+        <button data-lang-btn="fr">FR</button>
+        <button data-lang-btn="es">ES</button>
+        <button data-lang-btn="de">DE</button>
+        <button data-lang-btn="it">IT</button>
+        <button data-lang-btn="el">EL</button>
+    </div>
+
+    <nav class="section-tabs">
+        <button data-tab-btn="travel" class="active">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+            <span data-tab-label="travel">Новини подорожей</span>
+        </button>
+        <button data-tab-btn="product">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            <span data-tab-label="product">Новини продукту</span>
+        </button>
+    </nav>
+
+    <main class="blog-content">
+        <div class="container">
+
+            <!-- ═══════════ TAB: TRAVEL NEWS ═══════════ -->
+            <div data-tab-content="travel" class="tab-visible">
+
+                <section class="travel-news" data-lang="uk"><div class="visible-inner">
+                    <h2>Новини подорожей</h2>
+                    <p>Свіжі новини, поради та події для мандрівників</p>
+                    <div id="blog-grid-uk" class="blog-grid"></div>
+                    <div id="blog-empty-uk" class="blog-empty" style="display:none">Новини тимчасово недоступні</div>
+                    <button id="blog-more-uk" class="blog-load-more" style="display:none" data-load-more>Завантажити ще</button>
+                </div></section>
+
+                <section class="travel-news" data-lang="en"><div class="visible-inner">
+                    <h2>Travel News</h2>
+                    <p>Latest news, tips and events for travelers</p>
+                    <div id="blog-grid-en" class="blog-grid"></div>
+                    <div id="blog-empty-en" class="blog-empty" style="display:none">News temporarily unavailable</div>
+                    <button id="blog-more-en" class="blog-load-more" style="display:none" data-load-more>Load more</button>
+                </div></section>
+
+                <section class="travel-news" data-lang="fr"><div class="visible-inner">
+                    <h2>Actualit&#233;s voyage</h2>
+                    <p>Derni&#232;res nouvelles, conseils et &#233;v&#233;nements pour les voyageurs</p>
+                    <div id="blog-grid-fr" class="blog-grid"></div>
+                    <div id="blog-empty-fr" class="blog-empty" style="display:none">Actualit&#233;s temporairement indisponibles</div>
+                    <button id="blog-more-fr" class="blog-load-more" style="display:none" data-load-more>Charger plus</button>
+                </div></section>
+
+                <section class="travel-news" data-lang="es"><div class="visible-inner">
+                    <h2>Noticias de viaje</h2>
+                    <p>&#218;ltimas noticias, consejos y eventos para viajeros</p>
+                    <div id="blog-grid-es" class="blog-grid"></div>
+                    <div id="blog-empty-es" class="blog-empty" style="display:none">Noticias temporalmente no disponibles</div>
+                    <button id="blog-more-es" class="blog-load-more" style="display:none" data-load-more>Cargar m&#225;s</button>
+                </div></section>
+
+                <section class="travel-news" data-lang="de"><div class="visible-inner">
+                    <h2>Reisenachrichten</h2>
+                    <p>Aktuelle Nachrichten, Tipps und Events f&#252;r Reisende</p>
+                    <div id="blog-grid-de" class="blog-grid"></div>
+                    <div id="blog-empty-de" class="blog-empty" style="display:none">Nachrichten vor&#252;bergehend nicht verf&#252;gbar</div>
+                    <button id="blog-more-de" class="blog-load-more" style="display:none" data-load-more>Mehr laden</button>
+                </div></section>
+
+                <section class="travel-news" data-lang="it"><div class="visible-inner">
+                    <h2>Notizie di viaggio</h2>
+                    <p>Ultime notizie, consigli ed eventi per i viaggiatori</p>
+                    <div id="blog-grid-it" class="blog-grid"></div>
+                    <div id="blog-empty-it" class="blog-empty" style="display:none">Notizie temporaneamente non disponibili</div>
+                    <button id="blog-more-it" class="blog-load-more" style="display:none" data-load-more>Carica altro</button>
+                </div></section>
+
+                <section class="travel-news" data-lang="el"><div class="visible-inner">
+                    <h2>&#932;&#945;&#958;&#953;&#948;&#953;&#969;&#964;&#953;&#954;&#940; &#957;&#941;&#945;</h2>
+                    <p>&#932;&#949;&#955;&#949;&#965;&#964;&#945;&#943;&#945; &#957;&#941;&#945;, &#963;&#965;&#956;&#946;&#959;&#965;&#955;&#941;&#962; &#954;&#945;&#953; &#949;&#954;&#948;&#951;&#955;&#974;&#963;&#949;&#953;&#962; &#947;&#953;&#945; &#964;&#945;&#958;&#953;&#948;&#953;&#974;&#964;&#949;&#962;</p>
+                    <div id="blog-grid-el" class="blog-grid"></div>
+                    <div id="blog-empty-el" class="blog-empty" style="display:none">&#932;&#945; &#957;&#941;&#945; &#948;&#949;&#957; &#949;&#943;&#957;&#945;&#953; &#960;&#961;&#959;&#963;&#969;&#961;&#953;&#957;&#940; &#948;&#953;&#945;&#952;&#941;&#963;&#953;&#956;&#945;</div>
+                    <button id="blog-more-el" class="blog-load-more" style="display:none" data-load-more>&#934;&#972;&#961;&#964;&#969;&#963;&#951; &#960;&#949;&#961;&#953;&#963;&#963;&#972;&#964;&#949;&#961;&#969;&#957;</button>
+                </div></section>
+
+            </div>
+
+            <!-- ═══════════ TAB: PRODUCT NEWS ═══════════ -->
+            <div data-tab-content="product">
+
+                <!-- ── What's New ── -->
+                <section class="news-section" data-lang="uk"><div class="visible-inner">
+                    <h2>Що нового</h2>
+                    <p>Останні оновлення та новини розробки</p>
+                    <div class="news-list">
+                        <div class="news-card"><div class="news-date"><div class="news-date-day">21</div><div class="news-date-month">Бер 2026</div></div><div class="news-body"><h3>Підтримка iPad та стандартизація інтерфейсу</h3><p>Адаптація під iPad з підтримкою обертання екрана. Автоматичне визначення мови пристрою при першому запуску. Єдиний стиль кнопок, форм та заголовків на всіх екранах. Покращений екран створення подій та реорганізація меню налаштувань. (Build 67–68)</p><span class="news-tag">Оновлення</span></div></div>
+                        <div class="news-card"><div class="news-date"><div class="news-date-day">20</div><div class="news-date-month">Бер 2026</div></div><div class="news-body"><h3>Відстеження друзів на карті та push-сповіщення</h3><p>Слідкуйте за друзями в реальному часі на карті. Моніторинг стану API з автоматичним повторенням запитів. Покращена доставка push-сповіщень. Оновлені екрани друзів, підписок та кабінету користувача. (Build 56–66)</p><span class="news-tag">Функціонал</span></div></div>
+                        <div class="news-card"><div class="news-date"><div class="news-date-day">15</div><div class="news-date-month">Бер 2026</div></div><div class="news-body"><h3>Фільтри для фото, пошук адреси та аудіоплеєр</h3><p>Обробка фото перед публікацією фільтрами. Пошук конкретних місць на карті. Аудіоплеєр для відтворення аудіо-контенту. Відстеження улюблених локацій зі сповіщеннями. Підказки тексту при створенні подій. Додаток перейменовано на I'M IN. (Build 44–49)</p><span class="news-tag">Функціонал</span></div></div>
+                        <div class="news-card"><div class="news-date"><div class="news-date-day">10</div><div class="news-date-month">Бер 2026</div></div><div class="news-body"><h3>Продуктивність, CI/CD та безпека</h3><p>Оптимізована стрічка подій — швидше завантаження, менше пам'яті. Автоматична збірка та деплой у TestFlight через CI/CD. Мініатюри відео під час буферизації. Виправлено 100+ попереджень коду, видалено конфіденційні дані. (Build 39–55)</p><span class="news-tag">Інфраструктура</span></div></div>
+                        <div class="news-card"><div class="news-date"><div class="news-date-day">08</div><div class="news-date-month">Бер 2026</div></div><div class="news-body"><h3>SEO-оптимізація та нові функції сайту</h3><p>Додано sitemap.xml, robots.txt, Open Graph мета-теги, JSON-LD структуровані дані. Нові секції: "Як це працює", FAQ, блог з дорожньою картою. Parallax-ефекти та соціальні мережі у футері.</p><span class="news-tag">Веб-сайт</span></div></div>
+                        <div class="news-card"><div class="news-date"><div class="news-date-day">05</div><div class="news-date-month">Бер 2026</div></div><div class="news-body"><h3>ШІ-помічник та юридичні документи</h3><p>Запущено чат-бот з підтримкою 7 мов, нечітким пошуком та базою знань. Додано Угоду користування та Політику конфіденційності на всіх мовах.</p><span class="news-tag">Функціонал</span></div></div>
+                        <div class="news-card"><div class="news-date"><div class="news-date-day">01</div><div class="news-date-month">Бер 2026</div></div><div class="news-body"><h3>Запуск промо-сайту I'M IN</h3><p>Презентація додатку з описом 12 функцій, інтерактивними ілюстраціями, підтримкою 7 мов та адаптивним дизайном для всіх пристроїв.</p><span class="news-tag">Реліз</span></div></div>
+                    </div>
+                </div></section>
+
+                <section class="news-section" data-lang="en"><div class="visible-inner">
+                    <h2>What's New</h2>
+                    <p>Latest updates and development news</p>
+                    <div class="news-list">
+                        <div class="news-card"><div class="news-date"><div class="news-date-day">21</div><div class="news-date-month">Mar 2026</div></div><div class="news-body"><h3>iPad Support &amp; UI Standardization</h3><p>Full iPad adaptation with rotation support. Automatic device language detection on first launch. Unified button, form, and heading styles across all screens. Improved event creation and reorganized settings menu. (Build 67–68)</p><span class="news-tag">Update</span></div></div>
+                        <div class="news-card"><div class="news-date"><div class="news-date-day">20</div><div class="news-date-month">Mar 2026</div></div><div class="news-body"><h3>Friend Tracking on Map &amp; Push Notifications</h3><p>Track friends in real-time on the map. API health monitoring with automatic request retry. Improved push notification delivery. Updated friends, subscriptions, and user profile screens. (Build 56–66)</p><span class="news-tag">Feature</span></div></div>
+                        <div class="news-card"><div class="news-date"><div class="news-date-day">15</div><div class="news-date-month">Mar 2026</div></div><div class="news-body"><h3>Photo Filters, Address Search &amp; Audio Player</h3><p>Photo editing with filters before publishing. Search for specific locations on the map. Audio player for event content. Favorite location tracking with notifications. Smart text suggestions for event descriptions. App renamed to I'M IN. (Build 44–49)</p><span class="news-tag">Feature</span></div></div>
+                        <div class="news-card"><div class="news-date"><div class="news-date-day">10</div><div class="news-date-month">Mar 2026</div></div><div class="news-body"><h3>Performance, CI/CD &amp; Security</h3><p>Optimized event feed — faster loading, less memory usage. Automated CI/CD build and TestFlight deployment. Video thumbnails during buffering. Fixed 100+ code warnings, removed sensitive data from codebase. (Build 39–55)</p><span class="news-tag">Infrastructure</span></div></div>
+                        <div class="news-card"><div class="news-date"><div class="news-date-day">08</div><div class="news-date-month">Mar 2026</div></div><div class="news-body"><h3>SEO Optimization &amp; New Site Features</h3><p>Added sitemap.xml, robots.txt, Open Graph meta tags, JSON-LD structured data. New sections: "How it works", FAQ, blog with roadmap. Parallax effects and social media links in footer.</p><span class="news-tag">Website</span></div></div>
+                        <div class="news-card"><div class="news-date"><div class="news-date-day">05</div><div class="news-date-month">Mar 2026</div></div><div class="news-body"><h3>AI Assistant &amp; Legal Documents</h3><p>Launched chatbot with 7-language support, fuzzy search and knowledge base. Added Terms of Use and Privacy Policy in all languages.</p><span class="news-tag">Feature</span></div></div>
+                        <div class="news-card"><div class="news-date"><div class="news-date-day">01</div><div class="news-date-month">Mar 2026</div></div><div class="news-body"><h3>I'M IN Promo Website Launch</h3><p>App presentation with 12 features, interactive illustrations, 7-language support and responsive design for all devices.</p><span class="news-tag">Release</span></div></div>
+                    </div>
+                </div></section>
+
+                <section class="news-section" data-lang="fr"><div class="visible-inner">
+                    <h2>Quoi de neuf</h2><p>Derni&#232;res mises &#224; jour et nouvelles du d&#233;veloppement</p>
+                    <div class="news-list">
+                        <div class="news-card"><div class="news-date"><div class="news-date-day">21</div><div class="news-date-month">Mar 2026</div></div><div class="news-body"><h3>Support iPad et standardisation de l'interface</h3><p>Adaptation compl&#232;te pour iPad avec rotation. D&#233;tection automatique de la langue au premier lancement. Style unifi&#233; des boutons, formulaires et titres. (Build 67–68)</p><span class="news-tag">Mise &#224; jour</span></div></div>
+                        <div class="news-card"><div class="news-date"><div class="news-date-day">20</div><div class="news-date-month">Mar 2026</div></div><div class="news-body"><h3>Suivi d'amis sur la carte et notifications push</h3><p>Suivez vos amis en temps r&#233;el sur la carte. Monitoring API avec retry automatique. Notifications push am&#233;lior&#233;es. (Build 56–66)</p><span class="news-tag">Fonctionnalit&#233;</span></div></div>
+                        <div class="news-card"><div class="news-date"><div class="news-date-day">15</div><div class="news-date-month">Mar 2026</div></div><div class="news-body"><h3>Filtres photo, recherche d'adresse et lecteur audio</h3><p>&#201;dition photo avec filtres. Recherche de lieux sur la carte. Lecteur audio. Suivi de lieux favoris. App renomm&#233;e I'M IN. (Build 44–49)</p><span class="news-tag">Fonctionnalit&#233;</span></div></div>
+                        <div class="news-card"><div class="news-date"><div class="news-date-day">10</div><div class="news-date-month">Mar 2026</div></div><div class="news-body"><h3>Performance, CI/CD et s&#233;curit&#233;</h3><p>Flux d'&#233;v&#233;nements optimis&#233;. D&#233;ploiement CI/CD automatis&#233; vers TestFlight. 100+ avertissements corrig&#233;s. (Build 39–55)</p><span class="news-tag">Infrastructure</span></div></div>
+                        <div class="news-card"><div class="news-date"><div class="news-date-day">01</div><div class="news-date-month">Mar 2026</div></div><div class="news-body"><h3>Lancement du site promo I'M IN</h3><p>Pr&#233;sentation de l'appli avec 12 fonctionnalit&#233;s, illustrations interactives, support de 7 langues et design adaptatif.</p><span class="news-tag">Sortie</span></div></div>
+                    </div>
+                </div></section>
+
+                <section class="news-section" data-lang="es"><div class="visible-inner">
+                    <h2>Novedades</h2><p>&#218;ltimas actualizaciones y noticias del desarrollo</p>
+                    <div class="news-list">
+                        <div class="news-card"><div class="news-date"><div class="news-date-day">21</div><div class="news-date-month">Mar 2026</div></div><div class="news-body"><h3>Soporte iPad y estandarizaci&#243;n de interfaz</h3><p>Adaptaci&#243;n completa para iPad con rotaci&#243;n. Detecci&#243;n autom&#225;tica del idioma. Estilo unificado. (Build 67–68)</p><span class="news-tag">Actualizaci&#243;n</span></div></div>
+                        <div class="news-card"><div class="news-date"><div class="news-date-day">20</div><div class="news-date-month">Mar 2026</div></div><div class="news-body"><h3>Seguimiento de amigos y notificaciones push</h3><p>Sigue a tus amigos en tiempo real. Monitoreo API con reintentos. Notificaciones push mejoradas. (Build 56–66)</p><span class="news-tag">Funcionalidad</span></div></div>
+                        <div class="news-card"><div class="news-date"><div class="news-date-day">15</div><div class="news-date-month">Mar 2026</div></div><div class="news-body"><h3>Filtros de foto, b&#250;squeda y reproductor de audio</h3><p>Edici&#243;n de fotos con filtros. B&#250;squeda de lugares. Reproductor de audio. App renombrada a I'M IN. (Build 44–49)</p><span class="news-tag">Funcionalidad</span></div></div>
+                        <div class="news-card"><div class="news-date"><div class="news-date-day">01</div><div class="news-date-month">Mar 2026</div></div><div class="news-body"><h3>Lanzamiento del sitio promo I'M IN</h3><p>Presentaci&#243;n de la app con 12 funciones, soporte de 7 idiomas y dise&#241;o responsivo.</p><span class="news-tag">Lanzamiento</span></div></div>
+                    </div>
+                </div></section>
+
+                <section class="news-section" data-lang="de"><div class="visible-inner">
+                    <h2>Neuigkeiten</h2><p>Aktuelle Updates und Entwicklungsnachrichten</p>
+                    <div class="news-list">
+                        <div class="news-card"><div class="news-date"><div class="news-date-day">21</div><div class="news-date-month">M&#228;r 2026</div></div><div class="news-body"><h3>iPad-Unterst&#252;tzung &amp; UI-Standardisierung</h3><p>Vollst&#228;ndige iPad-Anpassung mit Rotation. Automatische Spracherkennung. Einheitlicher Stil f&#252;r Buttons, Formulare und &#220;berschriften. (Build 67–68)</p><span class="news-tag">Update</span></div></div>
+                        <div class="news-card"><div class="news-date"><div class="news-date-day">20</div><div class="news-date-month">M&#228;r 2026</div></div><div class="news-body"><h3>Freunde auf der Karte verfolgen &amp; Push-Benachrichtigungen</h3><p>Verfolgen Sie Freunde in Echtzeit. API-Monitoring mit automatischem Retry. Verbesserte Push-Benachrichtigungen. (Build 56–66)</p><span class="news-tag">Funktion</span></div></div>
+                        <div class="news-card"><div class="news-date"><div class="news-date-day">15</div><div class="news-date-month">M&#228;r 2026</div></div><div class="news-body"><h3>Fotofilter, Adresssuche &amp; Audioplayer</h3><p>Fotobearbeitung mit Filtern. Ortssuche auf der Karte. Audioplayer. App umbenannt in I'M IN. (Build 44–49)</p><span class="news-tag">Funktion</span></div></div>
+                        <div class="news-card"><div class="news-date"><div class="news-date-day">01</div><div class="news-date-month">M&#228;r 2026</div></div><div class="news-body"><h3>Start der I'M IN Promo-Website</h3><p>App-Pr&#228;sentation mit 12 Funktionen, 7-Sprachen-Support und responsivem Design.</p><span class="news-tag">Release</span></div></div>
+                    </div>
+                </div></section>
+
+                <section class="news-section" data-lang="it"><div class="visible-inner">
+                    <h2>Novit&#224;</h2><p>Ultimi aggiornamenti e notizie sullo sviluppo</p>
+                    <div class="news-list">
+                        <div class="news-card"><div class="news-date"><div class="news-date-day">21</div><div class="news-date-month">Mar 2026</div></div><div class="news-body"><h3>Supporto iPad e standardizzazione interfaccia</h3><p>Adattamento completo per iPad con rotazione. Rilevamento automatico della lingua. Stile unificato. (Build 67–68)</p><span class="news-tag">Aggiornamento</span></div></div>
+                        <div class="news-card"><div class="news-date"><div class="news-date-day">20</div><div class="news-date-month">Mar 2026</div></div><div class="news-body"><h3>Tracciamento amici sulla mappa e notifiche push</h3><p>Segui gli amici in tempo reale. Monitoraggio API con retry automatico. Notifiche push migliorate. (Build 56–66)</p><span class="news-tag">Funzionalit&#224;</span></div></div>
+                        <div class="news-card"><div class="news-date"><div class="news-date-day">15</div><div class="news-date-month">Mar 2026</div></div><div class="news-body"><h3>Filtri foto, ricerca indirizzo e lettore audio</h3><p>Modifica foto con filtri. Ricerca luoghi sulla mappa. Lettore audio. App rinominata I'M IN. (Build 44–49)</p><span class="news-tag">Funzionalit&#224;</span></div></div>
+                        <div class="news-card"><div class="news-date"><div class="news-date-day">01</div><div class="news-date-month">Mar 2026</div></div><div class="news-body"><h3>Lancio del sito promo I'M IN</h3><p>Presentazione dell'app con 12 funzionalit&#224;, supporto 7 lingue e design responsivo.</p><span class="news-tag">Rilascio</span></div></div>
+                    </div>
+                </div></section>
+
+                <section class="news-section" data-lang="el"><div class="visible-inner">
+                    <h2>&#932;&#953; &#957;&#941;&#959; &#965;&#960;&#940;&#961;&#967;&#949;&#953;</h2><p>&#932;&#949;&#955;&#949;&#965;&#964;&#945;&#943;&#949;&#962; &#949;&#957;&#951;&#956;&#949;&#961;&#974;&#963;&#949;&#953;&#962; &#954;&#945;&#953; &#957;&#941;&#945; &#945;&#957;&#940;&#960;&#964;&#965;&#958;&#951;&#962;</p>
+                    <div class="news-list">
+                        <div class="news-card"><div class="news-date"><div class="news-date-day">21</div><div class="news-date-month">&#924;&#945;&#961; 2026</div></div><div class="news-body"><h3>&#933;&#960;&#959;&#963;&#964;&#942;&#961;&#953;&#958;&#951; iPad &amp; &#964;&#965;&#960;&#959;&#960;&#959;&#943;&#951;&#963;&#951; &#948;&#953;&#949;&#960;&#945;&#966;&#942;&#962;</h3><p>&#928;&#955;&#942;&#961;&#951;&#962; &#960;&#961;&#959;&#963;&#945;&#961;&#956;&#959;&#947;&#942; iPad &#956;&#949; &#960;&#949;&#961;&#953;&#963;&#964;&#961;&#959;&#966;&#942;. &#913;&#965;&#964;&#972;&#956;&#945;&#964;&#951; &#945;&#957;&#943;&#967;&#957;&#949;&#965;&#963;&#951; &#947;&#955;&#974;&#963;&#963;&#945;&#962;. (Build 67–68)</p><span class="news-tag">&#917;&#957;&#951;&#956;&#941;&#961;&#969;&#963;&#951;</span></div></div>
+                        <div class="news-card"><div class="news-date"><div class="news-date-day">01</div><div class="news-date-month">&#924;&#945;&#961; 2026</div></div><div class="news-body"><h3>&#917;&#954;&#954;&#943;&#957;&#951;&#963;&#951; promo &#953;&#963;&#964;&#959;&#963;&#949;&#955;&#943;&#948;&#945;&#962; I'M IN</h3><p>&#928;&#945;&#961;&#959;&#965;&#963;&#943;&#945;&#963;&#951; &#949;&#966;&#945;&#961;&#956;&#959;&#947;&#942;&#962; &#956;&#949; 12 &#955;&#949;&#953;&#964;&#959;&#965;&#961;&#947;&#943;&#949;&#962;, &#965;&#960;&#959;&#963;&#964;&#942;&#961;&#953;&#958;&#951; 7 &#947;&#955;&#969;&#963;&#963;&#974;&#957; &#954;&#945;&#953; responsive design.</p><span class="news-tag">&#922;&#965;&#954;&#955;&#959;&#966;&#959;&#961;&#943;&#945;</span></div></div>
+                    </div>
+                </div></section>
+
+                <!-- ── Roadmap ── -->
+                <section class="roadmap" data-lang="uk"><div class="visible-inner">
+                    <h2>Дорожня карта</h2>
+                    <p>Наш план розвитку додатку I'M IN</p>
+                    <div class="roadmap-timeline">
+                        <div class="roadmap-item"><div class="roadmap-phase">Фаза 5</div><h3>Запуск</h3><p>Публікація в App Store та Google Play. Маркетингова кампанія, залучення перших користувачів та побудова спільноти.</p><span class="roadmap-status roadmap-status--planned">Заплановано</span></div>
+                        <div class="roadmap-hidden" data-roadmap-extra>
+                            <div class="roadmap-item active"><div class="roadmap-phase">Фаза 3 — зараз</div><h3>Розробка MVP</h3><p>Розробка основного функціоналу: інтерактивна карта, реєстрація, створення івентів, завантаження фото/відео, голосові повідомлення.</p><span class="roadmap-status roadmap-status--current">В процесі</span></div>
+                            <div class="roadmap-item"><div class="roadmap-phase">Фаза 4</div><h3>Тестування (Beta)</h3><p>Закритий бета-тест з обмеженою групою користувачів. Збір зворотного зв'язку, виправлення помилок та оптимізація.</p><span class="roadmap-status roadmap-status--planned">Заплановано</span></div>
+                            <div class="roadmap-item completed"><div class="roadmap-phase">Фаза 2</div><h3>Лендінг та веб-присутність</h3><p>Створення промо-сайту, SEO-оптимізація, юридичні документи, чат-бот підтримки.</p><span class="roadmap-status roadmap-status--done">Завершено</span></div>
+                            <div class="roadmap-item completed"><div class="roadmap-phase">Фаза 1</div><h3>Концепція та дизайн</h3><p>Розробка концепції додатку, UX/UI дизайн, прототипування основних екранів та користувацького досвіду.</p><span class="roadmap-status roadmap-status--done">Завершено</span></div>
+                        </div>
+                        <button class="roadmap-toggle" data-roadmap-toggle>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                            <span data-toggle-label>Показати всі фази</span>
+                        </button>
+                    </div>
+                </div></section>
+
+                <section class="roadmap" data-lang="en"><div class="visible-inner">
+                    <h2>Roadmap</h2><p>Our development plan for I'M IN</p>
+                    <div class="roadmap-timeline">
+                        <div class="roadmap-item"><div class="roadmap-phase">Phase 5</div><h3>Launch</h3><p>Publishing on App Store and Google Play. Marketing campaign, attracting first users and building community.</p><span class="roadmap-status roadmap-status--planned">Planned</span></div>
+                        <div class="roadmap-hidden" data-roadmap-extra>
+                            <div class="roadmap-item active"><div class="roadmap-phase">Phase 3 — Current</div><h3>MVP Development</h3><p>Core functionality: interactive map, registration, event creation, photo/video upload, voice messages.</p><span class="roadmap-status roadmap-status--current">In Progress</span></div>
+                            <div class="roadmap-item"><div class="roadmap-phase">Phase 4</div><h3>Beta Testing</h3><p>Closed beta test with limited users. Gathering feedback, bug fixes and optimization.</p><span class="roadmap-status roadmap-status--planned">Planned</span></div>
+                            <div class="roadmap-item completed"><div class="roadmap-phase">Phase 2</div><h3>Landing &amp; Web Presence</h3><p>Promo website, SEO, legal docs, support chatbot.</p><span class="roadmap-status roadmap-status--done">Completed</span></div>
+                            <div class="roadmap-item completed"><div class="roadmap-phase">Phase 1</div><h3>Concept &amp; Design</h3><p>App concept, UX/UI design, prototyping.</p><span class="roadmap-status roadmap-status--done">Completed</span></div>
+                        </div>
+                        <button class="roadmap-toggle" data-roadmap-toggle><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg><span data-toggle-label>Show all phases</span></button>
+                    </div>
+                </div></section>
+
+                <section class="roadmap" data-lang="fr"><div class="visible-inner">
+                    <h2>Feuille de route</h2><p>Notre plan de d&#233;veloppement pour I'M IN</p>
+                    <div class="roadmap-timeline">
+                        <div class="roadmap-item"><div class="roadmap-phase">Phase 5</div><h3>Lancement</h3><p>Publication sur App Store et Google Play. Campagne marketing, acquisition des premiers utilisateurs.</p><span class="roadmap-status roadmap-status--planned">Planifi&#233;</span></div>
+                        <div class="roadmap-hidden" data-roadmap-extra>
+                            <div class="roadmap-item active"><div class="roadmap-phase">Phase 3 — En cours</div><h3>D&#233;veloppement MVP</h3><p>Carte interactive, inscription, cr&#233;ation d'&#233;v&#233;nements, upload photo/vid&#233;o, messages vocaux.</p><span class="roadmap-status roadmap-status--current">En cours</span></div>
+                            <div class="roadmap-item completed"><div class="roadmap-phase">Phase 2</div><h3>Pr&#233;sence web</h3><p>Site promo, SEO, documents juridiques, chatbot.</p><span class="roadmap-status roadmap-status--done">Termin&#233;</span></div>
+                            <div class="roadmap-item completed"><div class="roadmap-phase">Phase 1</div><h3>Concept &amp; Design</h3><p>D&#233;veloppement du concept, design UX/UI.</p><span class="roadmap-status roadmap-status--done">Termin&#233;</span></div>
+                        </div>
+                        <button class="roadmap-toggle" data-roadmap-toggle><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg><span data-toggle-label>Afficher toutes les phases</span></button>
+                    </div>
+                </div></section>
+
+                <section class="roadmap" data-lang="es"><div class="visible-inner">
+                    <h2>Hoja de ruta</h2><p>Nuestro plan de desarrollo para I'M IN</p>
+                    <div class="roadmap-timeline">
+                        <div class="roadmap-item"><div class="roadmap-phase">Fase 5</div><h3>Lanzamiento</h3><p>Publicaci&#243;n en App Store y Google Play. Campa&#241;a de marketing y captaci&#243;n de primeros usuarios.</p><span class="roadmap-status roadmap-status--planned">Planificado</span></div>
+                        <div class="roadmap-hidden" data-roadmap-extra>
+                            <div class="roadmap-item active"><div class="roadmap-phase">Fase 3 — Actual</div><h3>Desarrollo MVP</h3><p>Mapa interactivo, registro, creaci&#243;n de eventos, subida de fotos/v&#237;deos, mensajes de voz.</p><span class="roadmap-status roadmap-status--current">En progreso</span></div>
+                            <div class="roadmap-item completed"><div class="roadmap-phase">Fase 2</div><h3>Landing y Presencia web</h3><p>Sitio promo, SEO, documentos legales, chatbot.</p><span class="roadmap-status roadmap-status--done">Completado</span></div>
+                            <div class="roadmap-item completed"><div class="roadmap-phase">Fase 1</div><h3>Concepto y Dise&#241;o</h3><p>Desarrollo del concepto, dise&#241;o UX/UI.</p><span class="roadmap-status roadmap-status--done">Completado</span></div>
+                        </div>
+                        <button class="roadmap-toggle" data-roadmap-toggle><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg><span data-toggle-label>Mostrar todas las fases</span></button>
+                    </div>
+                </div></section>
+
+                <section class="roadmap" data-lang="de"><div class="visible-inner">
+                    <h2>Roadmap</h2><p>Unser Entwicklungsplan f&#252;r I'M IN</p>
+                    <div class="roadmap-timeline">
+                        <div class="roadmap-item"><div class="roadmap-phase">Phase 5</div><h3>Start</h3><p>Ver&#246;ffentlichung im App Store und Google Play. Marketingkampagne und Gewinnung der ersten Nutzer.</p><span class="roadmap-status roadmap-status--planned">Geplant</span></div>
+                        <div class="roadmap-hidden" data-roadmap-extra>
+                            <div class="roadmap-item active"><div class="roadmap-phase">Phase 3 — Aktuell</div><h3>MVP-Entwicklung</h3><p>Interaktive Karte, Registrierung, Event-Erstellung, Foto-/Video-Upload, Sprachnachrichten.</p><span class="roadmap-status roadmap-status--current">In Arbeit</span></div>
+                            <div class="roadmap-item completed"><div class="roadmap-phase">Phase 2</div><h3>Web-Pr&#228;senz</h3><p>Promo-Website, SEO, Rechtsdokumente, Chatbot.</p><span class="roadmap-status roadmap-status--done">Abgeschlossen</span></div>
+                            <div class="roadmap-item completed"><div class="roadmap-phase">Phase 1</div><h3>Konzept &amp; Design</h3><p>App-Konzeptentwicklung, UX/UI-Design.</p><span class="roadmap-status roadmap-status--done">Abgeschlossen</span></div>
+                        </div>
+                        <button class="roadmap-toggle" data-roadmap-toggle><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg><span data-toggle-label>Alle Phasen anzeigen</span></button>
+                    </div>
+                </div></section>
+
+                <section class="roadmap" data-lang="it"><div class="visible-inner">
+                    <h2>Roadmap</h2><p>Il nostro piano di sviluppo per I'M IN</p>
+                    <div class="roadmap-timeline">
+                        <div class="roadmap-item"><div class="roadmap-phase">Fase 5</div><h3>Lancio</h3><p>Pubblicazione su App Store e Google Play. Campagna marketing e acquisizione dei primi utenti.</p><span class="roadmap-status roadmap-status--planned">Pianificato</span></div>
+                        <div class="roadmap-hidden" data-roadmap-extra>
+                            <div class="roadmap-item active"><div class="roadmap-phase">Fase 3 — Attuale</div><h3>Sviluppo MVP</h3><p>Mappa interattiva, registrazione, creazione eventi, upload foto/video, messaggi vocali.</p><span class="roadmap-status roadmap-status--current">In corso</span></div>
+                            <div class="roadmap-item completed"><div class="roadmap-phase">Fase 2</div><h3>Presenza web</h3><p>Sito promo, SEO, documenti legali, chatbot.</p><span class="roadmap-status roadmap-status--done">Completato</span></div>
+                            <div class="roadmap-item completed"><div class="roadmap-phase">Fase 1</div><h3>Concetto &amp; Design</h3><p>Sviluppo del concetto, design UX/UI.</p><span class="roadmap-status roadmap-status--done">Completato</span></div>
+                        </div>
+                        <button class="roadmap-toggle" data-roadmap-toggle><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg><span data-toggle-label>Mostra tutte le fasi</span></button>
+                    </div>
+                </div></section>
+
+                <section class="roadmap" data-lang="el"><div class="visible-inner">
+                    <h2>&#927;&#948;&#953;&#954;&#972;&#962; &#967;&#940;&#961;&#964;&#951;&#962;</h2><p>&#932;&#959; &#963;&#967;&#941;&#948;&#953;&#959; &#945;&#957;&#940;&#960;&#964;&#965;&#958;&#951;&#962; &#956;&#945;&#962; &#947;&#953;&#945; &#964;&#959; I'M IN</p>
+                    <div class="roadmap-timeline">
+                        <div class="roadmap-item"><div class="roadmap-phase">&#934;&#940;&#963;&#951; 5</div><h3>&#917;&#954;&#954;&#943;&#957;&#951;&#963;&#951;</h3><p>&#916;&#951;&#956;&#959;&#963;&#943;&#949;&#965;&#963;&#951; &#963;&#964;&#959; App Store &#954;&#945;&#953; Google Play. Marketing &#954;&#945;&#956;&#960;&#940;&#957;&#953;&#945;.</p><span class="roadmap-status roadmap-status--planned">&#928;&#961;&#959;&#947;&#961;&#945;&#956;&#956;&#945;&#964;&#953;&#963;&#956;&#941;&#957;&#959;</span></div>
+                        <div class="roadmap-hidden" data-roadmap-extra>
+                            <div class="roadmap-item active"><div class="roadmap-phase">&#934;&#940;&#963;&#951; 3 — &#932;&#961;&#941;&#967;&#959;&#965;&#963;&#945;</div><h3>&#913;&#957;&#940;&#960;&#964;&#965;&#958;&#951; MVP</h3><p>&#916;&#953;&#945;&#948;&#961;&#945;&#963;&#964;&#953;&#954;&#972;&#962; &#967;&#940;&#961;&#964;&#951;&#962;, &#949;&#947;&#947;&#961;&#945;&#966;&#942;, &#948;&#951;&#956;&#953;&#959;&#965;&#961;&#947;&#943;&#945; events.</p><span class="roadmap-status roadmap-status--current">&#931;&#949; &#949;&#958;&#941;&#955;&#953;&#958;&#951;</span></div>
+                            <div class="roadmap-item completed"><div class="roadmap-phase">&#934;&#940;&#963;&#951; 1-2</div><h3>&#931;&#967;&#949;&#948;&#953;&#945;&#963;&#956;&#972;&#962; &amp; Web</h3><p>UX/UI, promo site, SEO, chatbot.</p><span class="roadmap-status roadmap-status--done">&#927;&#955;&#959;&#954;&#955;&#951;&#961;&#974;&#952;&#951;&#954;&#949;</span></div>
+                        </div>
+                        <button class="roadmap-toggle" data-roadmap-toggle><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg><span data-toggle-label>&#917;&#956;&#966;&#940;&#957;&#953;&#963;&#951; &#972;&#955;&#969;&#957; &#964;&#969;&#957; &#966;&#940;&#963;&#949;&#969;&#957;</span></button>
+                    </div>
+                </div></section>
+
+            </div><!-- /product tab -->
+
+        </div>
+    </main>
+
+    <footer class="blog-footer">
+        <div class="container">
+            <p>&copy; 2026 I'M IN. <a href="index.html">im-in.net</a></p>
+        </div>
+    </footer>
+
+    <script>
+        const pageTitles = {
+            uk: { title: 'Блог / Новини', subtitle: 'Новини подорожей та оновлення продукту', back: 'На головну' },
+            en: { title: 'Blog / News', subtitle: 'Travel news and product updates', back: 'Go Home' },
+            fr: { title: 'Blog / Actualit\u00e9s', subtitle: 'Actualit\u00e9s voyage et mises \u00e0 jour produit', back: 'Accueil' },
+            es: { title: 'Blog / Noticias', subtitle: 'Noticias de viaje y actualizaciones del producto', back: 'Inicio' },
+            de: { title: 'Blog / Neuigkeiten', subtitle: 'Reisenachrichten und Produktupdates', back: 'Startseite' },
+            it: { title: 'Blog / Notizie', subtitle: 'Notizie di viaggio e aggiornamenti prodotto', back: 'Home' },
+            el: { title: 'Blog / \u039d\u03ad\u03b1', subtitle: '\u03a4\u03b1\u03be\u03b9\u03b4\u03b9\u03c9\u03c4\u03b9\u03ba\u03ac \u03bd\u03ad\u03b1 \u03ba\u03b1\u03b9 \u03b5\u03bd\u03b7\u03bc\u03b5\u03c1\u03ce\u03c3\u03b5\u03b9\u03c2', back: '\u0391\u03c1\u03c7\u03b9\u03ba\u03ae' }
+        };
+        const tabLabels = {
+            uk: { travel: '\u041d\u043e\u0432\u0438\u043d\u0438 \u043f\u043e\u0434\u043e\u0440\u043e\u0436\u0435\u0439', product: '\u041d\u043e\u0432\u0438\u043d\u0438 \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u0443' },
+            en: { travel: 'Travel News', product: 'Product News' },
+            fr: { travel: 'Actualit\u00e9s voyage', product: 'Actualit\u00e9s produit' },
+            es: { travel: 'Noticias de viaje', product: 'Noticias del producto' },
+            de: { travel: 'Reisenachrichten', product: 'Produktneuigkeiten' },
+            it: { travel: 'Notizie di viaggio', product: 'Notizie prodotto' },
+            el: { travel: '\u03a4\u03b1\u03be\u03b9\u03b4\u03b9\u03c9\u03c4\u03b9\u03ba\u03ac \u03bd\u03ad\u03b1', product: '\u039d\u03ad\u03b1 \u03c0\u03c1\u03bf\u03ca\u03cc\u03bd\u03c4\u03bf\u03c2' }
+        };
+        const toggleLabels = {
+            uk: ['\u041f\u043e\u043a\u0430\u0437\u0430\u0442\u0438 \u0432\u0441\u0456 \u0444\u0430\u0437\u0438', '\u0421\u0445\u043e\u0432\u0430\u0442\u0438'],
+            en: ['Show all phases', 'Hide'],
+            fr: ['Afficher toutes les phases', 'Masquer'],
+            es: ['Mostrar todas las fases', 'Ocultar'],
+            de: ['Alle Phasen anzeigen', 'Ausblenden'],
+            it: ['Mostra tutte le fasi', 'Nascondi'],
+            el: ['\u0395\u03bc\u03c6\u03ac\u03bd\u03b9\u03c3\u03b7 \u03cc\u03bb\u03c9\u03bd', '\u0391\u03c0\u03cc\u03ba\u03c1\u03c5\u03c8\u03b7']
+        };
+
+        const urlLang = new URLSearchParams(window.location.search).get('lang');
+        let currentLang = urlLang || localStorage.getItem('language') || 'uk';
+
+        function setLang(lang) {
+            currentLang = lang;
+            localStorage.setItem('language', lang);
+            document.querySelectorAll('[data-lang-btn]').forEach(b => b.classList.toggle('active', b.getAttribute('data-lang-btn') === lang));
+            const hasLang = document.querySelectorAll('[data-lang="' + lang + '"]').length > 0;
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.classList.toggle('visible', el.getAttribute('data-lang') === lang || (!hasLang && el.getAttribute('data-lang') === 'en'));
+            });
+            const t = pageTitles[lang] || pageTitles.uk;
+            document.getElementById('page-title').textContent = t.title;
+            document.getElementById('page-subtitle').textContent = t.subtitle;
+            document.getElementById('back-text').textContent = t.back;
+            const tl = tabLabels[lang] || tabLabels.uk;
+            document.querySelector('[data-tab-label="travel"]').textContent = tl.travel;
+            document.querySelector('[data-tab-label="product"]').textContent = tl.product;
+        }
+
+        document.querySelectorAll('[data-lang-btn]').forEach(btn => btn.addEventListener('click', () => setLang(btn.getAttribute('data-lang-btn'))));
+        setLang(currentLang);
+
+        /* ── Tab switching ── */
+        let currentTab = 'travel';
+        function setTab(tab) {
+            currentTab = tab;
+            document.querySelectorAll('[data-tab-btn]').forEach(b => b.classList.toggle('active', b.getAttribute('data-tab-btn') === tab));
+            document.querySelectorAll('[data-tab-content]').forEach(el => el.classList.toggle('tab-visible', el.getAttribute('data-tab-content') === tab));
+        }
+        document.querySelectorAll('[data-tab-btn]').forEach(btn => btn.addEventListener('click', () => setTab(btn.getAttribute('data-tab-btn'))));
+
+        /* ── Roadmap toggle ── */
+        document.querySelectorAll('[data-roadmap-toggle]').forEach(btn => {
+            btn.addEventListener('click', function () {
+                const timeline = this.closest('.roadmap-timeline');
+                const extra = timeline.querySelector('[data-roadmap-extra]');
+                const isOpen = extra.classList.toggle('expanded');
+                this.classList.toggle('expanded', isOpen);
+                const labels = toggleLabels[currentLang] || toggleLabels.uk;
+                this.querySelector('[data-toggle-label]').textContent = isOpen ? labels[1] : labels[0];
+            });
+        });
+    </script>
+
+    <script>
+    (function () {
+        const API_BASE = 'https://social-automation-production-6fe3.up.railway.app';
+        const LOCAL_INDEX = 'blog/posts.json';
+        const PAGE_SIZE = 10;
+        const LANGS = ['uk', 'en', 'fr', 'es', 'de', 'it', 'el'];
+        let allPosts = [], offset = 0, allDone = false, loading = false, useLocalData = false;
+
+        function fmtDate(iso) {
+            if (!iso) return '';
+            const d = new Date(iso);
+            const months = ['С\u0456ч','Лют','Бер','Кв\u0456','Тра','Чер','Лип','Сер','Вер','Жов','Лис','Гру'];
+            return String(d.getDate()).padStart(2,'0') + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
+        }
+        function truncate(t, m) { return (!t || t.length <= m) ? (t||'') : t.slice(0,m).replace(/\s+\S*$/,'') + '\u2026'; }
+        function escHtml(s) { var e = document.createElement('span'); e.textContent = s; return e.innerHTML; }
+        function mapUrl(lat, lon, name) { return 'https://www.google.com/maps/search/?api=1&query=' + (name ? encodeURIComponent(name) : lat+','+lon); }
+
+        function buildCard(post) {
+            var a = document.createElement('a');
+            a.className = 'blog-card'; a.href = 'blog/post-' + post.id + '.html';
+            a.style.textDecoration = 'none'; a.style.color = 'inherit';
+            var h = '';
+            if (post.image_url) h += '<img class="blog-card-img" src="' + escHtml(post.image_url) + '" alt="" loading="lazy" onerror="this.style.display=\'none\'">';
+            h += '<div class="blog-card-body"><div class="blog-card-date">' + escHtml(fmtDate(post.published_at||post.created_at)) + '</div>';
+            if (post.title) h += '<h3>' + escHtml(post.title) + '</h3>';
+            h += '<div class="blog-card-text">' + escHtml(truncate(post.content_raw,280)) + '</div><div class="blog-card-meta">';
+            if (post.place_name && post.latitude && post.longitude) h += '<span class="blog-card-badge badge-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg>' + escHtml(post.place_name) + '</span>';
+            if (post.source_url) { var d=''; try{d=new URL(post.source_url).hostname.replace('www.','');}catch(e){d='source';} h += '<span class="blog-card-badge badge-source"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>' + escHtml(d) + '</span>'; }
+            h += '</div></div>';
+            a.innerHTML = h;
+            return a;
+        }
+
+        function showEmpty(s) { LANGS.forEach(function(l){ var e=document.getElementById('blog-empty-'+l); if(e)e.style.display=s?'block':'none'; }); }
+        function showButtons(s) { LANGS.forEach(function(l){ var b=document.getElementById('blog-more-'+l); if(b)b.style.display=s?'inline-block':'none'; }); }
+        function appendPosts(posts) { LANGS.forEach(function(l){ var g=document.getElementById('blog-grid-'+l); if(!g)return; posts.forEach(function(p){g.appendChild(buildCard(p));}); }); }
+
+        async function tryLoadLocal() { try { var r=await fetch(LOCAL_INDEX); if(!r.ok)return false; allPosts=await r.json(); useLocalData=true; return allPosts.length>0; } catch(e){ return false; } }
+        function renderLocalPage() { var p=allPosts.slice(offset,offset+PAGE_SIZE); if(!p.length&&!offset){showEmpty(true);return;} appendPosts(p); offset+=p.length; if(offset>=allPosts.length){allDone=true;showButtons(false);}else{showButtons(true);} }
+        async function loadFromApi() { try { var r=await fetch(API_BASE+'/api/blog/posts?limit='+PAGE_SIZE+'&offset='+offset); if(!r.ok)throw new Error('HTTP '+r.status); var p=await r.json(); if(!p.length&&!offset){showEmpty(true);return;} appendPosts(p); offset+=p.length; if(p.length<PAGE_SIZE)allDone=true; else showButtons(true); } catch(e){ console.error('Blog posts fetch error:',e); if(!offset)showEmpty(true); } }
+        async function loadPosts() { if(loading||allDone)return; loading=true; showButtons(false); if(useLocalData)renderLocalPage(); else await loadFromApi(); loading=false; }
+
+        document.querySelectorAll('[data-load-more]').forEach(function(b){b.addEventListener('click',loadPosts);});
+        (async function(){ var h=await tryLoadLocal(); if(!h)useLocalData=false; await loadPosts(); })();
+    })();
+    </script>
+</body>
+</html>

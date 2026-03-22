@@ -1,0 +1,450 @@
+{
+  "en": {
+    "nav": {
+      "features": "Features",
+      "about": "About",
+      "contact": "Contact"
+    },
+    "hero": {
+      "title": "Your space for <span class='highlight'>events</span> and <span class='highlight'>communication</span>",
+      "subtitle": "Mark months on the map, share moments, create events and find like-minded people",
+      "downloadBtn": "Download App",
+      "learnMoreBtn": "Learn More"
+    },
+    "features": {
+      "title": "App Features",
+      "map": {
+        "title": "Event Map",
+        "description": "Mark months and periods on an interactive map. Create your own markers and share locations with friends."
+      },
+      "photos": {
+        "title": "Photos & Videos",
+        "description": "Capture and save the best moments. Share photos and videos with your community and create unforgettable memories."
+      },
+      "events": {
+        "title": "Events",
+        "description": "Create your own events, invite friends and find interesting events nearby. Never miss something important."
+      },
+      "chat": {
+        "title": "Communication",
+        "description": "Chat with friends, discuss events and plan together. Fast and convenient real-time communication."
+      },
+      "groups": {
+        "title": "Interest Groups",
+        "description": "Create and join interest groups. Find like-minded people and be part of the community."
+      },
+      "calendar": {
+        "title": "Event Calendar",
+        "description": "Plan your events and track important dates. Personal calendar with all your activities."
+      }
+    },
+    "about": {
+      "title": "About Im-in",
+      "description1": "Im-in is a modern app that brings people together around shared interests and events. We create a space where you can mark important moments on the map, share memories through photos and videos, organize events and find new friends.",
+      "description2": "Our mission is to make communication and event organization simpler and more interesting. Join the Im-in community and discover new opportunities for connections and activities.",
+      "stats": {
+        "users": "Active Users",
+        "events": "Monthly Events",
+        "groups": "Interest Groups"
+      }
+    },
+    "download": {
+      "title": "Download Im-in Now",
+      "subtitle": "Join the community and start creating unforgettable moments",
+      "appStore": "Download from",
+      "googlePlay": "Download from"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "website": "Website",
+      "email": "Email"
+    },
+    "footer": {
+      "copyright": "© 2026 Im-in. All rights reserved."
+    }
+  },
+  "fr": {
+    "nav": {
+      "features": "Fonctionnalités",
+      "about": "À propos",
+      "contact": "Contact"
+    },
+    "hero": {
+      "title": "Votre espace pour les <span class='highlight'>événements</span> et la <span class='highlight'>communication</span>",
+      "subtitle": "Marquez les mois sur la carte, partagez des moments, créez des événements et trouvez des personnes partageant les mêmes idées",
+      "downloadBtn": "Télécharger l'app",
+      "learnMoreBtn": "En savoir plus"
+    },
+    "features": {
+      "title": "Fonctionnalités de l'app",
+      "map": {
+        "title": "Carte des événements",
+        "description": "Marquez les mois et les périodes sur une carte interactive. Créez vos propres marqueurs et partagez des emplacements avec des amis."
+      },
+      "photos": {
+        "title": "Photos et vidéos",
+        "description": "Capturez et enregistrez les meilleurs moments. Partagez des photos et des vidéos avec votre communauté et créez des souvenirs inoubliables."
+      },
+      "events": {
+        "title": "Événements",
+        "description": "Créez vos propres événements, invitez des amis et trouvez des événements intéressants à proximité. Ne manquez jamais quelque chose d'important."
+      },
+      "chat": {
+        "title": "Communication",
+        "description": "Discutez avec des amis, discutez d'événements et planifiez ensemble. Communication rapide et pratique en temps réel."
+      },
+      "groups": {
+        "title": "Groupes d'intérêt",
+        "description": "Créez et rejoignez des groupes d'intérêt. Trouvez des personnes partageant les mêmes idées et faites partie de la communauté."
+      },
+      "calendar": {
+        "title": "Calendrier des événements",
+        "description": "Planifiez vos événements et suivez les dates importantes. Calendrier personnel avec toutes vos activités."
+      }
+    },
+    "about": {
+      "title": "À propos d'Im-in",
+      "description1": "Im-in est une application moderne qui rassemble les gens autour d'intérêts et d'événements communs. Nous créons un espace où vous pouvez marquer des moments importants sur la carte, partager des souvenirs via des photos et des vidéos, organiser des événements et trouver de nouveaux amis.",
+      "description2": "Notre mission est de rendre la communication et l'organisation d'événements plus simples et plus intéressantes. Rejoignez la communauté Im-in et découvrez de nouvelles opportunités de connexions et d'activités.",
+      "stats": {
+        "users": "Utilisateurs actifs",
+        "events": "Événements mensuels",
+        "groups": "Groupes d'intérêt"
+      }
+    },
+    "download": {
+      "title": "Téléchargez Im-in maintenant",
+      "subtitle": "Rejoignez la communauté et commencez à créer des moments inoubliables",
+      "appStore": "Télécharger depuis",
+      "googlePlay": "Télécharger depuis"
+    },
+    "contact": {
+      "title": "Contactez-nous",
+      "website": "Site Web",
+      "email": "Email"
+    },
+    "footer": {
+      "copyright": "© 2026 Im-in. Tous droits réservés."
+    }
+  },
+  "es": {
+    "nav": {
+      "features": "Características",
+      "about": "Acerca de",
+      "contact": "Contacto"
+    },
+    "hero": {
+      "title": "Tu espacio para <span class='highlight'>eventos</span> y <span class='highlight'>comunicación</span>",
+      "subtitle": "Marca meses en el mapa, comparte momentos, crea eventos y encuentra personas afines",
+      "downloadBtn": "Descargar App",
+      "learnMoreBtn": "Saber más"
+    },
+    "features": {
+      "title": "Características de la App",
+      "map": {
+        "title": "Mapa de Eventos",
+        "description": "Marca meses y períodos en un mapa interactivo. Crea tus propios marcadores y comparte ubicaciones con amigos."
+      },
+      "photos": {
+        "title": "Fotos y Videos",
+        "description": "Captura y guarda los mejores momentos. Comparte fotos y videos con tu comunidad y crea recuerdos inolvidables."
+      },
+      "events": {
+        "title": "Eventos",
+        "description": "Crea tus propios eventos, invita amigos y encuentra eventos interesantes cerca. Nunca te pierdas algo importante."
+      },
+      "chat": {
+        "title": "Comunicación",
+        "description": "Chatea con amigos, discute eventos y planifica juntos. Comunicación rápida y conveniente en tiempo real."
+      },
+      "groups": {
+        "title": "Grupos de Interés",
+        "description": "Crea y únete a grupos de interés. Encuentra personas afines y sé parte de la comunidad."
+      },
+      "calendar": {
+        "title": "Calendario de Eventos",
+        "description": "Planifica tus eventos y rastrea fechas importantes. Calendario personal con todas tus actividades."
+      }
+    },
+    "about": {
+      "title": "Acerca de Im-in",
+      "description1": "Im-in es una aplicación moderna que une a las personas en torno a intereses y eventos compartidos. Creamos un espacio donde puedes marcar momentos importantes en el mapa, compartir recuerdos a través de fotos y videos, organizar eventos y encontrar nuevos amigos.",
+      "description2": "Nuestra misión es hacer que la comunicación y la organización de eventos sean más simples e interesantes. Únete a la comunidad Im-in y descubre nuevas oportunidades para conexiones y actividades.",
+      "stats": {
+        "users": "Usuarios Activos",
+        "events": "Eventos Mensuales",
+        "groups": "Grupos de Interés"
+      }
+    },
+    "download": {
+      "title": "Descarga Im-in Ahora",
+      "subtitle": "Únete a la comunidad y comienza a crear momentos inolvidables",
+      "appStore": "Descargar desde",
+      "googlePlay": "Descargar desde"
+    },
+    "contact": {
+      "title": "Contáctanos",
+      "website": "Sitio Web",
+      "email": "Email"
+    },
+    "footer": {
+      "copyright": "© 2026 Im-in. Todos los derechos reservados."
+    }
+  },
+  "de": {
+    "nav": {
+      "features": "Funktionen",
+      "about": "Über uns",
+      "contact": "Kontakt"
+    },
+    "hero": {
+      "title": "Ihr Raum für <span class='highlight'>Veranstaltungen</span> und <span class='highlight'>Kommunikation</span>",
+      "subtitle": "Markieren Sie Monate auf der Karte, teilen Sie Momente, erstellen Sie Veranstaltungen und finden Sie Gleichgesinnte",
+      "downloadBtn": "App herunterladen",
+      "learnMoreBtn": "Mehr erfahren"
+    },
+    "features": {
+      "title": "App-Funktionen",
+      "map": {
+        "title": "Veranstaltungskarte",
+        "description": "Markieren Sie Monate und Perioden auf einer interaktiven Karte. Erstellen Sie Ihre eigenen Marker und teilen Sie Standorte mit Freunden."
+      },
+      "photos": {
+        "title": "Fotos & Videos",
+        "description": "Erfassen und speichern Sie die besten Momente. Teilen Sie Fotos und Videos mit Ihrer Community und schaffen Sie unvergessliche Erinnerungen."
+      },
+      "events": {
+        "title": "Veranstaltungen",
+        "description": "Erstellen Sie Ihre eigenen Veranstaltungen, laden Sie Freunde ein und finden Sie interessante Veranstaltungen in der Nähe. Verpassen Sie nie etwas Wichtiges."
+      },
+      "chat": {
+        "title": "Kommunikation",
+        "description": "Chatten Sie mit Freunden, diskutieren Sie Veranstaltungen und planen Sie gemeinsam. Schnelle und bequeme Echtzeit-Kommunikation."
+      },
+      "groups": {
+        "title": "Interessengruppen",
+        "description": "Erstellen Sie Interessengruppen und treten Sie ihnen bei. Finden Sie Gleichgesinnte und werden Sie Teil der Community."
+      },
+      "calendar": {
+        "title": "Veranstaltungskalender",
+        "description": "Planen Sie Ihre Veranstaltungen und verfolgen Sie wichtige Termine. Persönlicher Kalender mit all Ihren Aktivitäten."
+      }
+    },
+    "about": {
+      "title": "Über Im-in",
+      "description1": "Im-in ist eine moderne App, die Menschen um gemeinsame Interessen und Veranstaltungen zusammenbringt. Wir schaffen einen Raum, in dem Sie wichtige Momente auf der Karte markieren, Erinnerungen durch Fotos und Videos teilen, Veranstaltungen organisieren und neue Freunde finden können.",
+      "description2": "Unsere Mission ist es, Kommunikation und Veranstaltungsorganisation einfacher und interessanter zu gestalten. Treten Sie der Im-in-Community bei und entdecken Sie neue Möglichkeiten für Verbindungen und Aktivitäten.",
+      "stats": {
+        "users": "Aktive Benutzer",
+        "events": "Monatliche Veranstaltungen",
+        "groups": "Interessengruppen"
+      }
+    },
+    "download": {
+      "title": "Laden Sie Im-in jetzt herunter",
+      "subtitle": "Treten Sie der Community bei und beginnen Sie, unvergessliche Momente zu schaffen",
+      "appStore": "Herunterladen von",
+      "googlePlay": "Herunterladen von"
+    },
+    "contact": {
+      "title": "Kontaktieren Sie uns",
+      "website": "Website",
+      "email": "Email"
+    },
+    "footer": {
+      "copyright": "© 2026 Im-in. Alle Rechte vorbehalten."
+    }
+  },
+  "it": {
+    "nav": {
+      "features": "Funzionalità",
+      "about": "Chi siamo",
+      "contact": "Contatti"
+    },
+    "hero": {
+      "title": "Il tuo spazio per <span class='highlight'>eventi</span> e <span class='highlight'>comunicazione</span>",
+      "subtitle": "Segna i mesi sulla mappa, condividi momenti, crea eventi e trova persone con interessi simili",
+      "downloadBtn": "Scarica App",
+      "learnMoreBtn": "Scopri di più"
+    },
+    "features": {
+      "title": "Funzionalità dell'App",
+      "map": {
+        "title": "Mappa Eventi",
+        "description": "Segna mesi e periodi su una mappa interattiva. Crea i tuoi marcatori e condividi posizioni con gli amici."
+      },
+      "photos": {
+        "title": "Foto e Video",
+        "description": "Cattura e salva i momenti migliori. Condividi foto e video con la tua community e crea ricordi indimenticabili."
+      },
+      "events": {
+        "title": "Eventi",
+        "description": "Crea i tuoi eventi, invita amici e trova eventi interessanti nelle vicinanze. Non perdere mai qualcosa di importante."
+      },
+      "chat": {
+        "title": "Comunicazione",
+        "description": "Chatta con gli amici, discuti eventi e pianifica insieme. Comunicazione rapida e conveniente in tempo reale."
+      },
+      "groups": {
+        "title": "Gruppi di Interesse",
+        "description": "Crea e unisciti a gruppi di interesse. Trova persone con interessi simili e fai parte della community."
+      },
+      "calendar": {
+        "title": "Calendario Eventi",
+        "description": "Pianifica i tuoi eventi e traccia date importanti. Calendario personale con tutte le tue attività."
+      }
+    },
+    "about": {
+      "title": "Chi siamo - Im-in",
+      "description1": "Im-in è un'app moderna che unisce le persone intorno a interessi ed eventi condivisi. Creiamo uno spazio dove puoi segnare momenti importanti sulla mappa, condividere ricordi attraverso foto e video, organizzare eventi e trovare nuovi amici.",
+      "description2": "La nostra missione è rendere la comunicazione e l'organizzazione di eventi più semplici e interessanti. Unisciti alla community Im-in e scopri nuove opportunità per connessioni e attività.",
+      "stats": {
+        "users": "Utenti Attivi",
+        "events": "Eventi Mensili",
+        "groups": "Gruppi di Interesse"
+      }
+    },
+    "download": {
+      "title": "Scarica Im-in Ora",
+      "subtitle": "Unisciti alla community e inizia a creare momenti indimenticabili",
+      "appStore": "Scarica da",
+      "googlePlay": "Scarica da"
+    },
+    "contact": {
+      "title": "Contattaci",
+      "website": "Sito Web",
+      "email": "Email"
+    },
+    "footer": {
+      "copyright": "© 2026 Im-in. Tutti i diritti riservati."
+    }
+  },
+  "el": {
+    "nav": {
+      "features": "Χαρακτηριστικά",
+      "about": "Σχετικά",
+      "contact": "Επικοινωνία"
+    },
+    "hero": {
+      "title": "Ο χώρος σας για <span class='highlight'>εκδηλώσεις</span> και <span class='highlight'>επικοινωνία</span>",
+      "subtitle": "Σημειώστε μήνες στον χάρτη, μοιραστείτε στιγμές, δημιουργήστε εκδηλώσεις και βρείτε ομοϊδεάτες",
+      "downloadBtn": "Λήψη Εφαρμογής",
+      "learnMoreBtn": "Μάθετε περισσότερα"
+    },
+    "features": {
+      "title": "Χαρακτηριστικά Εφαρμογής",
+      "map": {
+        "title": "Χάρτης Εκδηλώσεων",
+        "description": "Σημειώστε μήνες και περιόδους σε έναν διαδραστικό χάρτη. Δημιουργήστε τα δικά σας δείκτες και μοιραστείτε τοποθεσίες με φίλους."
+      },
+      "photos": {
+        "title": "Φωτογραφίες & Βίντεο",
+        "description": "Καταγράψτε και αποθηκεύστε τις καλύτερες στιγμές. Μοιραστείτε φωτογραφίες και βίντεο με την κοινότητά σας και δημιουργήστε αξέχαστες αναμνήσεις."
+      },
+      "events": {
+        "title": "Εκδηλώσεις",
+        "description": "Δημιουργήστε τις δικές σας εκδηλώσεις, προσκαλέστε φίλους και βρείτε ενδιαφέρουσες εκδηλώσεις κοντά. Μην χάσετε ποτέ κάτι σημαντικό."
+      },
+      "chat": {
+        "title": "Επικοινωνία",
+        "description": "Συνομιλήστε με φίλους, συζητήστε εκδηλώσεις και σχεδιάστε μαζί. Γρήγορη και βολική επικοινωνία σε πραγματικό χρόνο."
+      },
+      "groups": {
+        "title": "Ομάδες Ενδιαφερόντων",
+        "description": "Δημιουργήστε και εγγραφείτε σε ομάδες ενδιαφερόντων. Βρείτε ομοϊδεάτες και γίνετε μέρος της κοινότητας."
+      },
+      "calendar": {
+        "title": "Ημερολόγιο Εκδηλώσεων",
+        "description": "Σχεδιάστε τις εκδηλώσεις σας και παρακολουθήστε σημαντικές ημερομηνίες. Προσωπικό ημερολόγιο με όλες τις δραστηριότητές σας."
+      }
+    },
+    "about": {
+      "title": "Σχετικά με το Im-in",
+      "description1": "Το Im-in είναι μια σύγχρονη εφαρμογή που ενώνει ανθρώπους γύρω από κοινά ενδιαφέροντα και εκδηλώσεις. Δημιουργούμε έναν χώρο όπου μπορείτε να σημειώσετε σημαντικές στιγμές στον χάρτη, να μοιραστείτε αναμνήσεις μέσω φωτογραφιών και βίντεο, να οργανώσετε εκδηλώσεις και να βρείτε νέους φίλους.",
+      "description2": "Η αποστολή μας είναι να κάνουμε την επικοινωνία και την οργάνωση εκδηλώσεων πιο απλές και ενδιαφέρουσες. Εγγραφείτε στην κοινότητα Im-in και ανακαλύψτε νέες ευκαιρίες για συνδέσεις και δραστηριότητες.",
+      "stats": {
+        "users": "Ενεργοί Χρήστες",
+        "events": "Μηνιαίες Εκδηλώσεις",
+        "groups": "Ομάδες Ενδιαφερόντων"
+      }
+    },
+    "download": {
+      "title": "Λήψη Im-in Τώρα",
+      "subtitle": "Εγγραφείτε στην κοινότητα και ξεκινήστε να δημιουργείτε αξέχαστες στιγμές",
+      "appStore": "Λήψη από",
+      "googlePlay": "Λήψη από"
+    },
+    "contact": {
+      "title": "Επικοινωνήστε μαζί μας",
+      "website": "Ιστοσελίδα",
+      "email": "Email"
+    },
+    "footer": {
+      "copyright": "© 2026 Im-in. Όλα τα δικαιώματα διατηρούνται."
+    }
+  },
+  "uk": {
+    "nav": {
+      "features": "Можливості",
+      "about": "Про нас",
+      "contact": "Контакти"
+    },
+    "hero": {
+      "title": "Твій простір для <span class='highlight'>подій</span> та <span class='highlight'>спілкування</span>",
+      "subtitle": "Відмічай місяці на карті, ділися моментами, створюй події та знаходь однодумців",
+      "downloadBtn": "Завантажити додаток",
+      "learnMoreBtn": "Дізнатися більше"
+    },
+    "features": {
+      "title": "Можливості додатку",
+      "map": {
+        "title": "Карта подій",
+        "description": "Відмічай місяці та періоди на інтерактивній карті. Створюй власні маркери та ділись локаціями з друзями."
+      },
+      "photos": {
+        "title": "Фото та відео",
+        "description": "Знімай та зберігай найкращі моменти. Ділись фото та відео зі своєю спільнотою та створюй незабутні спогади."
+      },
+      "events": {
+        "title": "Події та івенти",
+        "description": "Створюй власні події, запрошуй друзів та знаходь цікаві івенти поблизу. Ніколи не пропусти важливе."
+      },
+      "chat": {
+        "title": "Спілкування",
+        "description": "Переписуйся з друзями, обговорюй події та плануй разом. Швидке та зручне спілкування в реальному часі."
+      },
+      "groups": {
+        "title": "Групи за інтересами",
+        "description": "Створюй та приєднуйся до груп за інтересами. Знаходь однодумців та будь частиною спільноти."
+      },
+      "calendar": {
+        "title": "Календар подій",
+        "description": "Плануй свої події та відстежуй важливі дати. Персональний календар з усіма твоїми активностями."
+      }
+    },
+    "about": {
+      "title": "Про Im-in",
+      "description1": "Im-in - це сучасний додаток, який об'єднує людей навколо спільних інтересів та подій. Ми створюємо простір, де ти можеш відмічати важливі моменти на карті, ділитися спогадами через фото та відео, організовувати події та знаходити нових друзів.",
+      "description2": "Наша місія - зробити спілкування та організацію подій простішими та цікавішими. Приєднуйся до спільноти Im-in та відкрий нові можливості для зв'язків та активностей.",
+      "stats": {
+        "users": "Активних користувачів",
+        "events": "Подій щомісяця",
+        "groups": "Груп за інтересами"
+      }
+    },
+    "download": {
+      "title": "Завантаж Im-in зараз",
+      "subtitle": "Приєднуйся до спільноти та почни створювати незабутні моменти",
+      "appStore": "Завантажити з",
+      "googlePlay": "Завантажити з"
+    },
+    "contact": {
+      "title": "Зв'яжіться з нами",
+      "website": "Веб-сайт",
+      "email": "Email"
+    },
+    "footer": {
+      "copyright": "© 2026 Im-in. Всі права захищені."
+    }
+  }
+}

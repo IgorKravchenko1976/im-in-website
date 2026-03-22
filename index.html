@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="I'M IN - додаток для мандрівників: створюй маршрути, об'єднуйся в групи, залишай фото, відео та голосові повідомлення на місцях, ділись враженнями та знаходь друзів">
+    <title>I'M IN - Додаток для мандрівників та дослідників</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="128x128" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="canonical" href="https://www.im-in.net/">
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.im-in.net/">
+    <meta property="og:title" content="I'M IN — Додаток для мандрівників та дослідників">
+    <meta property="og:description" content="Створюй маршрути, об'єднуйся в групи, залишай фото, відео та голосові повідомлення на місцях — для тих, хто прийде після тебе.">
+    <meta property="og:image" content="https://www.im-in.net/logo-imin.png">
+    <meta property="og:locale" content="uk_UA">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="I'M IN — Додаток для мандрівників">
+    <meta name="twitter:description" content="Створюй маршрути, залишай повідомлення на місцях, знаходь друзів-мандрівників">
+    <meta name="twitter:image" content="https://www.im-in.net/logo-imin.png">
+
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="uk" href="https://www.im-in.net/">
+    <link rel="alternate" hreflang="en" href="https://www.im-in.net/">
+    <link rel="alternate" hreflang="fr" href="https://www.im-in.net/">
+    <link rel="alternate" hreflang="es" href="https://www.im-in.net/">
+    <link rel="alternate" hreflang="de" href="https://www.im-in.net/">
+    <link rel="alternate" hreflang="it" href="https://www.im-in.net/">
+    <link rel="alternate" hreflang="el" href="https://www.im-in.net/">
+    <link rel="alternate" hreflang="x-default" href="https://www.im-in.net/">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "I'M IN",
+        "description": "Mobile app for travelers: create routes, join groups, leave photos, videos and voice messages at locations",
+        "url": "https://www.im-in.net",
+        "applicationCategory": "TravelApplication",
+        "operatingSystem": "iOS, Android",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Kravchenko Igor Oleksandrovych",
+            "url": "https://www.im-in.net"
+        },
+        "inLanguage": ["uk", "en", "fr", "es", "de", "it", "el"]
+    }
+    </script>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Nunito:wght@900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Splash / Hero -->
+    <section class="splash-hero">
+        <div class="splash-bg"></div>
+        <div class="container">
+            <nav class="navbar">
+                <div class="nav-content">
+                    <a href="#" class="logo">
+                        <div class="logo-globe" aria-label="I'M IN">
+                            <div class="logo-earth"></div>
+                            <div class="logo-overlay">
+                                <span class="logo-text">I'M<svg class="logo-pin" viewBox="0 0 18 26" fill="none"><path d="M9 0C4 0 0 4 0 9c0 6.8 9 17 9 17s9-10.2 9-17C18 4 14 0 9 0z" fill="white"/><circle cx="9" cy="9" r="3.2" fill="rgba(0,0,0,0.3)"/></svg>IN</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="nav-right">
+                        <ul class="nav-menu">
+                            <li><a href="#features" data-translate="nav.features">Можливості</a></li>
+                            <li><a href="#about" data-translate="nav.about">Про нас</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                            <li><a href="#contact" data-translate="nav.contact">Контакти</a></li>
+                        </ul>
+                        <div class="language-selector">
+                            <button class="language-btn" aria-label="Select language">
+                                <span class="current-language">UK</span>
+                                <span class="language-arrow">
+                                    <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </span>
+                            </button>
+                            <div class="language-dropdown">
+                                <button data-lang="uk" class="language-option active">Українська</button>
+                                <button data-lang="en" class="language-option">English</button>
+                                <button data-lang="fr" class="language-option">Français</button>
+                                <button data-lang="es" class="language-option">Español</button>
+                                <button data-lang="de" class="language-option">Deutsch</button>
+                                <button data-lang="it" class="language-option">Italiano</button>
+                                <button data-lang="el" class="language-option">Ελληνικά</button>
+                            </div>
+                        </div>
+                        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="hero-content">
+                <div class="hero-left">
+                    <h1 class="hero-title" data-translate="hero.title">
+                        Мандруй, <span class="highlight">ділись</span>, <span class="highlight">відкривай</span> разом
+                    </h1>
+                    <p class="hero-subtitle" data-translate="hero.subtitle">
+                        Додаток для тих, хто любить подорожувати. Створюй маршрути, об'єднуйся в групи, залишай фото, відео та голосові повідомлення на місцях — для тих, хто прийде після тебе.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#download" class="btn btn-primary" data-translate="hero.downloadBtn">Скоро в App Store та Google Play</a>
+                        <a href="#features" class="btn btn-outline" data-translate="hero.learnMoreBtn">Дізнатися більше</a>
+                    </div>
+                </div>
+                <div class="hero-right">
+                    <div class="hero-phones" data-parallax="hero">
+                        <div class="phone-mockup phone-back">
+                            <div class="phone-frame">
+                                <div class="phone-notch"></div>
+                                <div class="phone-screen">
+                                    <img src="app-login.png" alt="I'M IN - вхід" class="screen-img">
+                                </div>
+                                <div class="phone-home-bar"></div>
+                            </div>
+                        </div>
+                        <div class="phone-mockup phone-front">
+                            <div class="phone-frame">
+                                <div class="phone-notch"></div>
+                                <div class="phone-screen">
+                                    <img src="app-map.png" alt="I'M IN - карта з фото" class="screen-img">
+                                </div>
+                                <div class="phone-home-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="var(--bg-lavender)"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title section-title--left" data-translate="about.title">Про I'M IN</h2>
+                    <p class="about-description" data-translate="about.description1">
+                        I'M IN — це додаток для людей, які люблять подорожувати та відкривати нові місця. Об'єднуйся в групи мандрівників, плануй спільні поїздки, домовляйся про зустрічі та збирай компанію для активного відпочинку.
+                    </p>
+                    <p class="about-description" data-translate="about.description2">
+                        Залишай фото, відео та голосові повідомлення на місцях для тих, хто прийде після тебе. Створюй групові альбоми та спогади, шукай друзів які вже побували в цікавих місцях та ділись своїми враженнями з усім світом.
+                    </p>
+                    <div class="stats">
+                        <div class="stat-item stat-item--soon">
+                            <div class="stat-icon">
+                                <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="12" r="5" fill="var(--primary)"/><path d="M6 28c0-5.5 4.5-10 10-10s10 4.5 10 10" stroke="var(--primary)" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+                            </div>
+                            <div class="stat-label" data-translate="about.stats.users">Активних користувачів</div>
+                        </div>
+                        <div class="stat-item stat-item--soon">
+                            <div class="stat-icon">
+                                <svg viewBox="0 0 32 32" fill="none"><path d="M16 4c-5.5 0-10 4.5-10 10 0 7.3 10 16 10 16s10-8.7 10-16c0-5.5-4.5-10-10-10z" fill="var(--primary)" opacity="0.2"/><circle cx="16" cy="14" r="4" fill="var(--primary)"/></svg>
+                            </div>
+                            <div class="stat-label" data-translate="about.stats.events">Місць на карті</div>
+                        </div>
+                        <div class="stat-item stat-item--soon">
+                            <div class="stat-icon">
+                                <svg viewBox="0 0 32 32" fill="none"><circle cx="8" cy="12" r="3" fill="var(--primary)"/><circle cx="20" cy="24" r="3" fill="var(--primary)" opacity="0.6"/><circle cx="26" cy="10" r="3" fill="var(--primary)" opacity="0.4"/><path d="M8 12 C13 20 16 24 20 24 C24 24 25 16 26 10" stroke="var(--primary)" stroke-width="2" stroke-dasharray="3 2" fill="none"/></svg>
+                            </div>
+                            <div class="stat-label" data-translate="about.stats.groups">Маршрутів</div>
+                        </div>
+                    </div>
+                    <p class="stats-note" data-translate="about.stats.note">Додаток в розробці — статистика з'явиться після запуску</p>
+                </div>
+                <div class="about-visual" data-parallax="about">
+                    <img src="app-phone-nobg.png" alt="I'M IN - додаток" class="about-hero-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title" data-translate="features.title">Можливості додатку</h2>
+            <p class="section-subtitle" data-translate="features.subtitle">Все що потрібно мандрівнику — в одному додатку</p>
+            <div class="features-grid">
+                <!-- 1. Routes -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 80 80" fill="none">
+                            <circle class="ic-bg" cx="40" cy="40" r="36" fill="var(--primary-light)"/>
+                            <circle class="ic-pin ic-pin-1" cx="20" cy="28" r="5" fill="var(--primary)"/>
+                            <circle class="ic-dot" cx="20" cy="28" r="2" fill="white"/>
+                            <circle class="ic-pin ic-pin-2" cx="42" cy="52" r="5" fill="var(--primary)" opacity="0.75"/>
+                            <circle class="ic-dot" cx="42" cy="52" r="2" fill="white" opacity="0.75"/>
+                            <circle class="ic-pin ic-pin-3" cx="60" cy="26" r="5" fill="var(--primary)" opacity="0.5"/>
+                            <circle class="ic-dot" cx="60" cy="26" r="2" fill="white" opacity="0.5"/>
+                            <path class="ic-route" d="M20 28 C28 44, 34 52, 42 52 C50 52, 54 36, 60 26" stroke="var(--primary)" stroke-width="2.5" stroke-dasharray="5 4" fill="none" stroke-linecap="round"/>
+                            <path class="ic-flag" d="M58 20v-6h8l-3 3 3 3h-8" fill="var(--accent)" opacity="0"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title" data-translate="features.routes.title">Маршрути та подорожі</h3>
+                    <p class="feature-description" data-translate="features.routes.description">Плануй мандрівки, створюй екскурсійні маршрути по містах та визначних місцях. Ділись готовими маршрутами з друзями та спільнотою.</p>
+                </div>
+                <!-- 2. Interactive Map -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 80 80" fill="none">
+                            <circle class="ic-bg" cx="40" cy="40" r="36" fill="var(--primary-light)"/>
+                            <rect class="ic-map-bg" x="16" y="18" width="48" height="40" rx="6" fill="white" stroke="var(--primary)" stroke-width="1.5" opacity="0.6"/>
+                            <line x1="32" y1="18" x2="32" y2="58" stroke="var(--primary)" stroke-width="1" opacity="0.15"/>
+                            <line x1="48" y1="18" x2="48" y2="58" stroke="var(--primary)" stroke-width="1" opacity="0.15"/>
+                            <line x1="16" y1="34" x2="64" y2="34" stroke="var(--primary)" stroke-width="1" opacity="0.15"/>
+                            <line x1="16" y1="46" x2="64" y2="46" stroke="var(--primary)" stroke-width="1" opacity="0.15"/>
+                            <path class="ic-pin-drop" d="M30 26c-3.3 0-6 2.7-6 6 0 4.4 6 9.6 6 9.6s6-5.2 6-9.6c0-3.3-2.7-6-6-6z" fill="var(--primary)"/>
+                            <circle cx="30" cy="32" r="2.5" fill="white"/>
+                            <path class="ic-pin-drop ic-pin-d2" d="M52 34c-3.3 0-6 2.7-6 6 0 4.4 6 9.6 6 9.6s6-5.2 6-9.6c0-3.3-2.7-6-6-6z" fill="var(--primary)" opacity="0.6"/>
+                            <circle cx="52" cy="40" r="2.5" fill="white" opacity="0.6"/>
+                            <circle class="ic-pulse" cx="40" cy="42" r="3" fill="var(--accent)" opacity="0"/>
+                            <circle class="ic-pulse-ring" cx="40" cy="42" r="3" fill="none" stroke="var(--accent)" stroke-width="1.5" opacity="0"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title" data-translate="features.map.title">Інтерактивна карта</h3>
+                    <p class="feature-description" data-translate="features.map.description">Переглядай карту з відмітками мандрівників, фото та повідомленнями. Знаходь цікаві місця поруч або плануй подорожі у нові міста.</p>
+                </div>
+                <!-- 3. Groups -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 80 80" fill="none">
+                            <circle class="ic-bg" cx="40" cy="40" r="36" fill="var(--primary-light)"/>
+                            <circle class="ic-avatar ic-av-1" cx="28" cy="30" r="7" fill="var(--primary)"/>
+                            <circle cx="28" cy="28" r="3" fill="white" opacity="0.6"/>
+                            <circle class="ic-avatar ic-av-2" cx="52" cy="30" r="7" fill="var(--primary)" opacity="0.75"/>
+                            <circle cx="52" cy="28" r="3" fill="white" opacity="0.45"/>
+                            <circle class="ic-avatar ic-av-3" cx="40" cy="48" r="7" fill="var(--primary)" opacity="0.55"/>
+                            <circle cx="40" cy="46" r="3" fill="white" opacity="0.35"/>
+                            <path class="ic-link" d="M33 35 L37 43" stroke="var(--primary)" stroke-width="1.5" opacity="0" stroke-dasharray="2 2"/>
+                            <path class="ic-link" d="M47 35 L43 43" stroke="var(--primary)" stroke-width="1.5" opacity="0" stroke-dasharray="2 2"/>
+                            <path class="ic-link" d="M35 30 L45 30" stroke="var(--primary)" stroke-width="1.5" opacity="0" stroke-dasharray="2 2"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title" data-translate="features.groups.title">Групи мандрівників</h3>
+                    <p class="feature-description" data-translate="features.groups.description">Об'єднуйся в групи для активного відпочинку та спільних подорожей. Домовляйся про зустрічі, плануй поїздки разом та збирай компанію.</p>
+                </div>
+                <!-- 4. Location Messages -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 80 80" fill="none">
+                            <circle class="ic-bg" cx="40" cy="40" r="36" fill="var(--primary-light)"/>
+                            <path d="M40 18c-8.8 0-16 7.2-16 16 0 11.7 16 25.6 16 25.6s16-13.9 16-25.6c0-8.8-7.2-16-16-16z" fill="var(--primary)" opacity="0.15"/>
+                            <path class="ic-bubble" d="M26 28 h28 a4 4 0 0 1 4 4 v12 a4 4 0 0 1-4 4 h-8 l-6 6 l-2-6 h-12 a4 4 0 0 1-4-4 v-12 a4 4 0 0 1 4-4z" fill="white" stroke="var(--primary)" stroke-width="2"/>
+                            <rect class="ic-media ic-m1" x="30" y="33" width="10" height="8" rx="2" fill="var(--primary)" opacity="0.3"/>
+                            <circle class="ic-media ic-m2" cx="50" cy="37" r="4.5" fill="var(--primary)" opacity="0"/>
+                            <path class="ic-media ic-m3" d="M48 35 l5 2.5 -5 2.5z" fill="white" opacity="0"/>
+                            <rect class="ic-media ic-m4" x="30" y="43" width="16" height="2" rx="1" fill="var(--primary)" opacity="0.2"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title" data-translate="features.messages.title">Повідомлення на місцях</h3>
+                    <p class="feature-description" data-translate="features.messages.description">Залишай фото, відео та голосові повідомлення прямо на локаціях — для наступних відвідувачів. Дізнавайся, що кажуть ті, хто вже побував тут.</p>
+                </div>
+                <!-- 5. Group Albums -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 80 80" fill="none">
+                            <circle class="ic-bg" cx="40" cy="40" r="36" fill="var(--primary-light)"/>
+                            <rect class="ic-photo ic-ph-3" x="28" y="28" width="28" height="22" rx="4" fill="white" stroke="var(--primary)" stroke-width="1.5" opacity="0.4"/>
+                            <rect class="ic-photo ic-ph-2" x="24" y="24" width="28" height="22" rx="4" fill="white" stroke="var(--primary)" stroke-width="1.5" opacity="0.65"/>
+                            <rect class="ic-photo ic-ph-1" x="20" y="20" width="28" height="22" rx="4" fill="white" stroke="var(--primary)" stroke-width="2"/>
+                            <circle cx="28" cy="28" r="2.5" fill="var(--primary)" opacity="0.4"/>
+                            <path d="M20 38 l8-6 5 4 7-8 8 10" stroke="var(--primary)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+                            <circle class="ic-badge" cx="54" cy="20" r="7" fill="var(--accent)" opacity="0"/>
+                            <text class="ic-badge-text" x="54" y="24" text-anchor="middle" fill="white" font-size="10" font-weight="700" opacity="0">+5</text>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title" data-translate="features.albums.title">Групові альбоми</h3>
+                    <p class="feature-description" data-translate="features.albums.description">Створюй спільні фотоальбоми та спогади для груп. Збирай найкращі моменти подорожей в одному місці та ділись ними з друзями.</p>
+                </div>
+                <!-- 6. Discover Places -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 80 80" fill="none">
+                            <circle class="ic-bg" cx="40" cy="40" r="36" fill="var(--primary-light)"/>
+                            <path d="M40 16c-10 0-18 8-18 18 0 13.2 18 28 18 28s18-14.8 18-28c0-10-8-18-18-18z" fill="var(--primary)" opacity="0.12"/>
+                            <circle cx="40" cy="34" r="10" fill="var(--primary)" opacity="0.2"/>
+                            <path class="ic-star" d="M40 26 l2.9 5.8 6.4 0.9 -4.6 4.5 1.1 6.4 -5.8-3 -5.8 3 1.1-6.4 -4.6-4.5 6.4-0.9z" fill="var(--primary)"/>
+                            <circle class="ic-sparkle ic-sp-1" cx="56" cy="24" r="1.5" fill="var(--accent)" opacity="0"/>
+                            <circle class="ic-sparkle ic-sp-2" cx="24" cy="22" r="1" fill="var(--accent)" opacity="0"/>
+                            <circle class="ic-sparkle ic-sp-3" cx="58" cy="42" r="1.2" fill="var(--accent)" opacity="0"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title" data-translate="features.places.title">Відкривай місця</h3>
+                    <p class="feature-description" data-translate="features.places.description">Знаходь цікаві місця, читай враження тих хто вже був, шукай приховані перлини від місцевих. Відмічайся та показуй свій досвід подорожей.</p>
+                </div>
+                <!-- 7. Find Friends -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 80 80" fill="none">
+                            <circle class="ic-bg" cx="40" cy="40" r="36" fill="var(--primary-light)"/>
+                            <circle class="ic-person ic-p1" cx="28" cy="30" r="8" fill="var(--primary)"/>
+                            <circle cx="28" cy="28" r="3.5" fill="white" opacity="0.5"/>
+                            <circle class="ic-person ic-p2" cx="52" cy="30" r="8" fill="var(--primary)" opacity="0.6"/>
+                            <circle cx="52" cy="28" r="3.5" fill="white" opacity="0.3"/>
+                            <path class="ic-connect" d="M36 30 h8" stroke="var(--primary)" stroke-width="2" stroke-dasharray="3 2" opacity="0.3"/>
+                            <circle class="ic-heart-bg" cx="40" cy="30" r="5" fill="var(--accent)" opacity="0"/>
+                            <path class="ic-handshake" d="M26 48 L32 42 L40 48 L48 42 L54 48" stroke="var(--primary)" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.3"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title" data-translate="features.friends.title">Знаходь друзів</h3>
+                    <p class="feature-description" data-translate="features.friends.description">Шукай людей які вже побували в цікавих місцях, підписуйся на мандрівників, обмінюйся досвідом та плануй спільні пригоди.</p>
+                </div>
+                <!-- 8. Check-ins -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 80 80" fill="none">
+                            <circle class="ic-bg" cx="40" cy="40" r="36" fill="var(--primary-light)"/>
+                            <path d="M40 16c-10 0-18 8-18 18 0 13.2 18 28 18 28s18-14.8 18-28c0-10-8-18-18-18z" fill="var(--primary)" opacity="0.15"/>
+                            <circle cx="40" cy="34" r="12" fill="var(--primary)" opacity="0.25"/>
+                            <circle class="ic-check-circle" cx="40" cy="34" r="10" fill="var(--primary)"/>
+                            <path class="ic-checkmark" d="M33 34 l5 5 l9-10" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                            <circle class="ic-ripple-1" cx="40" cy="34" r="10" fill="none" stroke="var(--primary)" stroke-width="1.5" opacity="0"/>
+                            <circle class="ic-ripple-2" cx="40" cy="34" r="10" fill="none" stroke="var(--primary)" stroke-width="1" opacity="0"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title" data-translate="features.checkin.title">Відмітки та чекіни</h3>
+                    <p class="feature-description" data-translate="features.checkin.description">Відмічайся в місцях де ти побував, збирай колекцію відвіданих локацій та показуй свій туристичний досвід іншим мандрівникам.</p>
+                </div>
+                <!-- 9. Voice Messages -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 80 80" fill="none">
+                            <circle class="ic-bg" cx="40" cy="40" r="36" fill="var(--primary-light)"/>
+                            <rect class="ic-mic" x="35" y="22" width="10" height="20" rx="5" fill="var(--primary)"/>
+                            <path d="M28 38 a12 12 0 0 0 24 0" stroke="var(--primary)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                            <line x1="40" y1="50" x2="40" y2="56" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="34" y1="56" x2="46" y2="56" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round"/>
+                            <rect class="ic-wave ic-w1" x="56" y="30" width="3" height="8" rx="1.5" fill="var(--primary)" opacity="0.2"/>
+                            <rect class="ic-wave ic-w2" x="61" y="26" width="3" height="16" rx="1.5" fill="var(--primary)" opacity="0.15"/>
+                            <rect class="ic-wave ic-w3" x="66" y="32" width="3" height="6" rx="1.5" fill="var(--primary)" opacity="0.1"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title" data-translate="features.voice.title">Голосові записи</h3>
+                    <p class="feature-description" data-translate="features.voice.description">Записуй голосові повідомлення та аудіогіди прямо на місцях. Розповідай історії, ділись враженнями та залишай голосові нотатки для інших.</p>
+                </div>
+                <!-- 10. Place Stories -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 80 80" fill="none">
+                            <circle class="ic-bg" cx="40" cy="40" r="36" fill="var(--primary-light)"/>
+                            <rect class="ic-page ic-pg-1" x="20" y="18" width="24" height="32" rx="3" fill="white" stroke="var(--primary)" stroke-width="1.5"/>
+                            <rect class="ic-page ic-pg-2" x="36" y="22" width="24" height="32" rx="3" fill="white" stroke="var(--primary)" stroke-width="1.5" opacity="0.5"/>
+                            <rect class="ic-line" x="25" y="26" width="14" height="2" rx="1" fill="var(--primary)" opacity="0.3"/>
+                            <rect class="ic-line" x="25" y="31" width="10" height="2" rx="1" fill="var(--primary)" opacity="0.2"/>
+                            <rect class="ic-line" x="25" y="36" width="12" height="2" rx="1" fill="var(--primary)" opacity="0.15"/>
+                            <rect class="ic-line" x="25" y="41" width="8" height="2" rx="1" fill="var(--primary)" opacity="0.1"/>
+                            <circle class="ic-story-dot" cx="54" cy="56" r="5" fill="var(--accent)" opacity="0"/>
+                            <path class="ic-story-pen" d="M50 54 l6-6 3 3 -6 6z" fill="var(--primary)" opacity="0"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title" data-translate="features.stories.title">Розповіді про місця</h3>
+                    <p class="feature-description" data-translate="features.stories.description">Пиши та читай розповіді про місця — від історичних фактів до особистих вражень. Створюй контент що допоможе іншим мандрівникам.</p>
+                </div>
+                <!-- 11. Event Planning -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 80 80" fill="none">
+                            <circle class="ic-bg" cx="40" cy="40" r="36" fill="var(--primary-light)"/>
+                            <rect class="ic-cal" x="18" y="22" width="44" height="38" rx="6" fill="white" stroke="var(--primary)" stroke-width="2"/>
+                            <line x1="18" y1="34" x2="62" y2="34" stroke="var(--primary)" stroke-width="1.5"/>
+                            <line x1="28" y1="18" x2="28" y2="26" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="52" y1="18" x2="52" y2="26" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round"/>
+                            <rect class="ic-cal-day" x="24" y="38" width="8" height="7" rx="2" fill="var(--primary)" opacity="0.1"/>
+                            <rect class="ic-cal-day" x="36" y="38" width="8" height="7" rx="2" fill="var(--primary)" opacity="0.1"/>
+                            <rect class="ic-cal-active" x="48" y="38" width="8" height="7" rx="2" fill="var(--primary)" opacity="0.15"/>
+                            <rect class="ic-cal-day" x="24" y="49" width="8" height="7" rx="2" fill="var(--primary)" opacity="0.1"/>
+                            <rect class="ic-cal-day" x="36" y="49" width="8" height="7" rx="2" fill="var(--primary)" opacity="0.1"/>
+                            <circle class="ic-cal-pin" cx="52" cy="42" r="4" fill="var(--accent)" opacity="0"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title" data-translate="features.events.title">Планування подій</h3>
+                    <p class="feature-description" data-translate="features.events.description">Створюй події та запрошуй друзів на спільні подорожі. Плануй екскурсії, походи та зустрічі з єдиного календаря.</p>
+                </div>
+                <!-- 12. Travel Stats -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 80 80" fill="none">
+                            <circle class="ic-bg" cx="40" cy="40" r="36" fill="var(--primary-light)"/>
+                            <rect class="ic-bar ic-b1" x="18" y="44" width="10" height="16" rx="3" fill="var(--primary)" opacity="0.35"/>
+                            <rect class="ic-bar ic-b2" x="31" y="36" width="10" height="24" rx="3" fill="var(--primary)" opacity="0.55"/>
+                            <rect class="ic-bar ic-b3" x="44" y="28" width="10" height="32" rx="3" fill="var(--primary)" opacity="0.75"/>
+                            <rect class="ic-bar ic-b4" x="57" y="22" width="10" height="38" rx="3" fill="var(--primary)"/>
+                            <circle class="ic-trophy" cx="62" cy="18" r="5" fill="var(--accent)" opacity="0"/>
+                            <path class="ic-trophy-icon" d="M60 16 l2 3 2-3z" fill="white" opacity="0"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title" data-translate="features.stats.title">Статистика подорожей</h3>
+                    <p class="feature-description" data-translate="features.stats.description">Відстежуй свої подорожі, переглядай статистику відвіданих місць, пройдених маршрутів та зібраних вражень. Змагайся з друзями.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Showcase 1: Map Experience -->
+    <section class="showcase">
+        <div class="container">
+            <div class="showcase-content">
+                <div class="showcase-text">
+                    <span class="showcase-badge" data-translate="showcase.map.badge">Головна функція</span>
+                    <h3 class="showcase-title" data-translate="showcase.map.title">Карта пригод</h3>
+                    <p class="showcase-description" data-translate="showcase.map.description">Інтерактивна карта — серце додатку. Бачте всі відмітки мандрівників, маршрути, фото та повідомлення на одній карті.</p>
+                    <ul class="showcase-list">
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="var(--primary)" opacity="0.1"/><path d="M6 10l3 3 5-5" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <span data-translate="showcase.map.item1">Перегляд місць та фото на карті в реальному часі</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="var(--primary)" opacity="0.1"/><path d="M6 10l3 3 5-5" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <span data-translate="showcase.map.item2">Фільтрація за категоріями: їжа, природа, архітектура</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="var(--primary)" opacity="0.1"/><path d="M6 10l3 3 5-5" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <span data-translate="showcase.map.item3">Побудова маршруту одним дотиком</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="showcase-visual">
+                    <svg class="showcase-illustration" viewBox="0 0 440 340" fill="none">
+                        <rect x="20" y="20" width="400" height="300" rx="20" fill="var(--primary-light)" opacity="0.5"/>
+                        <rect x="30" y="30" width="380" height="280" rx="16" fill="white" opacity="0.8"/>
+                        <!-- Grid lines -->
+                        <line x1="30" y1="110" x2="410" y2="110" stroke="var(--primary)" stroke-width="0.5" opacity="0.1"/>
+                        <line x1="30" y1="190" x2="410" y2="190" stroke="var(--primary)" stroke-width="0.5" opacity="0.1"/>
+                        <line x1="30" y1="270" x2="410" y2="270" stroke="var(--primary)" stroke-width="0.5" opacity="0.1"/>
+                        <line x1="150" y1="30" x2="150" y2="310" stroke="var(--primary)" stroke-width="0.5" opacity="0.1"/>
+                        <line x1="270" y1="30" x2="270" y2="310" stroke="var(--primary)" stroke-width="0.5" opacity="0.1"/>
+                        <!-- Animated route -->
+                        <path class="sc-route" d="M80 240 C120 180, 160 160, 200 140 C240 120, 280 130, 320 100 C340 88, 360 80, 380 70" stroke="var(--primary)" stroke-width="3" stroke-dasharray="8 6" fill="none" stroke-linecap="round"/>
+                        <!-- Pin 1 -->
+                        <g class="sc-pin sc-pin-1">
+                            <ellipse cx="80" cy="248" rx="10" ry="3" fill="var(--primary)" opacity="0.15"/>
+                            <path d="M80 214c-8.3 0-15 6.7-15 15 0 11 15 24 15 24s15-13 15-24c0-8.3-6.7-15-15-15z" fill="var(--primary)"/>
+                            <circle cx="80" cy="229" r="6" fill="white"/>
+                            <rect class="sc-photo" x="64" y="190" width="32" height="24" rx="4" fill="var(--primary)" opacity="0" stroke="white" stroke-width="1.5"/>
+                        </g>
+                        <!-- Pin 2 -->
+                        <g class="sc-pin sc-pin-2">
+                            <ellipse cx="200" cy="148" rx="10" ry="3" fill="var(--primary)" opacity="0.15"/>
+                            <path d="M200 114c-8.3 0-15 6.7-15 15 0 11 15 24 15 24s15-13 15-24c0-8.3-6.7-15-15-15z" fill="var(--primary)" opacity="0.8"/>
+                            <circle cx="200" cy="129" r="6" fill="white" opacity="0.8"/>
+                        </g>
+                        <!-- Pin 3 -->
+                        <g class="sc-pin sc-pin-3">
+                            <ellipse cx="320" cy="108" rx="10" ry="3" fill="var(--primary)" opacity="0.15"/>
+                            <path d="M320 74c-8.3 0-15 6.7-15 15 0 11 15 24 15 24s15-13 15-24c0-8.3-6.7-15-15-15z" fill="var(--primary)" opacity="0.65"/>
+                            <circle cx="320" cy="89" r="6" fill="white" opacity="0.65"/>
+                        </g>
+                        <!-- Current location pulse -->
+                        <circle class="sc-loc-pulse" cx="380" cy="70" r="6" fill="var(--accent)"/>
+                        <circle class="sc-loc-ring-1" cx="380" cy="70" r="6" fill="none" stroke="var(--accent)" stroke-width="2"/>
+                        <circle class="sc-loc-ring-2" cx="380" cy="70" r="6" fill="none" stroke="var(--accent)" stroke-width="1"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Showcase 2: Community -->
+    <section class="showcase showcase--reverse">
+        <div class="container">
+            <div class="showcase-content">
+                <div class="showcase-text">
+                    <span class="showcase-badge" data-translate="showcase.community.badge">Спільнота</span>
+                    <h3 class="showcase-title" data-translate="showcase.community.title">Разом цікавіше</h3>
+                    <p class="showcase-description" data-translate="showcase.community.description">Подорожуй не поодинці — знаходь людей із спільними інтересами, створюй групи та плануй пригоди разом.</p>
+                    <ul class="showcase-list">
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="var(--primary)" opacity="0.1"/><path d="M6 10l3 3 5-5" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <span data-translate="showcase.community.item1">Групові чати та планування подорожей</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="var(--primary)" opacity="0.1"/><path d="M6 10l3 3 5-5" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <span data-translate="showcase.community.item2">Спільні фотоальбоми та спогади</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="var(--primary)" opacity="0.1"/><path d="M6 10l3 3 5-5" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <span data-translate="showcase.community.item3">Рейтинги мандрівників та досягнення</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="showcase-visual">
+                    <svg class="showcase-illustration" viewBox="0 0 440 340" fill="none">
+                        <rect x="20" y="20" width="400" height="300" rx="20" fill="var(--primary-light)" opacity="0.5"/>
+                        <!-- Central group circle -->
+                        <circle cx="220" cy="170" r="80" fill="var(--primary)" opacity="0.06"/>
+                        <circle cx="220" cy="170" r="50" fill="var(--primary)" opacity="0.08"/>
+                        <!-- Avatars orbiting -->
+                        <g class="sc-orbit sc-o1">
+                            <circle cx="220" cy="90" r="22" fill="var(--primary)"/>
+                            <circle cx="220" cy="85" r="8" fill="white" opacity="0.5"/>
+                            <path d="M206 100 a14 10 0 0 1 28 0" fill="white" opacity="0.3"/>
+                        </g>
+                        <g class="sc-orbit sc-o2">
+                            <circle cx="300" cy="140" r="20" fill="var(--primary)" opacity="0.75"/>
+                            <circle cx="300" cy="135" r="7" fill="white" opacity="0.4"/>
+                            <path d="M288 148 a12 9 0 0 1 24 0" fill="white" opacity="0.25"/>
+                        </g>
+                        <g class="sc-orbit sc-o3">
+                            <circle cx="290" cy="230" r="18" fill="var(--primary)" opacity="0.55"/>
+                            <circle cx="290" cy="226" r="6.5" fill="white" opacity="0.35"/>
+                        </g>
+                        <g class="sc-orbit sc-o4">
+                            <circle cx="150" cy="230" r="18" fill="var(--primary)" opacity="0.55"/>
+                            <circle cx="150" cy="226" r="6.5" fill="white" opacity="0.35"/>
+                        </g>
+                        <g class="sc-orbit sc-o5">
+                            <circle cx="140" cy="140" r="20" fill="var(--primary)" opacity="0.75"/>
+                            <circle cx="140" cy="135" r="7" fill="white" opacity="0.4"/>
+                            <path d="M128 148 a12 9 0 0 1 24 0" fill="white" opacity="0.25"/>
+                        </g>
+                        <!-- Connection lines -->
+                        <line class="sc-line sc-l1" x1="220" y1="112" x2="280" y2="140" stroke="var(--primary)" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.3"/>
+                        <line class="sc-line sc-l2" x1="280" y1="155" x2="272" y2="218" stroke="var(--primary)" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.25"/>
+                        <line class="sc-line sc-l3" x1="168" y1="230" x2="272" y2="230" stroke="var(--primary)" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.2"/>
+                        <line class="sc-line sc-l4" x1="160" y1="140" x2="200" y2="112" stroke="var(--primary)" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.3"/>
+                        <line class="sc-line sc-l5" x1="148" y1="218" x2="155" y2="155" stroke="var(--primary)" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.25"/>
+                        <!-- Chat bubbles -->
+                        <g class="sc-chat sc-ch-1">
+                            <rect x="230" y="50" width="60" height="28" rx="10" fill="var(--primary)" opacity="0.15"/>
+                            <rect x="234" y="58" width="24" height="3" rx="1.5" fill="var(--primary)" opacity="0.3"/>
+                            <rect x="234" y="64" width="16" height="3" rx="1.5" fill="var(--primary)" opacity="0.2"/>
+                        </g>
+                        <g class="sc-chat sc-ch-2">
+                            <rect x="316" y="160" width="50" height="24" rx="10" fill="var(--accent)" opacity="0.15"/>
+                            <rect x="320" y="167" width="20" height="3" rx="1.5" fill="var(--accent)" opacity="0.3"/>
+                            <rect x="320" y="173" width="14" height="3" rx="1.5" fill="var(--accent)" opacity="0.2"/>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Showcase 3: Content Creation -->
+    <section class="showcase">
+        <div class="container">
+            <div class="showcase-content">
+                <div class="showcase-text">
+                    <span class="showcase-badge" data-translate="showcase.content.badge">Контент</span>
+                    <h3 class="showcase-title" data-translate="showcase.content.title">Залишай свій слід</h3>
+                    <p class="showcase-description" data-translate="showcase.content.description">Фото, відео, голосові записи, розповіді — кожен може залишити щось корисне та цікаве для наступних мандрівників.</p>
+                    <ul class="showcase-list">
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="var(--primary)" opacity="0.1"/><path d="M6 10l3 3 5-5" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <span data-translate="showcase.content.item1">Мультимедійні повідомлення прив'язані до локацій</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="var(--primary)" opacity="0.1"/><path d="M6 10l3 3 5-5" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <span data-translate="showcase.content.item2">Аудіогіди та голосові нотатки на місцях</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="var(--primary)" opacity="0.1"/><path d="M6 10l3 3 5-5" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <span data-translate="showcase.content.item3">Розповіді, рейтинги та рекомендації від реальних людей</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="showcase-visual">
+                    <svg class="showcase-illustration" viewBox="0 0 440 340" fill="none">
+                        <rect x="20" y="20" width="400" height="300" rx="20" fill="var(--primary-light)" opacity="0.5"/>
+                        <!-- Central pin -->
+                        <ellipse cx="220" cy="280" rx="50" ry="10" fill="var(--primary)" opacity="0.1"/>
+                        <path d="M220 120c-22 0-40 18-40 40 0 29.3 40 66 40 66s40-36.7 40-66c0-22-18-40-40-40z" fill="var(--primary)" opacity="0.15"/>
+                        <path class="sc-big-pin" d="M220 140c-12 0-22 10-22 22 0 16.1 22 36.3 22 36.3s22-20.2 22-36.3c0-12-10-22-22-22z" fill="var(--primary)"/>
+                        <circle cx="220" cy="162" r="10" fill="white"/>
+                        <!-- Orbiting content icons -->
+                        <g class="sc-content sc-cnt-1">
+                            <circle cx="120" cy="100" r="28" fill="white" stroke="var(--primary)" stroke-width="2"/>
+                            <rect x="108" y="90" width="16" height="12" rx="2" fill="var(--primary)" opacity="0.3"/>
+                            <circle cx="114" cy="95" r="2" fill="var(--primary)" opacity="0.5"/>
+                            <path d="M108 100 l4-3 3 2 4-4 5 5" stroke="var(--primary)" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.6"/>
+                            <text x="120" y="112" text-anchor="middle" fill="var(--primary)" font-size="7" font-weight="600" opacity="0.6">ФОТО</text>
+                        </g>
+                        <g class="sc-content sc-cnt-2">
+                            <circle cx="320" cy="100" r="28" fill="white" stroke="var(--primary)" stroke-width="2"/>
+                            <rect x="310" y="88" width="20" height="14" rx="3" fill="var(--primary)" opacity="0.3"/>
+                            <path d="M317 93 l7 4 -7 4z" fill="white" opacity="0.8"/>
+                            <text x="320" y="112" text-anchor="middle" fill="var(--primary)" font-size="7" font-weight="600" opacity="0.6">ВІДЕО</text>
+                        </g>
+                        <g class="sc-content sc-cnt-3">
+                            <circle cx="100" cy="220" r="28" fill="white" stroke="var(--primary)" stroke-width="2"/>
+                            <rect x="93" y="208" width="14" height="18" rx="7" fill="var(--primary)" opacity="0.3"/>
+                            <path d="M90 226 a10 8 0 0 0 20 0" stroke="var(--primary)" stroke-width="1.5" fill="none" opacity="0.4"/>
+                            <text x="100" y="242" text-anchor="middle" fill="var(--primary)" font-size="7" font-weight="600" opacity="0.6">АУДІО</text>
+                        </g>
+                        <g class="sc-content sc-cnt-4">
+                            <circle cx="340" cy="220" r="28" fill="white" stroke="var(--primary)" stroke-width="2"/>
+                            <rect x="328" y="208" width="16" height="20" rx="2" fill="var(--primary)" opacity="0.2"/>
+                            <rect x="331" y="212" width="10" height="2" rx="1" fill="var(--primary)" opacity="0.3"/>
+                            <rect x="331" y="216" width="8" height="2" rx="1" fill="var(--primary)" opacity="0.2"/>
+                            <rect x="331" y="220" width="10" height="2" rx="1" fill="var(--primary)" opacity="0.15"/>
+                            <text x="340" y="242" text-anchor="middle" fill="var(--primary)" font-size="7" font-weight="600" opacity="0.6">ТЕКСТ</text>
+                        </g>
+                        <!-- Connection dashes to pin -->
+                        <line class="sc-dash" x1="148" y1="110" x2="200" y2="148" stroke="var(--primary)" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.2"/>
+                        <line class="sc-dash" x1="292" y1="110" x2="240" y2="148" stroke="var(--primary)" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.2"/>
+                        <line class="sc-dash" x1="128" y1="220" x2="200" y2="180" stroke="var(--primary)" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.2"/>
+                        <line class="sc-dash" x1="312" y1="220" x2="240" y2="180" stroke="var(--primary)" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.2"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title" data-translate="howItWorks.title">Як це працює</h2>
+            <p class="section-subtitle" data-translate="howItWorks.subtitle">Почни свою пригоду за 6 простих кроків</p>
+            <div class="steps-timeline steps-timeline--6">
+                <div class="steps-line"></div>
+                <div class="steps-line-progress"></div>
+                <a href="#download" class="step-item step-item--link" data-step="1">
+                    <div class="step-icon-wrap">
+                        <div class="step-number">1</div>
+                        <div class="step-icon">
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <rect x="14" y="4" width="20" height="40" rx="4" stroke="currentColor" stroke-width="2.5" fill="none"/>
+                                <line x1="14" y1="10" x2="34" y2="10" stroke="currentColor" stroke-width="1.5"/>
+                                <line x1="14" y1="38" x2="34" y2="38" stroke="currentColor" stroke-width="1.5"/>
+                                <circle cx="24" cy="41" r="1.5" fill="currentColor"/>
+                                <path d="M20 22l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <line x1="24" y1="16" x2="24" y2="26" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h4 class="step-title" data-translate="howItWorks.step1.title">Завантаж додаток</h4>
+                    <p class="step-desc" data-translate="howItWorks.step1.desc">Скачай I'M IN з App Store або Google Play</p>
+                </a>
+                <div class="step-item" data-step="2">
+                    <div class="step-icon-wrap">
+                        <div class="step-number">2</div>
+                        <div class="step-icon">
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <circle cx="24" cy="16" r="8" stroke="currentColor" stroke-width="2.5" fill="none"/>
+                                <path d="M10 42c0-7.7 6.3-14 14-14s14 6.3 14 14" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                                <path d="M30 14l3 3 6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h4 class="step-title" data-translate="howItWorks.step2.title">Зареєструйся</h4>
+                    <p class="step-desc" data-translate="howItWorks.step2.desc">Створи акаунт за кілька секунд</p>
+                </div>
+                <div class="step-item" data-step="3">
+                    <div class="step-icon-wrap">
+                        <div class="step-number">3</div>
+                        <div class="step-icon">
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <rect x="6" y="8" width="36" height="32" rx="4" stroke="currentColor" stroke-width="2.5" fill="none"/>
+                                <path d="M6 16h36" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M24 16c-4 0-7 3-7 7 0 4.8 7 11 7 11s7-6.2 7-11c0-4-3-7-7-7z" fill="currentColor" opacity="0.15"/>
+                                <circle cx="24" cy="23" r="3" fill="currentColor" opacity="0.5"/>
+                                <circle cx="14" cy="28" r="2" fill="currentColor" opacity="0.25"/>
+                                <circle cx="36" cy="22" r="2" fill="currentColor" opacity="0.25"/>
+                                <circle cx="18" cy="20" r="1.5" fill="currentColor" opacity="0.2"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h4 class="step-title" data-translate="howItWorks.step3.title">Слідкуй за івентами</h4>
+                    <p class="step-desc" data-translate="howItWorks.step3.desc">Переглядай події у своїй локації або вибери іншу на карті</p>
+                </div>
+                <div class="step-item" data-step="4">
+                    <div class="step-icon-wrap">
+                        <div class="step-number">4</div>
+                        <div class="step-icon">
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <rect x="6" y="6" width="22" height="18" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <circle cx="13" cy="13" r="2.5" fill="currentColor" opacity="0.4"/>
+                                <path d="M6 20l6-5 4 3 6-6 6 8" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+                                <rect x="32" y="10" width="10" height="8" rx="2" fill="currentColor" opacity="0.15"/>
+                                <path d="M35 13l3 2-3 2z" fill="currentColor" opacity="0.5"/>
+                                <path d="M8 30h32a4 4 0 014 4v4a4 4 0 01-4 4H8a4 4 0 01-4-4v-4a4 4 0 014-4z" fill="currentColor" opacity="0.08" stroke="currentColor" stroke-width="1.5"/>
+                                <rect x="8" y="34" width="14" height="2" rx="1" fill="currentColor" opacity="0.25"/>
+                                <rect x="8" y="38" width="8" height="2" rx="1" fill="currentColor" opacity="0.15"/>
+                                <circle cx="38" cy="36" r="3" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.4"/>
+                                <line x1="38" y1="33.5" x2="38" y2="38.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+                                <circle cx="38" cy="35" r="0.8" fill="currentColor" opacity="0.4"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h4 class="step-title" data-translate="howItWorks.step4.title">Додай івент</h4>
+                    <p class="step-desc" data-translate="howItWorks.step4.desc">Фото, відео, опис та звукове повідомлення — координати автоматично</p>
+                </div>
+                <div class="step-item" data-step="5">
+                    <div class="step-icon-wrap">
+                        <div class="step-number">5</div>
+                        <div class="step-icon">
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <circle cx="18" cy="16" r="7" stroke="currentColor" stroke-width="2.5" fill="none"/>
+                                <path d="M6 38c0-6.6 5.4-12 12-12" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                                <circle cx="34" cy="16" r="7" stroke="currentColor" stroke-width="2" fill="none" opacity="0.5"/>
+                                <path d="M46 38c0-6.6-5.4-12-12-12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.5"/>
+                                <circle cx="34" cy="32" r="6" stroke="currentColor" stroke-width="2.5" fill="none"/>
+                                <line x1="34" y1="29" x2="34" y2="35" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                                <line x1="31" y1="32" x2="37" y2="32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h4 class="step-title" data-translate="howItWorks.step5.title">Додай друзів</h4>
+                    <p class="step-desc" data-translate="howItWorks.step5.desc">Знаходь мандрівників та створюй спільноту</p>
+                </div>
+                <div class="step-item" data-step="6">
+                    <div class="step-icon-wrap">
+                        <div class="step-number">6</div>
+                        <div class="step-icon">
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2" fill="none" opacity="0.15"/>
+                                <circle cx="24" cy="24" r="12" stroke="currentColor" stroke-width="2" fill="none" opacity="0.25"/>
+                                <path d="M24 6c-4 0-7.5 3-7.5 7 0 5.1 7.5 12 7.5 12s7.5-6.9 7.5-12c0-4-3.5-7-7.5-7z" fill="currentColor" opacity="0.5"/>
+                                <circle cx="24" cy="13" r="2.5" fill="white" opacity="0.8"/>
+                                <path d="M10 32l4-4 3 2 4-5 4 3 3-2 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/>
+                                <path d="M8 38c3-2 6-1 8 0s5 2 8 0 5-2 8 0 5 2 8 0" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.3"/>
+                                <circle cx="12" cy="22" r="2" fill="currentColor" opacity="0.3"/>
+                                <circle cx="36" cy="20" r="2" fill="currentColor" opacity="0.3"/>
+                                <circle cx="38" cy="30" r="1.5" fill="currentColor" opacity="0.2"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h4 class="step-title" data-translate="howItWorks.step6.title">Відривайся!</h4>
+                    <p class="step-desc" data-translate="howItWorks.step6.desc">Переглядай, спілкуйся, мандруй, обирай та відкривай нове</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="download">
+        <div class="container">
+            <div class="download-content">
+                <div class="download-header-row">
+                    <img src="logo-imin.png" alt="I'M IN" class="download-logo">
+                    <div class="download-header-text">
+                        <h2 class="download-title" data-translate="download.title">Скоро у вашому смартфоні</h2>
+                        <div class="coming-soon-badge" data-translate="download.badge">В розробці</div>
+                    </div>
+                </div>
+                <p class="download-subtitle" data-translate="download.subtitle">
+                    Додаток зараз в активній розробці. Очікуйте — скоро ви зможете завантажити I'M IN та приєднатися до спільноти мандрівників!
+                </p>
+                <div class="download-buttons">
+                    <div class="download-btn download-btn--soon">
+                        <svg class="download-store-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                        <div class="download-text">
+                            <span class="download-label" data-translate="download.coming">Скоро</span>
+                            <span class="download-platform">App Store</span>
+                        </div>
+                    </div>
+                    <div class="download-btn download-btn--soon">
+                        <svg class="download-store-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.807 1.626a1 1 0 010 1.732l-2.807 1.626L15.206 12l2.492-2.492zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg>
+                        <div class="download-text">
+                            <span class="download-label" data-translate="download.coming">Скоро</span>
+                            <span class="download-platform">Google Play</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title" data-translate="faq.title">Часті питання</h2>
+            <p class="section-subtitle" data-translate="faq.subtitle">Відповіді на найпопулярніші запитання</p>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span data-translate="faq.q1.question">Що таке I'M IN?</span>
+                        <svg class="faq-arrow" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-translate="faq.q1.answer">I'M IN — мобільний додаток для створення та перегляду подій на основі геолокації. Публікуйте фото та відео з прив'язкою до місця, переглядайте події на інтерактивній карті, спілкуйтесь з іншими користувачами та підписуйтесь на цікавих авторів.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span data-translate="faq.q2.question">Скільки коштує I'M IN?</span>
+                        <svg class="faq-arrow" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-translate="faq.q2.answer">Додаток I'M IN безкоштовний! Завантажуйте, реєструйтесь та користуйтесь усіма функціями без оплати.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span data-translate="faq.q3.question">Як зареєструватись?</span>
+                        <svg class="faq-arrow" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-translate="faq.q3.answer">Реєстрація займає хвилину і складається з двох кроків. Крок 1: підтвердіть email (надійде код), додайте фото профілю, ім'я та номер телефону. Крок 2: створіть пароль і прийміть умови використання. Після реєстрації можна увімкнути біометричний вхід (Face ID / відбиток пальця).</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span data-translate="faq.q4.question">Чи можна користуватись без реєстрації?</span>
+                        <svg class="faq-arrow" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-translate="faq.q4.answer">Так! У гостьовому режимі доступний перегляд карти та подій, а також пошук адрес. Для створення подій, коментарів, лайків, друзів та повідомлень потрібна реєстрація. Гостьові користувачі також можуть зв'язатися з підтримкою.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span data-translate="faq.q5.question">На яких платформах доступний додаток?</span>
+                        <svg class="faq-arrow" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-translate="faq.q5.answer">I'M IN доступний на iOS (App Store) та Android (Google Play).</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span data-translate="faq.q6.question">Які мови підтримує додаток?</span>
+                        <svg class="faq-arrow" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-translate="faq.q6.answer">Інтерфейс додатку підтримує 8 мов: українська, англійська, французька, іспанська, німецька, італійська, грецька та російська. Мову можна змінити у налаштуваннях.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span data-translate="faq.q7.question">Як створити подію?</span>
+                        <svg class="faq-arrow" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-translate="faq.q7.answer">Натисніть кнопку камери на нижній панелі. Зробіть фото, запишіть відео (до 10 сек) або виберіть з галереї. Додайте фільтр, голосове повідомлення, заголовок та опис. Місцеположення визначається автоматично або вибирається на карті. Якщо інтернет нестабільний — подія збережеться в черзі завантаження.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span data-translate="faq.q8.question">Які налаштування приватності доступні?</span>
+                        <svg class="faq-arrow" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-translate="faq.q8.answer">Обліковий запис може бути: приватний (контент бачите тільки ви), для друзів (бачать лише друзі) або публічний (бачать усі). Також доступні: біометричний вхід, зміна пароля та email через код підтвердження, блокування небажаних користувачів.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span data-translate="faq.q9.question">Як видалити обліковий запис?</span>
+                        <svg class="faq-arrow" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-translate="faq.q9.answer">Перейдіть до Кабінет → Видалення облікового запису. Потрібно ввести пароль, код підтвердження з email та підтвердити дію. Увага: видалення є безповоротним — усі дані, події та зв'язки будуть видалені назавжди.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span data-translate="faq.q10.question">Як зв'язатися з підтримкою?</span>
+                        <svg class="faq-arrow" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-translate="faq.q10.answer">Авторизовані користувачі: Налаштування → Підтримка (до 500 символів, прив'язується до акаунту). Без авторизації: екран входу → Підтримка (потрібно вказати ім'я, email, телефон та текст). Також можете написати нам на info@im-in.net.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title" data-translate="contact.title">Зв'яжіться з нами</h2>
+            <p class="section-subtitle" data-translate="contact.subtitle">Маєте питання? Напишіть нам — ми відповімо якнайшвидше</p>
+            <div class="contact-content">
+                <form id="contactForm" class="contact-form" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="cf-name" data-translate="contact.form.name">Ваше ім'я</label>
+                            <input type="text" id="cf-name" name="name" required autocomplete="name" maxlength="80">
+                            <span class="form-error" data-translate="contact.form.nameError">Будь ласка, введіть ім'я</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="cf-email" data-translate="contact.form.email">Ваш email</label>
+                            <input type="email" id="cf-email" name="email" required autocomplete="email" maxlength="120">
+                            <span class="form-error" data-translate="contact.form.emailError">Введіть коректний email</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="cf-subject" data-translate="contact.form.subject">Тема</label>
+                        <input type="text" id="cf-subject" name="subject" maxlength="150">
+                    </div>
+                    <div class="form-group">
+                        <label for="cf-message" data-translate="contact.form.message">Повідомлення</label>
+                        <textarea id="cf-message" name="message" rows="5" required maxlength="2000"></textarea>
+                        <span class="form-error" data-translate="contact.form.messageError">Будь ласка, введіть повідомлення</span>
+                    </div>
+                    <!-- Honeypot — hidden from real users -->
+                    <div class="form-hp" aria-hidden="true" tabindex="-1">
+                        <input type="text" name="website_url" tabindex="-1" autocomplete="off">
+                    </div>
+                    <input type="hidden" name="_ts" id="cf-ts">
+                    <input type="hidden" name="_sc" id="cf-sc" value="0">
+                    <button type="submit" class="form-submit">
+                        <span class="form-submit-text" data-translate="contact.form.send">Надіслати</span>
+                        <svg class="form-submit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                    </button>
+                </form>
+                <div id="contactSuccess" class="contact-success" hidden>
+                    <div class="contact-success-icon">
+                        <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="var(--primary)" stroke-width="2.5"/><path d="M14 24l7 7 13-13" stroke="var(--primary)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3 data-translate="contact.form.successTitle">Дякуємо!</h3>
+                    <p data-translate="contact.form.successText">Ваше повідомлення надіслано. Ми відповімо на вашу пошту якнайшвидше.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="logo-imin.png" alt="I'M IN" class="footer-logo-img">
+                </div>
+                <div class="footer-links">
+                    <a href="#features" data-translate="nav.features">Можливості</a>
+                    <a href="#about" data-translate="nav.about">Про нас</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="#contact" data-translate="nav.contact">Контакти</a>
+                    <a href="blog.html" data-translate="footer.blog">Блог</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://instagram.com/join_imin" target="_blank" rel="noopener" aria-label="Instagram" class="social-link">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                    <a href="https://www.facebook.com/share/1DqmUZtFwi/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook" class="social-link">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="https://t.me/im_in_net" target="_blank" rel="noopener" aria-label="Telegram" class="social-link">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.492-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                    </a>
+                    <a href="https://x.com/" target="_blank" rel="noopener" aria-label="X (Twitter)" class="social-link">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                </div>
+                <div class="footer-legal">
+                    <a href="terms.html" target="_blank" data-translate="footer.terms">Угода користування</a>
+                    <a href="privacy.html" target="_blank" data-translate="footer.privacy">Політика конфіденційності</a>
+                </div>
+                <p class="footer-text" data-translate="footer.copyright">
+                    © 2026 I'M IN. Всі права захищені.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+    <script src="https://social-automation-production-6fe3.up.railway.app/static/chat-widget.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — I'M IN</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="128x128" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%);
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+        }
+        .container { max-width: 480px; }
+        .pin-icon {
+            width: 80px; height: 80px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+            animation: float 4s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+        h1 { font-size: 6rem; font-weight: 800; line-height: 1; margin-bottom: 0.5rem; opacity: 0.9; }
+        h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; opacity: 0.85; }
+        p { font-size: 1.05rem; opacity: 0.7; line-height: 1.6; margin-bottom: 2rem; }
+        a {
+            display: inline-block;
+            padding: 0.9rem 2.5rem;
+            background: #fff;
+            color: #7C3AED;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        a:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.25); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <svg class="pin-icon" viewBox="0 0 80 80" fill="none">
+            <path d="M40 8c-13.2 0-24 10.8-24 24 0 17.6 24 40 24 40s24-22.4 24-40c0-13.2-10.8-24-24-24z" fill="white" opacity="0.2"/>
+            <path d="M40 16c-8.8 0-16 7.2-16 16 0 11.7 16 26.7 16 26.7S56 43.7 56 32c0-8.8-7.2-16-16-16z" fill="white"/>
+            <circle cx="40" cy="32" r="6" fill="#7C3AED"/>
+            <text x="38.5" y="36" font-family="Inter,sans-serif" font-weight="800" font-size="10" fill="white">?</text>
+        </svg>
+        <h1>404</h1>
+        <h2 id="subtitle">Сторінку не знайдено</h2>
+        <p id="desc">Схоже, ця точка на карті ще не відкрита. Поверніться на головну та продовжуйте мандрувати!</p>
+        <a href="index.html" id="home-link">На головну</a>
+    </div>
+    <script>
+        const lang = localStorage.getItem('language') || 'uk';
+        const t = {
+            uk: { sub: 'Сторінку не знайдено', desc: 'Схоже, ця точка на карті ще не відкрита. Поверніться на головну та продовжуйте мандрувати!', btn: 'На головну' },
+            en: { sub: 'Page not found', desc: 'Looks like this spot on the map hasn\'t been discovered yet. Head back to the homepage and keep exploring!', btn: 'Go Home' },
+            fr: { sub: 'Page non trouvée', desc: 'Ce point sur la carte n\'a pas encore été découvert. Retournez à l\'accueil et continuez à explorer !', btn: 'Accueil' },
+            es: { sub: 'Página no encontrada', desc: 'Parece que este punto del mapa aún no ha sido descubierto. ¡Vuelve al inicio y sigue explorando!', btn: 'Inicio' },
+            de: { sub: 'Seite nicht gefunden', desc: 'Dieser Punkt auf der Karte wurde noch nicht entdeckt. Zurück zur Startseite und weiter erkunden!', btn: 'Startseite' },
+            it: { sub: 'Pagina non trovata', desc: 'Sembra che questo punto sulla mappa non sia ancora stato scoperto. Torna alla homepage e continua a esplorare!', btn: 'Home' },
+            el: { sub: 'Η σελίδα δεν βρέθηκε', desc: 'Φαίνεται ότι αυτό το σημείο στον χάρτη δεν έχει ανακαλυφθεί ακόμα. Επιστρέψτε στην αρχική σελίδα!', btn: 'Αρχική' }
+        };
+        const tr = t[lang] || t.uk;
+        document.getElementById('subtitle').textContent = tr.sub;
+        document.getElementById('desc').textContent = tr.desc;
+        document.getElementById('home-link').textContent = tr.btn;
+    </script>
+</body>
+</html>
