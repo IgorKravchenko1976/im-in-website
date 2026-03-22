@@ -364,9 +364,7 @@
             border-radius: 16px;
             overflow: hidden;
             transition: all 0.3s;
-            display: flex;
-            flex-direction: row;
-            align-items: flex-start;
+            display: block;
         }
         .blog-card:hover {
             box-shadow: 0 8px 30px rgba(124, 58, 237, 0.12);
@@ -378,19 +376,13 @@
             height: 45px;
             object-fit: cover;
             background: var(--primary-light);
-            flex-shrink: 0;
-            border-radius: 16px 0 0 0;
-            margin-top: 1rem;
-            margin-left: 1rem;
             border-radius: 8px;
+            float: left;
+            margin: 1rem 0.75rem 0.5rem 1rem;
         }
 
         .blog-card-body {
             padding: 1rem 1.25rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            min-width: 0;
         }
 
         .blog-card-date {
@@ -413,7 +405,6 @@
             font-size: 0.88rem;
             line-height: 1.6;
             margin-bottom: 0.75rem;
-            flex: 1;
         }
 
         .blog-card-meta {
@@ -466,7 +457,7 @@
 
         @media (max-width: 768px) {
             .blog-grid { grid-template-columns: 1fr; }
-            .blog-card-img { width: 60px; height: 30px; margin-top: 0.75rem; margin-left: 0.75rem; }
+            .blog-card-img { width: 60px; height: 30px; margin: 0.75rem 0.5rem 0.25rem 0; }
         }
     </style>
 </head>
@@ -867,10 +858,11 @@
             a.className = 'blog-card'; a.href = 'blog/post-' + post.id + '.html';
             a.style.textDecoration = 'none'; a.style.color = 'inherit';
             var h = '';
+            h += '<div class="blog-card-body">';
             if (post.image_url) h += '<img class="blog-card-img" src="' + escHtml(post.image_url) + '" alt="" loading="lazy" onerror="this.style.display=\'none\'">';
-            h += '<div class="blog-card-body"><div class="blog-card-date">' + escHtml(fmtDate(post.published_at||post.created_at)) + '</div>';
+            h += '<div class="blog-card-date">' + escHtml(fmtDate(post.published_at||post.created_at)) + '</div>';
             if (title) h += '<h3>' + escHtml(title) + '</h3>';
-            h += '<div class="blog-card-text">' + escHtml(truncate(content,500)) + '</div><div class="blog-card-meta">';
+            h += '<div class="blog-card-text">' + escHtml(truncate(content,280)) + '</div><div class="blog-card-meta">';
             if (post.place_name && post.latitude && post.longitude) h += '<span class="blog-card-badge badge-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg>' + escHtml(post.place_name) + '</span>';
             if (post.source_url) { var d=''; try{d=new URL(post.source_url).hostname.replace('www.','');}catch(e){d='source';} h += '<span class="blog-card-badge badge-source"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>' + escHtml(d) + '</span>'; }
             h += '</div></div>';
