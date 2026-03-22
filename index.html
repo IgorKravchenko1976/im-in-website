@@ -17,13 +17,25 @@
     <meta property="og:title" content="I'M IN — Додаток для мандрівників та дослідників">
     <meta property="og:description" content="Створюй маршрути, об'єднуйся в групи, залишай фото, відео та голосові повідомлення на місцях — для тих, хто прийде після тебе.">
     <meta property="og:image" content="https://www.im-in.net/logo-imin.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:locale" content="uk_UA">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="fr_FR">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta property="og:locale:alternate" content="de_DE">
+    <meta property="og:locale:alternate" content="it_IT">
+    <meta property="og:locale:alternate" content="el_GR">
+    <meta property="og:site_name" content="I'M IN">
+    <meta name="theme-color" content="#7C3AED">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="I'M IN — Додаток для мандрівників">
+    <meta name="twitter:title" content="I'M IN — Додаток для мандрівників та дослідників">
     <meta name="twitter:description" content="Створюй маршрути, залишай повідомлення на місцях, знаходь друзів-мандрівників">
     <meta name="twitter:image" content="https://www.im-in.net/logo-imin.png">
+    <meta name="twitter:image:alt" content="I'M IN — мобільний додаток для мандрівників">
 
     <!-- hreflang -->
     <link rel="alternate" hreflang="uk" href="https://www.im-in.net/">
@@ -35,7 +47,41 @@
     <link rel="alternate" hreflang="el" href="https://www.im-in.net/">
     <link rel="alternate" hreflang="x-default" href="https://www.im-in.net/">
 
-    <!-- JSON-LD Structured Data -->
+    <!-- JSON-LD: Organization -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://www.im-in.net/#organization",
+        "name": "I'M IN",
+        "url": "https://www.im-in.net",
+        "logo": "https://www.im-in.net/logo-imin.png",
+        "sameAs": [
+            "https://instagram.com/join_imin",
+            "https://www.facebook.com/share/1DqmUZtFwi/",
+            "https://t.me/im_in_net"
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "info@im-in.net",
+            "contactType": "customer support",
+            "availableLanguage": ["Ukrainian", "English", "French", "Spanish", "German", "Italian", "Greek"]
+        }
+    }
+    </script>
+    <!-- JSON-LD: WebSite with SearchAction -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://www.im-in.net/#website",
+        "name": "I'M IN",
+        "url": "https://www.im-in.net",
+        "publisher": {"@id": "https://www.im-in.net/#organization"},
+        "inLanguage": ["uk", "en", "fr", "es", "de", "it", "el"]
+    }
+    </script>
+    <!-- JSON-LD: MobileApplication -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -43,6 +89,7 @@
         "name": "I'M IN",
         "description": "Mobile app for travelers: create routes, join groups, leave photos, videos and voice messages at locations",
         "url": "https://www.im-in.net",
+        "image": "https://www.im-in.net/logo-imin.png",
         "applicationCategory": "TravelApplication",
         "operatingSystem": "iOS, Android",
         "offers": {
@@ -50,28 +97,40 @@
             "price": "0",
             "priceCurrency": "USD"
         },
-        "author": {
-            "@type": "Person",
-            "name": "Kravchenko Igor Oleksandrovych",
-            "url": "https://www.im-in.net"
-        },
+        "author": {"@id": "https://www.im-in.net/#organization"},
         "inLanguage": ["uk", "en", "fr", "es", "de", "it", "el"]
     }
     </script>
+    <!-- JSON-LD: FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "Що таке I'M IN?", "acceptedAnswer": {"@type": "Answer", "text": "I'M IN — мобільний додаток для створення та перегляду подій на основі геолокації. Публікуйте фото та відео з прив'язкою до місця, переглядайте події на інтерактивній карті, спілкуйтесь з іншими користувачами та підписуйтесь на цікавих авторів."}},
+            {"@type": "Question", "name": "Скільки коштує I'M IN?", "acceptedAnswer": {"@type": "Answer", "text": "Додаток I'M IN безкоштовний! Завантажуйте, реєструйтесь та користуйтесь усіма функціями без оплати."}},
+            {"@type": "Question", "name": "Як зареєструватись?", "acceptedAnswer": {"@type": "Answer", "text": "Реєстрація займає хвилину: підтвердіть email, додайте фото профілю та ім'я, створіть пароль. Після реєстрації можна увімкнути біометричний вхід."}},
+            {"@type": "Question", "name": "Якими мовами підтримується додаток?", "acceptedAnswer": {"@type": "Answer", "text": "Інтерфейс додатку доступний українською, англійською, французькою, іспанською, німецькою, італійською та грецькою мовами."}},
+            {"@type": "Question", "name": "Як зв'язатися з підтримкою?", "acceptedAnswer": {"@type": "Answer", "text": "Через додаток: Налаштування → Підтримка. Або напишіть на info@im-in.net."}}
+        ]
+    }
+    </script>
 
-    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://social-automation-production-6fe3.up.railway.app">
+    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Nunito:wght@900&display=swap" rel="stylesheet">
 </head>
 <body>
+<main>
     <!-- Splash / Hero -->
     <section class="splash-hero">
         <div class="splash-bg"></div>
         <div class="container">
             <nav class="navbar">
                 <div class="nav-content">
-                    <a href="#" class="logo">
+                    <a href="https://www.im-in.net/" class="logo">
                         <div class="logo-globe" aria-label="I'M IN">
                             <div class="logo-earth"></div>
                             <div class="logo-overlay">
@@ -933,6 +992,7 @@
         </div>
     </section>
 
+</main>
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
