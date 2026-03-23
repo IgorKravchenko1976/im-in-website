@@ -164,7 +164,8 @@ const translationsData = {
       "q18": { "question": "Як завантажити кілька фото одночасно?", "answer": "На екрані «Нова подія» → «Додати медіа» → «Галерея (фото)» → оберіть до 10 фото. Якщо фото мають GPS-мітки, кожна подія отримає свої координати. Спільний заголовок та опис застосовуються до всіх." },
       "q19": { "question": "Як додати друга та чим друзі відрізняються від підписок?", "answer": "Друзі — двосторонній зв'язок: відкрийте профіль → «Додати в друзі» → другий прийме або відхилить. Друзі бачать контент навіть при приватному акаунті. Підписка — одностороння: підписуєтесь без підтвердження іншого, дозволяє фільтрувати стрічку за автором." },
       "q20": { "question": "Як відстежувати друзів на карті?", "answer": "Обидва мають увімкнути «Передача геолокації» в налаштуваннях. Тоді на карті з'являться маркери з аватарами друзів у реальному часі. Інтервал оновлення: від 5 до 60 секунд. Працює у фоновому режимі." },
-      "q21": { "question": "Чому не приходять push-сповіщення?", "answer": "1) Перевірте Меню → Налаштування → Сповіщення (увімкнені?). 2) Системні налаштування пристрою (дозволено сповіщення для I'M IN?). 3) Не увімкнений режим «Не турбувати». Типи: запити на дружбу, події від друзів, події поблизу, спостережувані місця." }
+      "q21": { "question": "Чому не приходять push-сповіщення?", "answer": "1) Перевірте Меню → Налаштування → Сповіщення (увімкнені?). 2) Системні налаштування пристрою (дозволено сповіщення для I'M IN?). 3) Не увімкнений режим «Не турбувати». Типи: запити на дружбу, події від друзів, події поблизу, спостережувані місця." },
+      "q22": { "question": "Чи працює додаток без інтернету?", "answer": "Ні. I'M IN потребує постійного інтернет-з'єднання (Wi-Fi або мобільні дані). Офлайн-режим відсутній — усі дані завантажуються з сервера в реальному часі. Єдиний виняток: подія, створена без інтернету, потрапляє в чергу та автоматично відправиться при появі з'єднання." }
     }
   },
   "en": {
@@ -331,7 +332,8 @@ const translationsData = {
       "q18": { "question": "How to upload multiple photos at once?", "answer": "On the 'New event' screen → 'Add media' → 'Gallery (photos)' → select up to 10 photos. If photos have GPS tags, each event gets its own coordinates. A shared title and description apply to all." },
       "q19": { "question": "How to add a friend and what's the difference from subscriptions?", "answer": "Friends are mutual: open a profile → 'Add friend' → they accept or decline. Friends see content even with a private account. Subscription is one-way: you follow without approval, and can filter the feed by author." },
       "q20": { "question": "How to track friends on the map?", "answer": "Both must enable 'Location sharing' in settings. Then friend avatars appear on the map in real time. Update interval: 5 to 60 seconds. Works in the background." },
-      "q21": { "question": "Why am I not receiving push notifications?", "answer": "1) Check Menu → Settings → Notifications (enabled?). 2) Device system settings (notifications allowed for I'M IN?). 3) 'Do Not Disturb' mode is not on. Types: friend requests, friend events, nearby events, watched places." }
+      "q21": { "question": "Why am I not receiving push notifications?", "answer": "1) Check Menu → Settings → Notifications (enabled?). 2) Device system settings (notifications allowed for I'M IN?). 3) 'Do Not Disturb' mode is not on. Types: friend requests, friend events, nearby events, watched places." },
+      "q22": { "question": "Does the app work offline?", "answer": "No. I'M IN requires a constant internet connection (Wi-Fi or mobile data). There is no offline mode — all data is loaded from the server in real time. The only exception: an event created without internet is queued and automatically uploaded when connection is restored." }
     }
   },
   "fr": {
@@ -498,7 +500,8 @@ const translationsData = {
       "q18": { "question": "Comment télécharger plusieurs photos ?", "answer": "Nouvel événement → Ajouter média → Galerie → sélectionnez jusqu'à 10 photos. Si les photos ont des métadonnées GPS, chaque événement reçoit ses propres coordonnées." },
       "q19": { "question": "Comment ajouter un ami ? Différence avec les abonnements ?", "answer": "Amis : lien mutuel (profil → Ajouter ami → l'autre accepte). Les amis voient le contenu même en mode privé. Abonnement : unilatéral, sans approbation, permet de filtrer le fil par auteur." },
       "q20": { "question": "Comment suivre ses amis sur la carte ?", "answer": "Les deux doivent activer « Partage de position » dans les paramètres. Les avatars apparaissent sur la carte en temps réel. Intervalle : 5 à 60 secondes. Fonctionne en arrière-plan." },
-      "q21": { "question": "Pourquoi je ne reçois pas les notifications push ?", "answer": "1) Menu → Paramètres → Notifications (activées ?). 2) Paramètres système du téléphone (autorisées pour I'M IN ?). 3) Mode « Ne pas déranger » désactivé. Types : demandes d'amis, événements d'amis, événements à proximité, lieux surveillés." }
+      "q21": { "question": "Pourquoi je ne reçois pas les notifications push ?", "answer": "1) Menu → Paramètres → Notifications (activées ?). 2) Paramètres système du téléphone (autorisées pour I'M IN ?). 3) Mode « Ne pas déranger » désactivé. Types : demandes d'amis, événements d'amis, événements à proximité, lieux surveillés." },
+      "q22": { "question": "L'appli fonctionne-t-elle hors ligne ?", "answer": "Non. I'M IN nécessite une connexion internet permanente (Wi-Fi ou données mobiles). Pas de mode hors ligne — toutes les données sont chargées depuis le serveur en temps réel. Seule exception : un événement créé sans internet est mis en file d'attente et envoyé automatiquement dès le retour de la connexion." }
     }
   },
   "es": {
@@ -665,7 +668,8 @@ const translationsData = {
       "q18": { "question": "¿Cómo subir varias fotos a la vez?", "answer": "Nuevo evento → Añadir medios → Galería → selecciona hasta 10 fotos. Si las fotos tienen GPS, cada evento obtiene sus propias coordenadas." },
       "q19": { "question": "¿Cómo agregar un amigo? ¿Diferencia con suscripciones?", "answer": "Amigos: vínculo mutuo (perfil → Agregar amigo → el otro acepta). Los amigos ven contenido incluso en modo privado. Suscripción: unilateral, sin aprobación, permite filtrar el feed por autor." },
       "q20": { "question": "¿Cómo rastrear amigos en el mapa?", "answer": "Ambos deben activar «Compartir ubicación» en ajustes. Aparecen avatares de amigos en tiempo real. Intervalo: 5 a 60 segundos. Funciona en segundo plano." },
-      "q21": { "question": "¿Por qué no recibo notificaciones push?", "answer": "1) Menú → Ajustes → Notificaciones (¿activadas?). 2) Ajustes del sistema (¿permitidas para I'M IN?). 3) Modo «No molestar» desactivado. Tipos: solicitudes de amistad, eventos de amigos, eventos cercanos, lugares vigilados." }
+      "q21": { "question": "¿Por qué no recibo notificaciones push?", "answer": "1) Menú → Ajustes → Notificaciones (¿activadas?). 2) Ajustes del sistema (¿permitidas para I'M IN?). 3) Modo «No molestar» desactivado. Tipos: solicitudes de amistad, eventos de amigos, eventos cercanos, lugares vigilados." },
+      "q22": { "question": "¿Funciona la app sin internet?", "answer": "No. I'M IN requiere conexión permanente a internet (Wi-Fi o datos móviles). No hay modo sin conexión — todos los datos se cargan del servidor en tiempo real. Única excepción: un evento creado sin internet se pone en cola y se envía automáticamente cuando vuelve la conexión." }
     }
   },
   "de": {
@@ -832,7 +836,8 @@ const translationsData = {
       "q18": { "question": "Wie lade ich mehrere Fotos hoch?", "answer": "Neues Event → Medien hinzufügen → Galerie → bis zu 10 Fotos wählen. Fotos mit GPS-Daten bekommen eigene Koordinaten." },
       "q19": { "question": "Wie füge ich einen Freund hinzu? Unterschied zu Abos?", "answer": "Freunde: gegenseitige Verbindung (Profil → Freund hinzufügen → der andere akzeptiert). Freunde sehen Inhalte auch bei privatem Konto. Abo: einseitig, ohne Genehmigung, Feed nach Autor filterbar." },
       "q20": { "question": "Wie verfolge ich Freunde auf der Karte?", "answer": "Beide müssen «Standortfreigabe» in Einstellungen aktivieren. Freunde-Avatare erscheinen in Echtzeit auf der Karte. Intervall: 5 bis 60 Sekunden. Funktioniert im Hintergrund." },
-      "q21": { "question": "Warum bekomme ich keine Push-Benachrichtigungen?", "answer": "1) Menü → Einstellungen → Benachrichtigungen (aktiviert?). 2) System-Einstellungen (für I'M IN erlaubt?). 3) «Nicht stören»-Modus deaktiviert. Typen: Freundschaftsanfragen, Freunde-Events, Events in der Nähe, beobachtete Orte." }
+      "q21": { "question": "Warum bekomme ich keine Push-Benachrichtigungen?", "answer": "1) Menü → Einstellungen → Benachrichtigungen (aktiviert?). 2) System-Einstellungen (für I'M IN erlaubt?). 3) «Nicht stören»-Modus deaktiviert. Typen: Freundschaftsanfragen, Freunde-Events, Events in der Nähe, beobachtete Orte." },
+      "q22": { "question": "Funktioniert die App offline?", "answer": "Nein. I'M IN benötigt eine ständige Internetverbindung (WLAN oder mobile Daten). Es gibt keinen Offline-Modus — alle Daten werden in Echtzeit vom Server geladen. Einzige Ausnahme: Ein ohne Internet erstelltes Event wird in die Warteschlange gestellt und automatisch gesendet, sobald die Verbindung wiederhergestellt ist." }
     }
   },
   "it": {
@@ -999,7 +1004,8 @@ const translationsData = {
       "q18": { "question": "Come caricare più foto contemporaneamente?", "answer": "Nuovo evento → Aggiungi media → Galleria → seleziona fino a 10 foto. Se le foto hanno tag GPS, ogni evento riceve le proprie coordinate." },
       "q19": { "question": "Come aggiungere un amico? Differenza con gli abbonamenti?", "answer": "Amici: legame reciproco (profilo → Aggiungi amico → l'altro accetta). Gli amici vedono i contenuti anche con account privato. Abbonamento: unilaterale, senza approvazione, permette di filtrare il feed per autore." },
       "q20": { "question": "Come seguire gli amici sulla mappa?", "answer": "Entrambi devono attivare «Condivisione posizione» nelle impostazioni. Gli avatar degli amici appaiono sulla mappa in tempo reale. Intervallo: da 5 a 60 secondi. Funziona in background." },
-      "q21": { "question": "Perché non ricevo notifiche push?", "answer": "1) Menu → Impostazioni → Notifiche (attive?). 2) Impostazioni di sistema del dispositivo (permesse per I'M IN?). 3) Modalità «Non disturbare» disattivata. Tipi: richieste di amicizia, eventi di amici, eventi vicini, luoghi osservati." }
+      "q21": { "question": "Perché non ricevo notifiche push?", "answer": "1) Menu → Impostazioni → Notifiche (attive?). 2) Impostazioni di sistema del dispositivo (permesse per I'M IN?). 3) Modalità «Non disturbare» disattivata. Tipi: richieste di amicizia, eventi di amici, eventi vicini, luoghi osservati." },
+      "q22": { "question": "L'app funziona offline?", "answer": "No. I'M IN richiede una connessione internet costante (Wi-Fi o dati mobili). Non esiste modalità offline — tutti i dati vengono caricati dal server in tempo reale. Unica eccezione: un evento creato senza internet viene messo in coda e inviato automaticamente al ripristino della connessione." }
     }
   },
   "el": {
@@ -1166,7 +1172,8 @@ const translationsData = {
       "q18": { "question": "Πώς να ανεβάσω πολλές φωτογραφίες;", "answer": "Νέο γεγονός → Προσθήκη μέσων → Γκαλερί → επιλέξτε έως 10 φωτογραφίες. Φωτογραφίες με GPS λαμβάνουν δικές τους συντεταγμένες." },
       "q19": { "question": "Πώς να προσθέσω φίλο; Διαφορά με συνδρομές;", "answer": "Φίλοι: αμοιβαίος δεσμός (προφίλ → Προσθήκη φίλου → ο άλλος αποδέχεται). Οι φίλοι βλέπουν περιεχόμενο ακόμα και με ιδιωτικό λογαριασμό. Συνδρομή: μονομερής, χωρίς έγκριση, φιλτράρισμα ροής ανά δημιουργό." },
       "q20": { "question": "Πώς να παρακολουθώ φίλους στον χάρτη;", "answer": "Και οι δύο πρέπει να ενεργοποιήσουν «Κοινοποίηση τοποθεσίας» στις ρυθμίσεις. Τα avatar φίλων εμφανίζονται σε πραγματικό χρόνο. Διάστημα: 5 έως 60 δευτερόλεπτα. Λειτουργεί στο παρασκήνιο." },
-      "q21": { "question": "Γιατί δεν λαμβάνω push ειδοποιήσεις;", "answer": "1) Μενού → Ρυθμίσεις → Ειδοποιήσεις (ενεργές;). 2) Ρυθμίσεις συστήματος (επιτρέπονται για I'M IN;). 3) Λειτουργία «Μην ενοχλείτε» απενεργοποιημένη. Τύποι: αιτήματα φιλίας, γεγονότα φίλων, κοντινά γεγονότα, παρακολουθούμενα μέρη." }
+      "q21": { "question": "Γιατί δεν λαμβάνω push ειδοποιήσεις;", "answer": "1) Μενού → Ρυθμίσεις → Ειδοποιήσεις (ενεργές;). 2) Ρυθμίσεις συστήματος (επιτρέπονται για I'M IN;). 3) Λειτουργία «Μην ενοχλείτε» απενεργοποιημένη. Τύποι: αιτήματα φιλίας, γεγονότα φίλων, κοντινά γεγονότα, παρακολουθούμενα μέρη." },
+      "q22": { "question": "Λειτουργεί η εφαρμογή χωρίς internet;", "answer": "Όχι. Το I'M IN απαιτεί μόνιμη σύνδεση στο internet (Wi-Fi ή δεδομένα κινητού). Δεν υπάρχει λειτουργία εκτός σύνδεσης — όλα τα δεδομένα φορτώνονται από τον server σε πραγματικό χρόνο. Μοναδική εξαίρεση: ένα γεγονός που δημιουργήθηκε χωρίς internet μπαίνει σε ουρά και αποστέλλεται αυτόματα όταν αποκατασταθεί η σύνδεση." }
     }
   }
 };
