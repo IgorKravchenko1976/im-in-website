@@ -166,6 +166,17 @@ const translationsData = {
       "q20": { "question": "Як відстежувати друзів на карті?", "answer": "Обидва мають увімкнути «Передача геолокації» в налаштуваннях. Тоді на карті з'являться маркери з аватарами друзів у реальному часі. Інтервал оновлення: від 5 до 60 секунд. Працює у фоновому режимі." },
       "q21": { "question": "Чому не приходять push-сповіщення?", "answer": "1) Перевірте Меню → Налаштування → Сповіщення (увімкнені?). 2) Системні налаштування пристрою (дозволено сповіщення для I'M IN?). 3) Не увімкнений режим «Не турбувати». Типи: запити на дружбу, події від друзів, події поблизу, спостережувані місця." },
       "q22": { "question": "Чи працює додаток без інтернету?", "answer": "Ні. I'M IN потребує постійного інтернет-з'єднання (Wi-Fi або мобільні дані). Офлайн-режим відсутній — усі дані завантажуються з сервера в реальному часі. Єдиний виняток: подія, створена без інтернету, потрапляє в чергу та автоматично відправиться при появі з'єднання." }
+    },
+    "whatsnew": {
+      "title": "Що нового",
+      "subtitle": "Останні оновлення додатку — березень 2026",
+      "guide": { "title": "Інтерактивний гід", "desc": "Покрокові підказки на кожному екрані: карта, стрічка, створення подій, налаштування. З'являється автоматично. Повторити: Налаштування → Про додаток → Навчання." },
+      "mapbox": { "title": "Mapbox — новий провайдер карт", "desc": "Тепер можна обрати між Apple Maps та Mapbox. Більше деталей, додаткові стилі та покращена карта для різних регіонів." },
+      "editor": { "title": "Вбудований фоторедактор", "desc": "Фільтри, малювання, текст та корекція кольорів — обробляй фото прямо в додатку перед публікацією. Жодних сторонніх програм." },
+      "sharing": { "title": "Шерінг через системне меню", "desc": "Ділись подіями через iMessage, WhatsApp, Telegram чи будь-який інший додаток одним дотиком." },
+      "thumbnails": { "title": "Розумні мініатюри", "desc": "Автоматична генерація мініатюр для кожної події. Оновлюються лише при зміні медіа — швидко та ефективно." },
+      "ipad": { "title": "Повна підтримка iPad", "desc": "Адаптований інтерфейс для iPad з підтримкою обертання екрана — портретний та ландшафтний режими." },
+      "languages": { "title": "8 мов інтерфейсу", "desc": "Українська, англійська, французька, іспанська, німецька, італійська, грецька та російська. Мова визначається автоматично." }
     }
   },
   "en": {
@@ -334,6 +345,17 @@ const translationsData = {
       "q20": { "question": "How to track friends on the map?", "answer": "Both must enable 'Location sharing' in settings. Then friend avatars appear on the map in real time. Update interval: 5 to 60 seconds. Works in the background." },
       "q21": { "question": "Why am I not receiving push notifications?", "answer": "1) Check Menu → Settings → Notifications (enabled?). 2) Device system settings (notifications allowed for I'M IN?). 3) 'Do Not Disturb' mode is not on. Types: friend requests, friend events, nearby events, watched places." },
       "q22": { "question": "Does the app work offline?", "answer": "No. I'M IN requires a constant internet connection (Wi-Fi or mobile data). There is no offline mode — all data is loaded from the server in real time. The only exception: an event created without internet is queued and automatically uploaded when connection is restored." }
+    },
+    "whatsnew": {
+      "title": "What's New",
+      "subtitle": "Latest app updates — March 2026",
+      "guide": { "title": "Interactive Guide", "desc": "Step-by-step tips on every screen: map, feed, event creation, settings. Appears automatically. Repeat: Settings → About → Tutorial." },
+      "mapbox": { "title": "Mapbox — new map provider", "desc": "Choose between Apple Maps and Mapbox. More details, additional styles, and improved maps for different regions." },
+      "editor": { "title": "Built-in photo editor", "desc": "Filters, drawing, text & color correction — edit photos right in the app before publishing. No third-party apps needed." },
+      "sharing": { "title": "Share via system menu", "desc": "Share events via iMessage, WhatsApp, Telegram or any other app with a single tap." },
+      "thumbnails": { "title": "Smart thumbnails", "desc": "Automatic thumbnail generation for every event. Updated only when media changes — fast and efficient." },
+      "ipad": { "title": "Full iPad support", "desc": "Adapted interface for iPad with screen rotation support — portrait and landscape modes." },
+      "languages": { "title": "8 interface languages", "desc": "Ukrainian, English, French, Spanish, German, Italian, Greek and Russian. Language detected automatically." }
     }
   },
   "fr": {
@@ -502,6 +524,17 @@ const translationsData = {
       "q20": { "question": "Comment suivre ses amis sur la carte ?", "answer": "Les deux doivent activer « Partage de position » dans les paramètres. Les avatars apparaissent sur la carte en temps réel. Intervalle : 5 à 60 secondes. Fonctionne en arrière-plan." },
       "q21": { "question": "Pourquoi je ne reçois pas les notifications push ?", "answer": "1) Menu → Paramètres → Notifications (activées ?). 2) Paramètres système du téléphone (autorisées pour I'M IN ?). 3) Mode « Ne pas déranger » désactivé. Types : demandes d'amis, événements d'amis, événements à proximité, lieux surveillés." },
       "q22": { "question": "L'appli fonctionne-t-elle hors ligne ?", "answer": "Non. I'M IN nécessite une connexion internet permanente (Wi-Fi ou données mobiles). Pas de mode hors ligne — toutes les données sont chargées depuis le serveur en temps réel. Seule exception : un événement créé sans internet est mis en file d'attente et envoyé automatiquement dès le retour de la connexion." }
+    },
+    "whatsnew": {
+      "title": "Quoi de neuf",
+      "subtitle": "Dernières mises à jour — mars 2026",
+      "guide": { "title": "Guide interactif", "desc": "Conseils étape par étape sur chaque écran : carte, fil, création d'événements, paramètres. Apparaît automatiquement. Répéter : Paramètres → À propos → Tutoriel." },
+      "mapbox": { "title": "Mapbox — nouveau fournisseur de cartes", "desc": "Choisissez entre Apple Maps et Mapbox. Plus de détails, styles supplémentaires et carte améliorée." },
+      "editor": { "title": "Éditeur photo intégré", "desc": "Filtres, dessin, texte et correction — éditez vos photos directement dans l'app." },
+      "sharing": { "title": "Partage via le menu système", "desc": "Partagez des événements via iMessage, WhatsApp, Telegram ou toute autre app d'un seul geste." },
+      "thumbnails": { "title": "Miniatures intelligentes", "desc": "Génération automatique de miniatures. Mises à jour uniquement lors du changement de média." },
+      "ipad": { "title": "Support complet iPad", "desc": "Interface adaptée pour iPad avec rotation d'écran — modes portrait et paysage." },
+      "languages": { "title": "8 langues d'interface", "desc": "Ukrainien, anglais, français, espagnol, allemand, italien, grec et russe. Langue détectée automatiquement." }
     }
   },
   "es": {
@@ -670,6 +703,17 @@ const translationsData = {
       "q20": { "question": "¿Cómo rastrear amigos en el mapa?", "answer": "Ambos deben activar «Compartir ubicación» en ajustes. Aparecen avatares de amigos en tiempo real. Intervalo: 5 a 60 segundos. Funciona en segundo plano." },
       "q21": { "question": "¿Por qué no recibo notificaciones push?", "answer": "1) Menú → Ajustes → Notificaciones (¿activadas?). 2) Ajustes del sistema (¿permitidas para I'M IN?). 3) Modo «No molestar» desactivado. Tipos: solicitudes de amistad, eventos de amigos, eventos cercanos, lugares vigilados." },
       "q22": { "question": "¿Funciona la app sin internet?", "answer": "No. I'M IN requiere conexión permanente a internet (Wi-Fi o datos móviles). No hay modo sin conexión — todos los datos se cargan del servidor en tiempo real. Única excepción: un evento creado sin internet se pone en cola y se envía automáticamente cuando vuelve la conexión." }
+    },
+    "whatsnew": {
+      "title": "Novedades",
+      "subtitle": "Últimas actualizaciones — marzo 2026",
+      "guide": { "title": "Guía interactiva", "desc": "Consejos paso a paso en cada pantalla: mapa, feed, creación de eventos, ajustes. Aparece automáticamente. Repetir: Ajustes → Acerca de → Tutorial." },
+      "mapbox": { "title": "Mapbox — nuevo proveedor de mapas", "desc": "Elige entre Apple Maps y Mapbox. Más detalles, estilos adicionales y mapa mejorado." },
+      "editor": { "title": "Editor de fotos integrado", "desc": "Filtros, dibujo, texto y corrección — edita fotos directamente en la app." },
+      "sharing": { "title": "Compartir vía menú del sistema", "desc": "Comparte eventos a través de iMessage, WhatsApp, Telegram o cualquier otra app con un solo toque." },
+      "thumbnails": { "title": "Miniaturas inteligentes", "desc": "Generación automática de miniaturas. Se actualizan solo al cambiar el contenido multimedia." },
+      "ipad": { "title": "Soporte completo para iPad", "desc": "Interfaz adaptada para iPad con rotación de pantalla — modos retrato y paisaje." },
+      "languages": { "title": "8 idiomas de interfaz", "desc": "Ucraniano, inglés, francés, español, alemán, italiano, griego y ruso. Idioma detectado automáticamente." }
     }
   },
   "de": {
@@ -838,6 +882,17 @@ const translationsData = {
       "q20": { "question": "Wie verfolge ich Freunde auf der Karte?", "answer": "Beide müssen «Standortfreigabe» in Einstellungen aktivieren. Freunde-Avatare erscheinen in Echtzeit auf der Karte. Intervall: 5 bis 60 Sekunden. Funktioniert im Hintergrund." },
       "q21": { "question": "Warum bekomme ich keine Push-Benachrichtigungen?", "answer": "1) Menü → Einstellungen → Benachrichtigungen (aktiviert?). 2) System-Einstellungen (für I'M IN erlaubt?). 3) «Nicht stören»-Modus deaktiviert. Typen: Freundschaftsanfragen, Freunde-Events, Events in der Nähe, beobachtete Orte." },
       "q22": { "question": "Funktioniert die App offline?", "answer": "Nein. I'M IN benötigt eine ständige Internetverbindung (WLAN oder mobile Daten). Es gibt keinen Offline-Modus — alle Daten werden in Echtzeit vom Server geladen. Einzige Ausnahme: Ein ohne Internet erstelltes Event wird in die Warteschlange gestellt und automatisch gesendet, sobald die Verbindung wiederhergestellt ist." }
+    },
+    "whatsnew": {
+      "title": "Neuigkeiten",
+      "subtitle": "Aktuelle Updates — März 2026",
+      "guide": { "title": "Interaktiver Guide", "desc": "Schritt-für-Schritt-Tipps auf jedem Bildschirm: Karte, Feed, Erstellung, Einstellungen. Erscheint automatisch. Wiederholen: Einstellungen → Über → Tutorial." },
+      "mapbox": { "title": "Mapbox — neuer Kartenanbieter", "desc": "Wählen Sie zwischen Apple Maps und Mapbox. Mehr Details, zusätzliche Stile und verbesserte Karte." },
+      "editor": { "title": "Integrierter Foto-Editor", "desc": "Filter, Zeichnen, Text & Korrektur — bearbeiten Sie Fotos direkt in der App." },
+      "sharing": { "title": "Teilen über das Systemmenü", "desc": "Teilen Sie Events über iMessage, WhatsApp, Telegram oder jede andere App mit einem Tippen." },
+      "thumbnails": { "title": "Intelligente Thumbnails", "desc": "Automatische Thumbnail-Generierung. Wird nur bei Medienänderungen aktualisiert." },
+      "ipad": { "title": "Volle iPad-Unterstützung", "desc": "Angepasste Oberfläche für iPad mit Bildschirmrotation — Hoch- und Querformat." },
+      "languages": { "title": "8 Sprachen", "desc": "Ukrainisch, Englisch, Französisch, Spanisch, Deutsch, Italienisch, Griechisch und Russisch. Sprache wird automatisch erkannt." }
     }
   },
   "it": {
@@ -1006,6 +1061,17 @@ const translationsData = {
       "q20": { "question": "Come seguire gli amici sulla mappa?", "answer": "Entrambi devono attivare «Condivisione posizione» nelle impostazioni. Gli avatar degli amici appaiono sulla mappa in tempo reale. Intervallo: da 5 a 60 secondi. Funziona in background." },
       "q21": { "question": "Perché non ricevo notifiche push?", "answer": "1) Menu → Impostazioni → Notifiche (attive?). 2) Impostazioni di sistema del dispositivo (permesse per I'M IN?). 3) Modalità «Non disturbare» disattivata. Tipi: richieste di amicizia, eventi di amici, eventi vicini, luoghi osservati." },
       "q22": { "question": "L'app funziona offline?", "answer": "No. I'M IN richiede una connessione internet costante (Wi-Fi o dati mobili). Non esiste modalità offline — tutti i dati vengono caricati dal server in tempo reale. Unica eccezione: un evento creato senza internet viene messo in coda e inviato automaticamente al ripristino della connessione." }
+    },
+    "whatsnew": {
+      "title": "Novità",
+      "subtitle": "Ultimi aggiornamenti — marzo 2026",
+      "guide": { "title": "Guida interattiva", "desc": "Suggerimenti passo dopo passo su ogni schermata: mappa, feed, creazione eventi, impostazioni. Appare automaticamente. Ripetere: Impostazioni → Info → Tutorial." },
+      "mapbox": { "title": "Mapbox — nuovo provider di mappe", "desc": "Scegli tra Apple Maps e Mapbox. Più dettagli, stili aggiuntivi e mappa migliorata." },
+      "editor": { "title": "Editor foto integrato", "desc": "Filtri, disegno, testo e correzione — modifica le foto direttamente nell'app." },
+      "sharing": { "title": "Condivisione tramite menu di sistema", "desc": "Condividi eventi tramite iMessage, WhatsApp, Telegram o qualsiasi altra app con un tocco." },
+      "thumbnails": { "title": "Miniature intelligenti", "desc": "Generazione automatica di miniature. Aggiornate solo quando cambia il media." },
+      "ipad": { "title": "Supporto completo iPad", "desc": "Interfaccia adattata per iPad con rotazione dello schermo — modalità verticale e orizzontale." },
+      "languages": { "title": "8 lingue dell'interfaccia", "desc": "Ucraino, inglese, francese, spagnolo, tedesco, italiano, greco e russo. Lingua rilevata automaticamente." }
     }
   },
   "el": {
@@ -1174,6 +1240,17 @@ const translationsData = {
       "q20": { "question": "Πώς να παρακολουθώ φίλους στον χάρτη;", "answer": "Και οι δύο πρέπει να ενεργοποιήσουν «Κοινοποίηση τοποθεσίας» στις ρυθμίσεις. Τα avatar φίλων εμφανίζονται σε πραγματικό χρόνο. Διάστημα: 5 έως 60 δευτερόλεπτα. Λειτουργεί στο παρασκήνιο." },
       "q21": { "question": "Γιατί δεν λαμβάνω push ειδοποιήσεις;", "answer": "1) Μενού → Ρυθμίσεις → Ειδοποιήσεις (ενεργές;). 2) Ρυθμίσεις συστήματος (επιτρέπονται για I'M IN;). 3) Λειτουργία «Μην ενοχλείτε» απενεργοποιημένη. Τύποι: αιτήματα φιλίας, γεγονότα φίλων, κοντινά γεγονότα, παρακολουθούμενα μέρη." },
       "q22": { "question": "Λειτουργεί η εφαρμογή χωρίς internet;", "answer": "Όχι. Το I'M IN απαιτεί μόνιμη σύνδεση στο internet (Wi-Fi ή δεδομένα κινητού). Δεν υπάρχει λειτουργία εκτός σύνδεσης — όλα τα δεδομένα φορτώνονται από τον server σε πραγματικό χρόνο. Μοναδική εξαίρεση: ένα γεγονός που δημιουργήθηκε χωρίς internet μπαίνει σε ουρά και αποστέλλεται αυτόματα όταν αποκατασταθεί η σύνδεση." }
+    },
+    "whatsnew": {
+      "title": "Τι νέο υπάρχει",
+      "subtitle": "Τελευταίες ενημερώσεις — Μάρτιος 2026",
+      "guide": { "title": "Διαδραστικός οδηγός", "desc": "Βήμα-βήμα συμβουλές σε κάθε οθόνη: χάρτης, ροή, δημιουργία, ρυθμίσεις. Εμφανίζεται αυτόματα. Επανάληψη: Ρυθμίσεις → Σχετικά → Εκπαίδευση." },
+      "mapbox": { "title": "Mapbox — νέος πάροχος χαρτών", "desc": "Επιλέξτε μεταξύ Apple Maps και Mapbox. Περισσότερες λεπτομέρειες και βελτιωμένος χάρτης." },
+      "editor": { "title": "Ενσωματωμένος επεξεργαστής φωτό", "desc": "Φίλτρα, σχεδίαση, κείμενο και διόρθωση — επεξεργαστείτε φωτό απευθείας στην εφαρμογή." },
+      "sharing": { "title": "Κοινοποίηση μέσω μενού συστήματος", "desc": "Μοιραστείτε εκδηλώσεις μέσω iMessage, WhatsApp, Telegram ή οποιασδήποτε εφαρμογής." },
+      "thumbnails": { "title": "Έξυπνες μικρογραφίες", "desc": "Αυτόματη δημιουργία μικρογραφιών. Ενημερώνονται μόνο όταν αλλάζει το περιεχόμενο." },
+      "ipad": { "title": "Πλήρης υποστήριξη iPad", "desc": "Προσαρμοσμένη διεπαφή για iPad με περιστροφή οθόνης." },
+      "languages": { "title": "8 γλώσσες", "desc": "Ουκρανικά, Αγγλικά, Γαλλικά, Ισπανικά, Γερμανικά, Ιταλικά, Ελληνικά και Ρωσικά. Αυτόματη ανίχνευση." }
     }
   }
 };
