@@ -1704,6 +1704,71 @@ a.step-item--link:hover .step-title {
     }
 }
 
+/* ===================== WHAT'S NEW ===================== */
+.whats-new {
+    padding: 5rem 0 4rem;
+    background: linear-gradient(135deg, #1a1033 0%, #2d1b69 50%, #1a1033 100%);
+    position: relative;
+}
+
+.whats-new .section-title {
+    color: #fff;
+}
+
+.whats-new .section-subtitle {
+    color: rgba(255,255,255,0.6);
+}
+
+.whatsnew-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.whatsnew-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.whatsnew-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255,255,255,0.1);
+}
+
+.whatsnew-icon {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.whatsnew-card h4 {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+}
+
+.whatsnew-card p {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+    .whatsnew-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .whatsnew-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* ===================== RESPONSIVE ===================== */
 @media (max-width: 1200px) {
     .features-grid {
