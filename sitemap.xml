@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-
-    <!-- Main pages -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://www.im-in.net/</loc>
         <lastmod>2026-03-22</lastmod>
@@ -27,8 +24,6 @@
         <changefreq>monthly</changefreq>
         <priority>0.3</priority>
     </url>
-
-    <!-- Blog posts -->
     <url><loc>https://www.im-in.net/blog/post-24.html</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
     <url><loc>https://www.im-in.net/blog/post-23.html</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
     <url><loc>https://www.im-in.net/blog/post-22.html</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
