@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
-Disallow: /backup-*/
+Disallow: /blog/posts.json
 
 Sitemap: https://www.im-in.net/sitemap.xml
+
+Host: https://www.im-in.net
