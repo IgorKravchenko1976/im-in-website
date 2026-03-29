@@ -459,6 +459,17 @@
             .blog-grid { grid-template-columns: 1fr; }
             .blog-card-img { width: 100px; height: auto; margin: 0.75rem 0.75rem 0.25rem 0; }
         }
+
+        .blog-static-links { margin-bottom: 2rem; }
+        .blog-static-links h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem; }
+        .blog-static-links ul { list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+        .blog-static-links li a {
+            display: block; padding: 0.75rem 1rem; background: var(--primary-lighter);
+            border-radius: 10px; text-decoration: none; color: var(--text-dark);
+            font-weight: 500; font-size: 0.88rem; line-height: 1.4; transition: background 0.2s;
+        }
+        .blog-static-links li a:hover { background: var(--primary-light); }
+        @media (max-width: 768px) { .blog-static-links ul { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -504,6 +515,36 @@
 
             <!-- ═══════════ TAB: TRAVEL NEWS ═══════════ -->
             <div data-tab-content="travel" class="tab-visible">
+
+                <!-- BLOG_STATIC_LINKS_START -->
+                <div id="blog-static-links" class="blog-static-links">
+                    <h2>Усі статті блогу</h2>
+                    <ul>
+                        <li><a href="blog/post-24.html">Драгобрат — найвищий гірськолижний курорт України</a></li>
+                        <li><a href="blog/post-23.html">Весняна Каппадокія — політ на повітряній кулі</a></li>
+                        <li><a href="blog/post-22.html">Активний зимовий відпочинок у Карпатах</a></li>
+                        <li><a href="blog/post-21.html">Подорожі Україною — найкращі маршрути</a></li>
+                        <li><a href="blog/post-20.html">Гастрономічна подорож Львовом</a></li>
+                        <li><a href="blog/post-19.html">Зимові пригоди в горах — сноуборд та лижі</a></li>
+                        <li><a href="blog/post-18.html">Культурна спадщина України — музеї та замки</a></li>
+                        <li><a href="blog/post-17.html">Подорож до Одеси — море, архітектура, кухня</a></li>
+                        <li><a href="blog/post-16.html">Туристичні новини — весняний сезон 2026</a></li>
+                        <li><a href="blog/post-15.html">Екотуризм в Україні — природа та заповідники</a></li>
+                        <li><a href="blog/post-14.html">Відкрий нові місця з додатком I'M IN</a></li>
+                        <li><a href="blog/post-13.html">Історичні пам'ятки України — що варто побачити</a></li>
+                        <li><a href="blog/post-12.html">Львівська митниця повернула історичну реліквію</a></li>
+                        <li><a href="blog/post-9.html">Гірськолижні курорти Європи — зима 2026</a></li>
+                        <li><a href="blog/post-8.html">Подорож на велосипеді — маршрути України</a></li>
+                        <li><a href="blog/post-7.html">Весна в Карпатах — найкращий час для хайкінгу</a></li>
+                        <li><a href="blog/post-6.html">Фестивалі та події для мандрівників</a></li>
+                        <li><a href="blog/post-5.html">Як планувати подорож — поради від I'M IN</a></li>
+                        <li><a href="blog/post-4.html">Топ місць для фото — Instagram-локації</a></li>
+                        <li><a href="blog/post-3.html">Водний туризм — сплави та каякінг в Україні</a></li>
+                        <li><a href="blog/post-2.html">Створення подій з фото та відео в додатку</a></li>
+                        <li><a href="blog/post-1.html">Перша стаття блогу I'M IN — ласкаво просимо</a></li>
+                    </ul>
+                </div>
+                <!-- BLOG_STATIC_LINKS_END -->
 
                 <section class="travel-news" data-lang="uk"><div class="visible-inner">
                     <h2>Новини подорожей</h2>
@@ -899,6 +940,7 @@
                 if(!g)return;
                 posts.forEach(function(p){ g.appendChild(buildCard(p, l)); });
             });
+            if(posts.length){var sl=document.getElementById('blog-static-links');if(sl)sl.style.display='none';}
         }
 
         async function tryLoadLocal() { try { var r=await fetch(LOCAL_INDEX); if(!r.ok)return false; allPosts=await r.json(); useLocalData=true; return allPosts.length>0; } catch(e){ return false; } }

@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /blog/posts.json
 
 Sitemap: https://www.im-in.net/sitemap.xml
 
