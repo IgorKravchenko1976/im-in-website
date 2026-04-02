@@ -3,6 +3,7 @@ const translationsData = {
   "uk": {
     "nav": {
       "features": "Можливості",
+      "whatsnew": "Що нового",
       "about": "Про нас",
       "contact": "Контакти"
     },
@@ -190,6 +191,7 @@ const translationsData = {
   "en": {
     "nav": {
       "features": "Features",
+      "whatsnew": "What's New",
       "about": "About",
       "contact": "Contact"
     },
@@ -377,6 +379,7 @@ const translationsData = {
   "fr": {
     "nav": {
       "features": "Fonctionnalités",
+      "whatsnew": "Nouveautés",
       "about": "À propos",
       "contact": "Contact"
     },
@@ -564,6 +567,7 @@ const translationsData = {
   "es": {
     "nav": {
       "features": "Características",
+      "whatsnew": "Novedades",
       "about": "Acerca de",
       "contact": "Contacto"
     },
@@ -751,6 +755,7 @@ const translationsData = {
   "de": {
     "nav": {
       "features": "Funktionen",
+      "whatsnew": "Neuigkeiten",
       "about": "Über uns",
       "contact": "Kontakt"
     },
@@ -938,6 +943,7 @@ const translationsData = {
   "it": {
     "nav": {
       "features": "Funzionalità",
+      "whatsnew": "Novità",
       "about": "Chi siamo",
       "contact": "Contatti"
     },
@@ -1125,6 +1131,7 @@ const translationsData = {
   "el": {
     "nav": {
       "features": "Χαρακτηριστικά",
+      "whatsnew": "Νέα",
       "about": "Σχετικά",
       "contact": "Επικοινωνία"
     },
