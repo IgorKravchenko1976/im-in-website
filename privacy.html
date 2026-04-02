@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I'M IN — Політика конфіденційності / Privacy Policy</title>
-    <meta name="description" content="Політика конфіденційності додатку I'M IN. Як ми збираємо, використовуємо та захищаємо ваші персональні дані.">
+    <meta name="description" content="Політика конфіденційності додатку I'M IN v2.0. Як ми збираємо, використовуємо та захищаємо ваші персональні дані відповідно до GDPR.">
     <link rel="canonical" href="https://www.im-in.net/privacy.html">
     <meta name="robots" content="index, follow">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://www.im-in.net/privacy.html">
     <meta property="og:title" content="I'M IN — Політика конфіденційності">
-    <meta property="og:description" content="Як I'M IN збирає, використовує та захищає ваші персональні дані.">
+    <meta property="og:description" content="Як I'M IN збирає, використовує та захищає ваші персональні дані відповідно до GDPR.">
     <meta property="og:site_name" content="I'M IN">
     <script type="application/ld+json">
     {
@@ -18,7 +18,7 @@
         "@type": "WebPage",
         "name": "Політика конфіденційності I'M IN",
         "url": "https://www.im-in.net/privacy.html",
-        "description": "Політика конфіденційності додатку I'M IN",
+        "description": "Політика конфіденційності додатку I'M IN v2.0",
         "breadcrumb": {
             "@type": "BreadcrumbList",
             "itemListElement": [
@@ -40,6 +40,10 @@
         .lang-switcher { display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem; }
         .lang-switcher button { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: white; padding: 0.3rem 0.8rem; border-radius: 20px; cursor: pointer; font-size: 0.8rem; transition: all 0.2s; }
         .lang-switcher button:hover, .lang-switcher button.active { background: white; color: #7C3AED; }
+        .version-bar { max-width: 800px; margin: 1rem auto 0; padding: 0.75rem 1.5rem; background: #f3f0ff; border: 1px solid #DDD6FE; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: #5F5E63; flex-wrap: wrap; gap: 0.5rem; }
+        .version-bar strong { color: #7C3AED; }
+        .version-bar a { color: #7C3AED; text-decoration: none; font-weight: 500; }
+        .version-bar a:hover { text-decoration: underline; }
         .doc-container { max-width: 800px; margin: 2rem auto; padding: 2rem; background: white; border-radius: 16px; box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
         .doc-content { display: none; }
         .doc-content.active { display: block; }
@@ -47,13 +51,24 @@
         h2:first-child { margin-top: 0; }
         h3 { font-size: 1rem; margin: 1.5rem 0 0.5rem; font-weight: 600; }
         p { margin-bottom: 0.8rem; font-size: 0.95rem; color: #333; }
-        ul { margin: 0.5rem 0 1rem 1.5rem; }
+        ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
         li { margin-bottom: 0.4rem; font-size: 0.95rem; color: #333; }
         .contact-info { background: #f3f0ff; padding: 1rem 1.5rem; border-radius: 10px; margin-top: 1.5rem; }
         .doc-footer { text-align: center; padding: 2rem; color: #999; font-size: 0.8rem; }
+        .version-table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: 0.9rem; }
+        .version-table th { background: #f3f0ff; color: #7C3AED; font-weight: 600; text-align: left; padding: 0.6rem 0.8rem; border-bottom: 2px solid #DDD6FE; }
+        .version-table td { padding: 0.5rem 0.8rem; border-bottom: 1px solid #f0f0f0; color: #333; }
+        .version-table a { color: #7C3AED; text-decoration: none; font-weight: 500; }
+        .version-table a:hover { text-decoration: underline; }
+        .sub-table { width: 100%; border-collapse: collapse; margin: 0.5rem 0 1rem; font-size: 0.9rem; }
+        .sub-table th { background: #f8f7fc; color: #5F5E63; font-weight: 600; text-align: left; padding: 0.5rem 0.6rem; border-bottom: 1px solid #e0e0e0; font-size: 0.85rem; }
+        .sub-table td { padding: 0.4rem 0.6rem; border-bottom: 1px solid #f0f0f0; color: #333; font-size: 0.88rem; vertical-align: top; }
         @media (max-width: 600px) {
             .doc-container { margin: 1rem; padding: 1.5rem; }
             h2 { font-size: 1.1rem; }
+            .version-bar { flex-direction: column; text-align: center; }
+            .sub-table, .version-table { font-size: 0.8rem; }
+            .sub-table th, .sub-table td, .version-table th, .version-table td { padding: 0.35rem 0.4rem; }
         }
     </style>
 </head>
@@ -72,299 +87,724 @@
         </div>
     </div>
 
+    <div class="version-bar">
+        <span><strong>Версія 2.0</strong> — чинна з 2 квітня 2026 р.</span>
+        <a href="privacy-v1.html">Архів попередніх версій</a>
+    </div>
+
     <div class="doc-container">
-        <!-- Ukrainian -->
+
+        <!-- ==================== UKRAINIAN ==================== -->
         <div class="doc-content active" id="doc-uk">
             <h2>ПОЛІТИКА КОНФІДЕНЦІЙНОСТІ ТА ОБРОБКИ ПЕРСОНАЛЬНИХ ДАНИХ</h2>
+            <p>Версія 2.0 | Дата набуття чинності: 2 квітня 2026 р.</p>
 
-            <h3>1. ЗАГАЛЬНІ ПОЛОЖЕННЯ</h3>
-            <p>1.1. Контролер даних: ФОП Кравченко Ігор Олександрович, який визначає цілі та засоби обробки персональних даних Користувачів (відповідно до GDPR та Закону України «Про захист персональних даних»).</p>
-            <p>1.2. Ми збираємо та обробляємо Дані відповідно до чинного законодавства України, ЄС, США та міжнародного права про захист персональних даних.</p>
-            <p>1.3. Користуючись Додатком, Ви надаєте згоду на обробку Ваших персональних даних.</p>
+            <h3>Історія версій</h3>
+            <table class="version-table">
+                <tr><th>Версія</th><th>Дата</th><th>Опис змін</th><th>Документ</th></tr>
+                <tr><td>1.0</td><td>11.04.2025</td><td>Початкова версія</td><td><a href="privacy-v1.html?lang=uk">Переглянути</a></td></tr>
+                <tr><td>2.0</td><td>02.04.2026</td><td>Повний GDPR-чеклист: деталізовані категорії даних, правові основи, суб-процесори, міжнародні передачі, автоматизовані рішення</td><td>Поточна</td></tr>
+            </table>
 
-            <h3>2. ЯКІ ДАНІ МИ ОБРОБЛЯЄМО</h3>
+            <h3>1. КОНТРОЛЕР ДАНИХ (Data Controller)</h3>
+            <p><strong>Юридична назва:</strong> ФОП Кравченко Ігор Олександрович<br>
+            <strong>ЄДРПОУ:</strong> 2781501574<br>
+            <strong>Адреса:</strong> Україна, м. Київ<br>
+            <strong>Контактний email:</strong> <a href="mailto:admin@im-in.net" style="color:#7C3AED">admin@im-in.net</a><br>
+            <strong>Вебсайт:</strong> <a href="https://www.im-in.net" style="color:#7C3AED">www.im-in.net</a></p>
+            <p>Контролер визначає цілі та засоби обробки персональних даних Користувачів відповідно до Регламенту (ЄС) 2016/679 (GDPR) та Закону України «Про захист персональних даних».</p>
+
+            <h3>2. ЯКІ ДАНІ МИ ЗБИРАЄМО</h3>
+            <p>Ми збираємо та обробляємо такі категорії персональних даних:</p>
+
+            <p><strong>2.1. Дані облікового запису:</strong></p>
             <ul>
-                <li>Основні дані реєстрації: ім'я, дата народження, e-mail, пароль, фото профілю, номер телефону (за бажанням)</li>
-                <li>Дані пристрою: IP-адреса, тип пристрою, операційна система, лог-файли, cookie-файли</li>
-                <li>Геолокація: якщо Користувач надає дозвіл</li>
-                <li>Контент івентів: фото, відео, текст, голосові повідомлення</li>
-            </ul>
-            <p><strong>Примітка:</strong> Додаток не призначений для дітей віком до 16 років (18 — для ЄС).</p>
-
-            <h3>3. МЕТА ОБРОБКИ</h3>
-            <p>Виконання договору (реєстрація, надання сервісів), законний інтерес (безпека, аналітика), згода Користувача (маркетинг, геолокація), виконання правових зобов'язань.</p>
-
-            <h3>4. ФАЙЛИ COOKIE</h3>
-            <p>Ми використовуємо файли cookie для зручності та персоналізації. Користувач може вимкнути cookie у налаштуваннях.</p>
-
-            <h3>5. ПЕРІОД ЗБЕРІГАННЯ ДАНИХ</h3>
-            <p>Ми зберігаємо Дані доти, доки це потрібно для досягнення цілей обробки. Після видалення Облікового запису Дані видаляються або анонімізуються.</p>
-
-            <h3>6. ПЕРЕДАЧА ДАНИХ ТРЕТІМ ОСОБАМ</h3>
-            <p>Ми не передаємо Дані третім особам без згоди, крім випадків, передбачених законом. Для функціонування Додатку можемо залучати постачальників послуг з відповідними договорами захисту.</p>
-
-            <h3>7. ПРАВА КОРИСТУВАЧА</h3>
-            <ul>
-                <li>Право доступу до своїх Даних</li>
-                <li>Право на виправлення неточних Даних</li>
-                <li>Право на видалення (право «на забуття»)</li>
-                <li>Право відкликати згоду</li>
-                <li>Право заперечити проти обробки</li>
-                <li>Право на перенесення даних</li>
-                <li>Право подати скаргу до наглядового органу</li>
+                <li>Електронна пошта (email)</li>
+                <li>Ім'я та прізвище</li>
+                <li>Номер телефону (за бажанням)</li>
+                <li>Дата народження</li>
+                <li>Фото / аватар профілю</li>
+                <li>Біографія (текст «про себе»)</li>
             </ul>
 
-            <h3>8. МЕТОДИ ЗАХИСТУ</h3>
-            <p>Ми впроваджуємо технічні та організаційні заходи безпеки (шифрування, обмежений доступ, антивірусний захист).</p>
+            <p><strong>2.2. Технічні дані:</strong></p>
+            <ul>
+                <li>IP-адреса</li>
+                <li>Модель пристрою та операційна система</li>
+                <li>Push-токен (для надсилання сповіщень)</li>
+                <li>Дані сесій (токени авторизації, IP-адреса входу)</li>
+            </ul>
 
-            <h3>9–10. МАРКЕТИНГ ТА ЗМІНИ</h3>
-            <p>Маркетингові повідомлення лише за згодою. Ви можете відмовитись будь-коли. Ми можемо оновлювати цю Політику.</p>
+            <p><strong>2.3. Геолокаційні дані:</strong></p>
+            <ul>
+                <li>Координати (широта / довгота) — лише за явною згодою користувача</li>
+                <li>Останнє відоме місцезнаходження</li>
+            </ul>
+
+            <p><strong>2.4. Дані контенту:</strong></p>
+            <ul>
+                <li>Івенти: назва, опис, координати, дати проведення</li>
+                <li>Фото, відео, аудіо, прикріплені до івентів</li>
+                <li>Повідомлення та чати (текст)</li>
+            </ul>
+
+            <p><strong>2.5. Службові дані:</strong></p>
+            <ul>
+                <li>Журнал згоди (consent log) — запис про надання / відкликання згоди</li>
+            </ul>
+
+            <h3>3. ПРАВОВА ОСНОВА ОБРОБКИ (GDPR Art. 6)</h3>
+
+            <table class="sub-table">
+                <tr><th>Правова основа</th><th>Стаття GDPR</th><th>Для чого застосовується</th></tr>
+                <tr><td><strong>Згода</strong></td><td>Art. 6(1)(a)</td><td>Геолокація, push-сповіщення, автоматична модерація фото</td></tr>
+                <tr><td><strong>Виконання договору</strong></td><td>Art. 6(1)(b)</td><td>Створення облікового запису, чати, створення та перегляд івентів</td></tr>
+                <tr><td><strong>Законний інтерес</strong></td><td>Art. 6(1)(f)</td><td>Забезпечення безпеки, запобігання шахрайству, аналітика</td></tr>
+            </table>
+
+            <h3>4. МЕТА ОБРОБКИ ДАНИХ</h3>
+            <ul>
+                <li><strong>Реєстрація та авторизація</strong> — створення і керування обліковим записом</li>
+                <li><strong>Створення та перегляд івентів</strong> — збереження геоданих з медіа-контентом</li>
+                <li><strong>Листування та чати</strong> — обмін повідомленнями між користувачами</li>
+                <li><strong>Пошук друзів та підписки</strong> — соціальні функції додатку</li>
+                <li><strong>Відображення на карті</strong> — показ івентів та користувачів на мапі</li>
+                <li><strong>Push-сповіщення</strong> — інформування про нові події, повідомлення, оновлення</li>
+                <li><strong>Модерація контенту</strong> — автоматична перевірка фотографій через SightEngine</li>
+            </ul>
+
+            <h3>5. КАТЕГОРІЇ ПРОЦЕСОРІВ (Sub-processors)</h3>
+            <p>Для забезпечення функціонування Додатку ми залучаємо наступних суб-процесорів:</p>
+
+            <table class="sub-table">
+                <tr><th>Процесор</th><th>Функція</th><th>Розташування</th><th>Правова основа передачі</th></tr>
+                <tr><td><strong>OVH SAS</strong></td><td>Хостинг серверів та бази даних</td><td>Франція / Німеччина (DE)</td><td>ЄС — передача не потрібна</td></tr>
+                <tr><td><strong>Backblaze Inc.</strong></td><td>Зберігання медіа-файлів (фото, відео, аудіо)</td><td>США (Sacramento/Phoenix)</td><td>EU-U.S. Data Privacy Framework</td></tr>
+                <tr><td><strong>Expo / 650 Industries</strong></td><td>Push-сповіщення, build-сервіс</td><td>США</td><td>EU-U.S. Data Privacy Framework</td></tr>
+                <tr><td><strong>SightEngine</strong></td><td>Автоматична модерація фотографій</td><td>Франція / ЄС (FR, IE, DE, FI)</td><td>ЄС — передача не потрібна</td></tr>
+                <tr><td><strong>Apple Inc.</strong></td><td>APNs (Apple Push Notification Service)</td><td>США</td><td>Standard Contractual Clauses</td></tr>
+                <tr><td><strong>Google LLC</strong></td><td>FCM (Firebase Cloud Messaging)</td><td>США</td><td>Standard Contractual Clauses</td></tr>
+            </table>
+
+            <h3>6. ПЕРЕДАЧА ДАНИХ ЗА МЕЖІ ЄС</h3>
+            <p>Деякі наші суб-процесори знаходяться за межами Європейського Економічного Простору (ЄЕП). Ми гарантуємо належний рівень захисту даних при кожній передачі:</p>
+
+            <table class="sub-table">
+                <tr><th>Одержувач</th><th>Країна</th><th>Механізм захисту</th></tr>
+                <tr><td>Backblaze Inc.</td><td>США</td><td>EU-U.S. Data Privacy Framework (DPF)</td></tr>
+                <tr><td>Expo / 650 Industries</td><td>США</td><td>EU-U.S. Data Privacy Framework (DPF)</td></tr>
+                <tr><td>Apple Inc. (APNs)</td><td>США</td><td>Standard Contractual Clauses (SCC)</td></tr>
+                <tr><td>Google LLC (FCM)</td><td>США</td><td>Standard Contractual Clauses (SCC)</td></tr>
+            </table>
+
+            <h3>7. ТЕРМІН ЗБЕРІГАННЯ ДАНИХ</h3>
+            <table class="sub-table">
+                <tr><th>Тип даних</th><th>Термін зберігання</th></tr>
+                <tr><td>Активні дані облікового запису</td><td>Доки обліковий запис існує та є активним</td></tr>
+                <tr><td>Дані видаленого облікового запису</td><td>Анонімізуються протягом 30 днів після видалення</td></tr>
+                <tr><td>Журнал згоди (consent log)</td><td>Безстроково (відповідно до GDPR Art. 7(1) — підтвердження згоди)</td></tr>
+                <tr><td>Сесії авторизації</td><td>Деактивуються при виході з облікового запису (logout)</td></tr>
+                <tr><td>Геолокація</td><td>Зберігається останнє відоме місцезнаходження; історія не накопичується</td></tr>
+            </table>
+
+            <h3>8. ПРАВА КОРИСТУВАЧА (GDPR Art. 15–22)</h3>
+            <p>Відповідно до GDPR, кожний Користувач має такі права:</p>
+            <ul>
+                <li><strong>Право на доступ (Art. 15)</strong> — перегляд своїх даних у розділі «Мої дані» в кабінеті додатку</li>
+                <li><strong>Право на виправлення (Art. 16)</strong> — редагування профілю та будь-яких особистих даних</li>
+                <li><strong>Право на видалення (Art. 17)</strong> — видалення облікового запису та всіх пов'язаних даних</li>
+                <li><strong>Право на портативність (Art. 20)</strong> — експорт даних у форматі JSON</li>
+                <li><strong>Право на заперечення (Art. 21)</strong> — відкликання раніше наданої згоди на обробку</li>
+                <li><strong>Право на обмеження обробки (Art. 18)</strong> — тимчасове обмеження обробки за запитом</li>
+                <li><strong>Право подати скаргу до наглядового органу</strong> — Уповноважений Верховної Ради України з прав людини або відповідний орган ЄС за місцем проживання</li>
+            </ul>
+            <p>Для реалізації цих прав зверніться до нас: <a href="mailto:admin@im-in.net" style="color:#7C3AED">admin@im-in.net</a>. Ми відповімо протягом 30 днів.</p>
+
+            <h3>9. COOKIES ТА АВТОМАТИЗОВАНІ РІШЕННЯ</h3>
+            <p><strong>Cookies:</strong> Мобільний додаток I'M IN <strong>не використовує</strong> файли cookie.</p>
+            <p><strong>Автоматизовані рішення (Art. 22):</strong> Ми використовуємо автоматичну модерацію фотографій через сервіс SightEngine. Це означає, що завантажені фото автоматично перевіряються на наявність забороненого контенту (відвертий зміст, насильство тощо). Фото, що не пройшли перевірку, не публікуються. Користувач може оскаржити рішення, звернувшись до нас на <a href="mailto:admin@im-in.net" style="color:#7C3AED">admin@im-in.net</a>.</p>
+
+            <h3>10. ВІКОВЕ ОБМЕЖЕННЯ</h3>
+            <p>Сервіс доступний виключно для осіб віком <strong>від 18 років</strong>.</p>
+            <p>При реєстрації обов'язково вказується дата народження. Якщо вік користувача менше 18 років, реєстрація не допускається.</p>
+
+            <h3>11. ЗМІНИ ДО ПОЛІТИКИ</h3>
+            <p>Ми можемо оновлювати цю Політику. У разі суттєвих змін:</p>
+            <ul>
+                <li>Користувачі отримають сповіщення в Додатку</li>
+                <li>Для продовження користування буде запитано повторну згоду (re-consent через механізм NEW_POLICY_CONFIRMATION)</li>
+                <li>Попередні версії документів зберігаються в архіві та доступні за посиланням</li>
+            </ul>
+            <p>Всі версії Політики зберігаються з фіксацією дати та змісту змін.</p>
+
+            <h3>12. МЕТОДИ ЗАХИСТУ</h3>
+            <p>Ми впроваджуємо технічні та організаційні заходи безпеки:</p>
+            <ul>
+                <li>Шифрування даних при передачі (TLS/HTTPS)</li>
+                <li>Хешування паролів (bcrypt)</li>
+                <li>Обмежений доступ до бази даних</li>
+                <li>Регулярний моніторинг та аудит безпеки</li>
+                <li>Сервери в ЄС (OVH, Німеччина)</li>
+            </ul>
 
             <div class="contact-info">
-                <p><strong>11. КОНТАКТИ</strong></p>
-                <p>E-mail: admin@im-in.net</p>
-                <p>Останнє оновлення: 11/04/2025</p>
+                <p><strong>13. КОНТАКТИ</strong></p>
+                <p><strong>Контролер даних:</strong> ФОП Кравченко Ігор Олександрович</p>
+                <p><strong>Email:</strong> <a href="mailto:admin@im-in.net" style="color:#7C3AED">admin@im-in.net</a></p>
+                <p><strong>Поштова адреса:</strong> Україна, м. Київ</p>
+                <p><strong>Вебсайт:</strong> <a href="https://www.im-in.net" style="color:#7C3AED">www.im-in.net</a></p>
+                <p style="margin-top:0.8rem;font-size:0.85rem;color:#666;">Останнє оновлення: 02.04.2026 | Версія 2.0</p>
             </div>
         </div>
 
-        <!-- English -->
+        <!-- ==================== ENGLISH ==================== -->
         <div class="doc-content" id="doc-en">
-            <h2>PRIVACY AND DATA PROCESSING POLICY</h2>
+            <h2>PRIVACY AND PERSONAL DATA PROCESSING POLICY</h2>
+            <p>Version 2.0 | Effective date: April 2, 2026</p>
 
-            <h3>1. GENERAL PROVISIONS</h3>
-            <p>1.1. Data Controller: Individual Entrepreneur Kravchenko Igor Oleksandrovych, who determines the purposes and means of processing Users' personal data (in accordance with GDPR and Ukrainian Data Protection Law).</p>
-            <p>1.2. We collect and process Data in accordance with applicable laws of Ukraine, EU, USA, and international data protection law.</p>
-            <p>1.3. By using the App, You consent to the processing of Your personal data.</p>
+            <h3>Version History</h3>
+            <table class="version-table">
+                <tr><th>Version</th><th>Date</th><th>Description of Changes</th><th>Document</th></tr>
+                <tr><td>1.0</td><td>Apr 11, 2025</td><td>Initial version</td><td><a href="privacy-v1.html?lang=en">View</a></td></tr>
+                <tr><td>2.0</td><td>Apr 2, 2026</td><td>Full GDPR checklist: detailed data categories, legal bases, sub-processors, international transfers, automated decisions</td><td>Current</td></tr>
+            </table>
 
-            <h3>2. WHAT DATA WE PROCESS</h3>
+            <h3>1. DATA CONTROLLER</h3>
+            <p><strong>Legal name:</strong> Individual Entrepreneur Kravchenko Igor Oleksandrovych<br>
+            <strong>Tax ID (EDRPOU):</strong> 2781501574<br>
+            <strong>Address:</strong> Kyiv, Ukraine<br>
+            <strong>Contact email:</strong> <a href="mailto:admin@im-in.net" style="color:#7C3AED">admin@im-in.net</a><br>
+            <strong>Website:</strong> <a href="https://www.im-in.net" style="color:#7C3AED">www.im-in.net</a></p>
+            <p>The Controller determines the purposes and means of processing Users' personal data in accordance with Regulation (EU) 2016/679 (GDPR) and the Ukrainian Law "On Personal Data Protection".</p>
+
+            <h3>2. DATA WE COLLECT</h3>
+            <p>We collect and process the following categories of personal data:</p>
+
+            <p><strong>2.1. Account Data:</strong></p>
             <ul>
-                <li>Registration data: name, date of birth, email, password, profile photo, phone number (optional)</li>
-                <li>Device data: IP address, device type, operating system, log files, cookies</li>
-                <li>Geolocation: if the User grants permission</li>
-                <li>Event content: photos, videos, text, voice messages</li>
-            </ul>
-            <p><strong>Note:</strong> The App is not intended for children under 16 (18 for the EU).</p>
-
-            <h3>3. PURPOSE OF PROCESSING</h3>
-            <p>Contract performance (registration, services), legitimate interest (security, analytics), User consent (marketing, geolocation), legal obligations.</p>
-
-            <h3>4. COOKIES</h3>
-            <p>We use cookies for convenience and personalization. Users can disable cookies in their settings.</p>
-
-            <h3>5. DATA RETENTION PERIOD</h3>
-            <p>We retain Data as long as necessary for processing purposes. After Account deletion, Data is deleted or anonymized.</p>
-
-            <h3>6. DATA TRANSFER TO THIRD PARTIES</h3>
-            <p>We do not transfer Data to third parties without consent, except as required by law. We may engage service providers with appropriate data protection agreements.</p>
-
-            <h3>7. USER RIGHTS</h3>
-            <ul>
-                <li>Right of access to your Data</li>
-                <li>Right to rectification of inaccurate Data</li>
-                <li>Right to erasure ("right to be forgotten")</li>
-                <li>Right to withdraw consent</li>
-                <li>Right to object to processing</li>
-                <li>Right to data portability</li>
-                <li>Right to lodge a complaint with a supervisory authority</li>
+                <li>Email address</li>
+                <li>First and last name</li>
+                <li>Phone number (optional)</li>
+                <li>Date of birth</li>
+                <li>Profile photo / avatar</li>
+                <li>Biography ("about me" text)</li>
             </ul>
 
-            <h3>8. SECURITY MEASURES</h3>
-            <p>We implement technical and organizational security measures (encryption, restricted access, antivirus protection).</p>
+            <p><strong>2.2. Technical Data:</strong></p>
+            <ul>
+                <li>IP address</li>
+                <li>Device model and operating system</li>
+                <li>Push token (for sending notifications)</li>
+                <li>Session data (authorization tokens, login IP address)</li>
+            </ul>
 
-            <h3>9–10. MARKETING AND CHANGES</h3>
-            <p>Marketing messages only with consent. You can opt out at any time. We may update this Policy.</p>
+            <p><strong>2.3. Geolocation Data:</strong></p>
+            <ul>
+                <li>Coordinates (latitude / longitude) — only with explicit user consent</li>
+                <li>Last known location</li>
+            </ul>
+
+            <p><strong>2.4. Content Data:</strong></p>
+            <ul>
+                <li>Events: name, description, coordinates, dates</li>
+                <li>Photos, videos, audio attached to events</li>
+                <li>Messages and chats (text)</li>
+            </ul>
+
+            <p><strong>2.5. Service Data:</strong></p>
+            <ul>
+                <li>Consent log — record of consent given / withdrawn</li>
+            </ul>
+
+            <h3>3. LEGAL BASIS FOR PROCESSING (GDPR Art. 6)</h3>
+
+            <table class="sub-table">
+                <tr><th>Legal Basis</th><th>GDPR Article</th><th>Applied To</th></tr>
+                <tr><td><strong>Consent</strong></td><td>Art. 6(1)(a)</td><td>Geolocation, push notifications, automated photo moderation</td></tr>
+                <tr><td><strong>Contract Performance</strong></td><td>Art. 6(1)(b)</td><td>Account creation, chats, creating and viewing events</td></tr>
+                <tr><td><strong>Legitimate Interest</strong></td><td>Art. 6(1)(f)</td><td>Security, fraud prevention, analytics</td></tr>
+            </table>
+
+            <h3>4. PURPOSES OF PROCESSING</h3>
+            <ul>
+                <li><strong>Registration and authorization</strong> — creating and managing user accounts</li>
+                <li><strong>Creating and viewing events</strong> — storing geodata with media content</li>
+                <li><strong>Messaging and chats</strong> — exchanging messages between users</li>
+                <li><strong>Finding friends and subscriptions</strong> — social features of the app</li>
+                <li><strong>Map display</strong> — showing events and users on the map</li>
+                <li><strong>Push notifications</strong> — informing about new events, messages, updates</li>
+                <li><strong>Content moderation</strong> — automated photo verification via SightEngine</li>
+            </ul>
+
+            <h3>5. SUB-PROCESSORS</h3>
+            <p>To ensure the App functions properly, we engage the following sub-processors:</p>
+
+            <table class="sub-table">
+                <tr><th>Processor</th><th>Function</th><th>Location</th><th>Transfer Legal Basis</th></tr>
+                <tr><td><strong>OVH SAS</strong></td><td>Server and database hosting</td><td>France / Germany (DE)</td><td>EU — no transfer required</td></tr>
+                <tr><td><strong>Backblaze Inc.</strong></td><td>Media file storage (photos, videos, audio)</td><td>USA (Sacramento/Phoenix)</td><td>EU-U.S. Data Privacy Framework</td></tr>
+                <tr><td><strong>Expo / 650 Industries</strong></td><td>Push notifications, build service</td><td>USA</td><td>EU-U.S. Data Privacy Framework</td></tr>
+                <tr><td><strong>SightEngine</strong></td><td>Automated photo moderation</td><td>France / EU (FR, IE, DE, FI)</td><td>EU — no transfer required</td></tr>
+                <tr><td><strong>Apple Inc.</strong></td><td>APNs (Apple Push Notification Service)</td><td>USA</td><td>Standard Contractual Clauses</td></tr>
+                <tr><td><strong>Google LLC</strong></td><td>FCM (Firebase Cloud Messaging)</td><td>USA</td><td>Standard Contractual Clauses</td></tr>
+            </table>
+
+            <h3>6. INTERNATIONAL DATA TRANSFERS</h3>
+            <p>Some of our sub-processors are located outside the European Economic Area (EEA). We ensure adequate data protection for each transfer:</p>
+
+            <table class="sub-table">
+                <tr><th>Recipient</th><th>Country</th><th>Safeguard Mechanism</th></tr>
+                <tr><td>Backblaze Inc.</td><td>USA</td><td>EU-U.S. Data Privacy Framework (DPF)</td></tr>
+                <tr><td>Expo / 650 Industries</td><td>USA</td><td>EU-U.S. Data Privacy Framework (DPF)</td></tr>
+                <tr><td>Apple Inc. (APNs)</td><td>USA</td><td>Standard Contractual Clauses (SCC)</td></tr>
+                <tr><td>Google LLC (FCM)</td><td>USA</td><td>Standard Contractual Clauses (SCC)</td></tr>
+            </table>
+
+            <h3>7. DATA RETENTION</h3>
+            <table class="sub-table">
+                <tr><th>Data Type</th><th>Retention Period</th></tr>
+                <tr><td>Active account data</td><td>As long as the account exists and is active</td></tr>
+                <tr><td>Deleted account data</td><td>Anonymized within 30 days of deletion</td></tr>
+                <tr><td>Consent log</td><td>Indefinitely (per GDPR Art. 7(1) — proof of consent)</td></tr>
+                <tr><td>Authorization sessions</td><td>Deactivated upon logout</td></tr>
+                <tr><td>Geolocation</td><td>Last known location stored; history is not accumulated</td></tr>
+            </table>
+
+            <h3>8. USER RIGHTS (GDPR Art. 15–22)</h3>
+            <p>Under the GDPR, every User has the following rights:</p>
+            <ul>
+                <li><strong>Right of Access (Art. 15)</strong> — view your data in the "My Data" section of the app</li>
+                <li><strong>Right to Rectification (Art. 16)</strong> — edit your profile and any personal data</li>
+                <li><strong>Right to Erasure (Art. 17)</strong> — delete your account and all associated data</li>
+                <li><strong>Right to Data Portability (Art. 20)</strong> — export your data in JSON format</li>
+                <li><strong>Right to Object (Art. 21)</strong> — withdraw previously given consent</li>
+                <li><strong>Right to Restriction of Processing (Art. 18)</strong> — request temporary restriction upon request</li>
+                <li><strong>Right to lodge a complaint</strong> — with a supervisory authority (Ukrainian Parliament Commissioner for Human Rights or relevant EU authority)</li>
+            </ul>
+            <p>To exercise these rights, contact us at <a href="mailto:admin@im-in.net" style="color:#7C3AED">admin@im-in.net</a>. We will respond within 30 days.</p>
+
+            <h3>9. COOKIES AND AUTOMATED DECISIONS</h3>
+            <p><strong>Cookies:</strong> The I'M IN mobile app <strong>does not use</strong> cookies.</p>
+            <p><strong>Automated Decisions (Art. 22):</strong> We use automated photo moderation via SightEngine. This means uploaded photos are automatically checked for prohibited content (explicit content, violence, etc.). Photos that fail verification are not published. Users may contest any decision by contacting <a href="mailto:admin@im-in.net" style="color:#7C3AED">admin@im-in.net</a>.</p>
+
+            <h3>10. AGE RESTRICTION</h3>
+            <p>The Service is available exclusively to individuals aged <strong>18 years and older</strong>.</p>
+            <p>Date of birth is required during registration. Registration is denied if the user is under 18 years of age.</p>
+
+            <h3>11. CHANGES TO THIS POLICY</h3>
+            <p>We may update this Policy. In case of significant changes:</p>
+            <ul>
+                <li>Users will receive an in-app notification</li>
+                <li>Re-consent will be requested to continue using the App (via NEW_POLICY_CONFIRMATION mechanism)</li>
+                <li>Previous versions are archived and accessible via links</li>
+            </ul>
+            <p>All Policy versions are preserved with date stamps and change descriptions.</p>
+
+            <h3>12. SECURITY MEASURES</h3>
+            <p>We implement technical and organizational security measures:</p>
+            <ul>
+                <li>Data encryption in transit (TLS/HTTPS)</li>
+                <li>Password hashing (bcrypt)</li>
+                <li>Restricted database access</li>
+                <li>Regular security monitoring and audits</li>
+                <li>Servers located in the EU (OVH, Germany)</li>
+            </ul>
 
             <div class="contact-info">
-                <p><strong>11. CONTACT</strong></p>
-                <p>Email: admin@im-in.net</p>
-                <p>Last updated: 11/04/2025</p>
+                <p><strong>13. CONTACT</strong></p>
+                <p><strong>Data Controller:</strong> Individual Entrepreneur Kravchenko Igor Oleksandrovych</p>
+                <p><strong>Email:</strong> <a href="mailto:admin@im-in.net" style="color:#7C3AED">admin@im-in.net</a></p>
+                <p><strong>Postal address:</strong> Kyiv, Ukraine</p>
+                <p><strong>Website:</strong> <a href="https://www.im-in.net" style="color:#7C3AED">www.im-in.net</a></p>
+                <p style="margin-top:0.8rem;font-size:0.85rem;color:#666;">Last updated: 02.04.2026 | Version 2.0</p>
             </div>
         </div>
 
-        <!-- French -->
+        <!-- ==================== FRENCH ==================== -->
         <div class="doc-content" id="doc-fr">
-            <h2>POLITIQUE DE CONFIDENTIALITÉ ET DE TRAITEMENT DES DONNÉES</h2>
+            <h2>POLITIQUE DE CONFIDENTIALITÉ ET DE TRAITEMENT DES DONNÉES PERSONNELLES</h2>
+            <p>Version 2.0 | Date d'effet : 2 avril 2026</p>
 
-            <h3>1. DISPOSITIONS GÉNÉRALES</h3>
-            <p>Responsable du traitement : Entrepreneur Individuel Kravchenko Igor Oleksandrovych. Nous collectons et traitons les Données conformément au RGPD et aux lois ukrainiennes sur la protection des données.</p>
+            <h3>Historique des versions</h3>
+            <table class="version-table">
+                <tr><th>Version</th><th>Date</th><th>Modifications</th><th>Document</th></tr>
+                <tr><td>1.0</td><td>11/04/2025</td><td>Version initiale</td><td><a href="privacy-v1.html?lang=fr">Voir</a></td></tr>
+                <tr><td>2.0</td><td>02/04/2026</td><td>Checklist RGPD complet : catégories de données, bases légales, sous-traitants, transferts internationaux</td><td>Actuel</td></tr>
+            </table>
 
-            <h3>2. DONNÉES TRAITÉES</h3>
+            <h3>1. RESPONSABLE DU TRAITEMENT</h3>
+            <p><strong>Dénomination :</strong> Entrepreneur Individuel Kravchenko Igor Oleksandrovych<br>
+            <strong>Email :</strong> <a href="mailto:admin@im-in.net" style="color:#7C3AED">admin@im-in.net</a> | <strong>Site :</strong> <a href="https://www.im-in.net" style="color:#7C3AED">www.im-in.net</a></p>
+
+            <h3>2. DONNÉES COLLECTÉES</h3>
             <ul>
-                <li>Données d'inscription : nom, date de naissance, email, mot de passe, photo de profil, téléphone (optionnel)</li>
-                <li>Données de l'appareil : adresse IP, type d'appareil, système d'exploitation, cookies</li>
-                <li>Géolocalisation : avec permission de l'Utilisateur</li>
-                <li>Contenu : photos, vidéos, textes, messages vocaux</li>
-            </ul>
-            <p><strong>Note :</strong> L'Application n'est pas destinée aux enfants de moins de 16 ans (18 pour l'UE).</p>
-
-            <h3>3–6. FINALITÉS, COOKIES, CONSERVATION, TRANSFERTS</h3>
-            <p>Traitement pour l'exécution du contrat, l'intérêt légitime et le consentement. Cookies utilisés pour la personnalisation. Données conservées aussi longtemps que nécessaire. Pas de transfert sans consentement sauf obligation légale.</p>
-
-            <h3>7. DROITS DE L'UTILISATEUR</h3>
-            <ul>
-                <li>Droit d'accès, de rectification, d'effacement</li>
-                <li>Droit de retirer le consentement</li>
-                <li>Droit d'opposition et de portabilité</li>
-                <li>Droit de porter plainte auprès d'une autorité de contrôle</li>
+                <li><strong>Compte :</strong> email, nom, prénom, téléphone (optionnel), date de naissance, photo/avatar, biographie</li>
+                <li><strong>Techniques :</strong> adresse IP, modèle d'appareil, OS, push-token, sessions (tokens, IP)</li>
+                <li><strong>Géolocalisation :</strong> coordonnées (avec consentement explicite), dernière position connue</li>
+                <li><strong>Contenu :</strong> événements (nom, description, coordonnées, dates), photos, vidéos, audio, messages/chats</li>
+                <li><strong>Service :</strong> journal de consentement (consent log)</li>
             </ul>
 
-            <h3>8–10. SÉCURITÉ, MARKETING, MODIFICATIONS</h3>
-            <p>Mesures de sécurité techniques et organisationnelles. Messages marketing uniquement avec consentement. Politique pouvant être mise à jour.</p>
+            <h3>3. BASE LÉGALE (RGPD Art. 6)</h3>
+            <table class="sub-table">
+                <tr><th>Base légale</th><th>Article</th><th>Application</th></tr>
+                <tr><td>Consentement</td><td>Art. 6(1)(a)</td><td>Géolocalisation, notifications push, modération photo</td></tr>
+                <tr><td>Exécution du contrat</td><td>Art. 6(1)(b)</td><td>Création de compte, chats, événements</td></tr>
+                <tr><td>Intérêt légitime</td><td>Art. 6(1)(f)</td><td>Sécurité, prévention des fraudes, analyse</td></tr>
+            </table>
+
+            <h3>4. FINALITÉS DU TRAITEMENT</h3>
+            <p>Inscription/authentification, création/affichage d'événements, messagerie/chats, recherche d'amis, affichage carte, notifications push, modération de contenu (SightEngine).</p>
+
+            <h3>5. SOUS-TRAITANTS</h3>
+            <table class="sub-table">
+                <tr><th>Sous-traitant</th><th>Fonction</th><th>Localisation</th><th>Base de transfert</th></tr>
+                <tr><td>OVH SAS</td><td>Hébergement serveurs/BD</td><td>France/Allemagne</td><td>UE</td></tr>
+                <tr><td>Backblaze Inc.</td><td>Stockage médias</td><td>USA</td><td>DPF</td></tr>
+                <tr><td>Expo / 650 Industries</td><td>Notifications push</td><td>USA</td><td>DPF</td></tr>
+                <tr><td>SightEngine</td><td>Modération photo auto</td><td>France/UE</td><td>UE</td></tr>
+                <tr><td>Apple Inc.</td><td>APNs</td><td>USA</td><td>SCC</td></tr>
+                <tr><td>Google LLC</td><td>FCM</td><td>USA</td><td>SCC</td></tr>
+            </table>
+
+            <h3>6. TRANSFERTS INTERNATIONAUX</h3>
+            <p>Backblaze et Expo (USA) : DPF. Apple APNs et Google FCM (USA) : SCC (Clauses Contractuelles Types).</p>
+
+            <h3>7. CONSERVATION DES DONNÉES</h3>
+            <p>Données actives : tant que le compte existe. Compte supprimé : anonymisation sous 30 jours. Consent log : conservation illimitée (Art. 7(1)). Sessions : désactivées à la déconnexion.</p>
+
+            <h3>8. DROITS DE L'UTILISATEUR (Art. 15–22)</h3>
+            <ul>
+                <li>Droit d'accès (Art. 15) — section « Mes données » dans l'application</li>
+                <li>Droit de rectification (Art. 16) — modification du profil</li>
+                <li>Droit à l'effacement (Art. 17) — suppression du compte</li>
+                <li>Droit à la portabilité (Art. 20) — export JSON</li>
+                <li>Droit d'opposition (Art. 21) — retrait du consentement</li>
+                <li>Droit de plainte auprès d'une autorité de contrôle</li>
+            </ul>
+            <p>Contact : <a href="mailto:admin@im-in.net" style="color:#7C3AED">admin@im-in.net</a>. Réponse sous 30 jours.</p>
+
+            <h3>9. COOKIES ET DÉCISIONS AUTOMATISÉES</h3>
+            <p>L'application <strong>n'utilise pas</strong> de cookies. Modération automatique des photos via SightEngine (Art. 22 RGPD). Possibilité de contester les décisions.</p>
+
+            <h3>10. RESTRICTION D'ÂGE</h3>
+            <p>Service réservé aux personnes de <strong>18 ans et plus</strong>. Vérification de la date de naissance à l'inscription.</p>
+
+            <h3>11. MODIFICATIONS</h3>
+            <p>Notification dans l'application. Re-consentement requis pour les changements significatifs. Versions précédentes archivées.</p>
 
             <div class="contact-info">
-                <p><strong>11. CONTACT</strong></p>
-                <p>Email : admin@im-in.net</p>
-                <p>Dernière mise à jour : 11/04/2025</p>
+                <p><strong>13. CONTACT</strong></p>
+                <p>Email : <a href="mailto:admin@im-in.net" style="color:#7C3AED">admin@im-in.net</a></p>
+                <p>Adresse : Kyiv, Ukraine | Site : <a href="https://www.im-in.net" style="color:#7C3AED">www.im-in.net</a></p>
+                <p style="margin-top:0.8rem;font-size:0.85rem;color:#666;">Dernière mise à jour : 02/04/2026 | Version 2.0</p>
             </div>
         </div>
 
-        <!-- Spanish -->
+        <!-- ==================== SPANISH ==================== -->
         <div class="doc-content" id="doc-es">
-            <h2>POLÍTICA DE PRIVACIDAD Y PROCESAMIENTO DE DATOS</h2>
+            <h2>POLÍTICA DE PRIVACIDAD Y PROCESAMIENTO DE DATOS PERSONALES</h2>
+            <p>Versión 2.0 | Fecha de vigencia: 2 de abril de 2026</p>
 
-            <h3>1. DISPOSICIONES GENERALES</h3>
-            <p>Responsable del tratamiento: Empresario Individual Kravchenko Igor Oleksandrovych. Recopilamos y procesamos Datos de acuerdo con el RGPD y las leyes ucranianas de protección de datos.</p>
+            <h3>Historial de versiones</h3>
+            <table class="version-table">
+                <tr><th>Versión</th><th>Fecha</th><th>Cambios</th><th>Documento</th></tr>
+                <tr><td>1.0</td><td>11/04/2025</td><td>Versión inicial</td><td><a href="privacy-v1.html?lang=es">Ver</a></td></tr>
+                <tr><td>2.0</td><td>02/04/2026</td><td>Checklist RGPD completo: categorías de datos, bases legales, subencargados, transferencias internacionales</td><td>Actual</td></tr>
+            </table>
 
-            <h3>2. DATOS PROCESADOS</h3>
+            <h3>1. RESPONSABLE DEL TRATAMIENTO</h3>
+            <p><strong>Nombre:</strong> Empresario Individual Kravchenko Igor Oleksandrovych<br>
+            <strong>Email:</strong> <a href="mailto:admin@im-in.net" style="color:#7C3AED">admin@im-in.net</a> | <strong>Web:</strong> <a href="https://www.im-in.net" style="color:#7C3AED">www.im-in.net</a></p>
+
+            <h3>2. DATOS QUE RECOPILAMOS</h3>
             <ul>
-                <li>Datos de registro: nombre, fecha de nacimiento, email, contraseña, foto de perfil, teléfono (opcional)</li>
-                <li>Datos del dispositivo: dirección IP, tipo de dispositivo, sistema operativo, cookies</li>
-                <li>Geolocalización: con permiso del Usuario</li>
-                <li>Contenido: fotos, videos, textos, mensajes de voz</li>
-            </ul>
-            <p><strong>Nota:</strong> La Aplicación no está destinada a menores de 16 años (18 para la UE).</p>
-
-            <h3>3–6. FINALIDADES, COOKIES, RETENCIÓN, TRANSFERENCIAS</h3>
-            <p>Procesamiento para ejecución del contrato, interés legítimo y consentimiento. Cookies para personalización. Datos conservados el tiempo necesario. Sin transferencias sin consentimiento excepto por ley.</p>
-
-            <h3>7. DERECHOS DEL USUARIO</h3>
-            <ul>
-                <li>Derecho de acceso, rectificación, supresión</li>
-                <li>Derecho a retirar el consentimiento</li>
-                <li>Derecho de oposición y portabilidad</li>
-                <li>Derecho a presentar reclamación ante la autoridad de control</li>
+                <li><strong>Cuenta:</strong> email, nombre, apellido, teléfono (opcional), fecha de nacimiento, foto/avatar, biografía</li>
+                <li><strong>Técnicos:</strong> dirección IP, modelo de dispositivo, SO, push-token, sesiones (tokens, IP)</li>
+                <li><strong>Geolocalización:</strong> coordenadas (con consentimiento explícito), última posición conocida</li>
+                <li><strong>Contenido:</strong> eventos (nombre, descripción, coordenadas, fechas), fotos, videos, audio, mensajes/chats</li>
+                <li><strong>Servicio:</strong> registro de consentimiento (consent log)</li>
             </ul>
 
-            <h3>8–10. SEGURIDAD, MARKETING, CAMBIOS</h3>
-            <p>Medidas de seguridad técnicas y organizativas. Mensajes de marketing solo con consentimiento. Política actualizable.</p>
+            <h3>3. BASE LEGAL (RGPD Art. 6)</h3>
+            <table class="sub-table">
+                <tr><th>Base legal</th><th>Artículo</th><th>Aplicación</th></tr>
+                <tr><td>Consentimiento</td><td>Art. 6(1)(a)</td><td>Geolocalización, notificaciones push, moderación de fotos</td></tr>
+                <tr><td>Ejecución del contrato</td><td>Art. 6(1)(b)</td><td>Creación de cuenta, chats, eventos</td></tr>
+                <tr><td>Interés legítimo</td><td>Art. 6(1)(f)</td><td>Seguridad, prevención de fraude, analítica</td></tr>
+            </table>
+
+            <h3>4. FINALIDADES DEL TRATAMIENTO</h3>
+            <p>Registro/autenticación, creación/visualización de eventos, mensajería/chats, búsqueda de amigos, visualización en mapa, notificaciones push, moderación de contenido (SightEngine).</p>
+
+            <h3>5. SUBENCARGADOS DEL TRATAMIENTO</h3>
+            <table class="sub-table">
+                <tr><th>Subencargado</th><th>Función</th><th>Ubicación</th><th>Base de transferencia</th></tr>
+                <tr><td>OVH SAS</td><td>Hosting servidores/BD</td><td>Francia/Alemania</td><td>UE</td></tr>
+                <tr><td>Backblaze Inc.</td><td>Almacenamiento de medios</td><td>EE.UU.</td><td>DPF</td></tr>
+                <tr><td>Expo / 650 Industries</td><td>Notificaciones push</td><td>EE.UU.</td><td>DPF</td></tr>
+                <tr><td>SightEngine</td><td>Moderación automática de fotos</td><td>Francia/UE</td><td>UE</td></tr>
+                <tr><td>Apple Inc.</td><td>APNs</td><td>EE.UU.</td><td>SCC</td></tr>
+                <tr><td>Google LLC</td><td>FCM</td><td>EE.UU.</td><td>SCC</td></tr>
+            </table>
+
+            <h3>6–7. TRANSFERENCIAS INTERNACIONALES Y RETENCIÓN</h3>
+            <p>Backblaze y Expo (EE.UU.): DPF. Apple y Google (EE.UU.): SCC. Datos activos: mientras exista la cuenta. Cuenta eliminada: anonimización en 30 días. Consent log: indefinido (Art. 7(1)). Sesiones: desactivadas al cerrar sesión.</p>
+
+            <h3>8. DERECHOS DEL USUARIO (Art. 15–22)</h3>
+            <ul>
+                <li>Acceso (Art. 15), Rectificación (Art. 16), Supresión (Art. 17)</li>
+                <li>Portabilidad (Art. 20) — exportación JSON</li>
+                <li>Oposición (Art. 21), Limitación del tratamiento (Art. 18)</li>
+                <li>Reclamación ante la autoridad de control</li>
+            </ul>
+            <p>Contacto: <a href="mailto:admin@im-in.net" style="color:#7C3AED">admin@im-in.net</a>. Respuesta en 30 días.</p>
+
+            <h3>9. COOKIES Y DECISIONES AUTOMATIZADAS</h3>
+            <p>La aplicación <strong>no utiliza</strong> cookies. Moderación automática de fotos (SightEngine, Art. 22). Se puede impugnar las decisiones.</p>
+
+            <h3>10. RESTRICCIÓN DE EDAD</h3>
+            <p>Servicio exclusivo para personas de <strong>18 años o más</strong>. Verificación de fecha de nacimiento en el registro.</p>
+
+            <h3>11. CAMBIOS EN ESTA POLÍTICA</h3>
+            <p>Notificación en la aplicación. Re-consentimiento para cambios significativos. Versiones anteriores archivadas.</p>
 
             <div class="contact-info">
-                <p><strong>11. CONTACTO</strong></p>
-                <p>Email: admin@im-in.net</p>
-                <p>Última actualización: 11/04/2025</p>
+                <p><strong>13. CONTACTO</strong></p>
+                <p>Email: <a href="mailto:admin@im-in.net" style="color:#7C3AED">admin@im-in.net</a></p>
+                <p>Dirección: Kyiv, Ucrania | Web: <a href="https://www.im-in.net" style="color:#7C3AED">www.im-in.net</a></p>
+                <p style="margin-top:0.8rem;font-size:0.85rem;color:#666;">Última actualización: 02/04/2026 | Versión 2.0</p>
             </div>
         </div>
 
-        <!-- German -->
+        <!-- ==================== GERMAN ==================== -->
         <div class="doc-content" id="doc-de">
-            <h2>DATENSCHUTZ- UND DATENVERARBEITUNGSRICHTLINIE</h2>
+            <h2>DATENSCHUTZRICHTLINIE UND VERARBEITUNG PERSONENBEZOGENER DATEN</h2>
+            <p>Version 2.0 | Gültig ab: 2. April 2026</p>
 
-            <h3>1. ALLGEMEINE BESTIMMUNGEN</h3>
-            <p>Verantwortlicher: Einzelunternehmer Kravchenko Igor Oleksandrovych. Wir erheben und verarbeiten Daten gemäß DSGVO und ukrainischem Datenschutzrecht.</p>
+            <h3>Versionshistorie</h3>
+            <table class="version-table">
+                <tr><th>Version</th><th>Datum</th><th>Änderungen</th><th>Dokument</th></tr>
+                <tr><td>1.0</td><td>11.04.2025</td><td>Erstversion</td><td><a href="privacy-v1.html?lang=de">Ansehen</a></td></tr>
+                <tr><td>2.0</td><td>02.04.2026</td><td>Vollständige DSGVO-Checkliste: Datenkategorien, Rechtsgrundlagen, Auftragsverarbeiter, internationale Übermittlungen</td><td>Aktuell</td></tr>
+            </table>
 
-            <h3>2. VERARBEITETE DATEN</h3>
+            <h3>1. VERANTWORTLICHER</h3>
+            <p><strong>Name:</strong> Einzelunternehmer Kravchenko Igor Oleksandrovych<br>
+            <strong>E-Mail:</strong> <a href="mailto:admin@im-in.net" style="color:#7C3AED">admin@im-in.net</a> | <strong>Website:</strong> <a href="https://www.im-in.net" style="color:#7C3AED">www.im-in.net</a></p>
+
+            <h3>2. ERHOBENE DATEN</h3>
             <ul>
-                <li>Registrierungsdaten: Name, Geburtsdatum, E-Mail, Passwort, Profilfoto, Telefonnummer (optional)</li>
-                <li>Gerätedaten: IP-Adresse, Gerätetyp, Betriebssystem, Cookies</li>
-                <li>Geolokalisierung: mit Genehmigung des Nutzers</li>
-                <li>Inhalte: Fotos, Videos, Texte, Sprachnachrichten</li>
+                <li><strong>Konto:</strong> E-Mail, Name, Vorname, Telefon (optional), Geburtsdatum, Foto/Avatar, Biografie</li>
+                <li><strong>Technisch:</strong> IP-Adresse, Gerätemodell, OS, Push-Token, Sitzungen (Tokens, IP)</li>
+                <li><strong>Geolokalisierung:</strong> Koordinaten (mit ausdrücklicher Einwilligung), letzter bekannter Standort</li>
+                <li><strong>Inhalt:</strong> Events (Name, Beschreibung, Koordinaten, Daten), Fotos, Videos, Audio, Nachrichten/Chats</li>
+                <li><strong>Service:</strong> Einwilligungsprotokoll (Consent Log)</li>
             </ul>
-            <p><strong>Hinweis:</strong> Die App ist nicht für Kinder unter 16 Jahren bestimmt (18 für die EU).</p>
 
-            <h3>3–6. ZWECKE, COOKIES, AUFBEWAHRUNG, ÜBERMITTLUNG</h3>
-            <p>Verarbeitung zur Vertragserfüllung, berechtigtes Interesse und Einwilligung. Cookies zur Personalisierung. Daten so lange wie nötig aufbewahrt. Keine Übermittlung ohne Einwilligung außer gesetzlich vorgeschrieben.</p>
+            <h3>3. RECHTSGRUNDLAGE (DSGVO Art. 6)</h3>
+            <table class="sub-table">
+                <tr><th>Rechtsgrundlage</th><th>Artikel</th><th>Anwendung</th></tr>
+                <tr><td>Einwilligung</td><td>Art. 6(1)(a)</td><td>Geolokalisierung, Push-Benachrichtigungen, Fotomoderation</td></tr>
+                <tr><td>Vertragserfüllung</td><td>Art. 6(1)(b)</td><td>Kontoerstellung, Chats, Events</td></tr>
+                <tr><td>Berechtigtes Interesse</td><td>Art. 6(1)(f)</td><td>Sicherheit, Betrugsprävention, Analytik</td></tr>
+            </table>
 
-            <h3>7. NUTZERRECHTE</h3>
+            <h3>4. VERARBEITUNGSZWECKE</h3>
+            <p>Registrierung/Authentifizierung, Erstellung/Anzeige von Events, Nachrichtenübermittlung/Chats, Freundesuche, Kartenanzeige, Push-Benachrichtigungen, Inhaltsmoderation (SightEngine).</p>
+
+            <h3>5. AUFTRAGSVERARBEITER</h3>
+            <table class="sub-table">
+                <tr><th>Verarbeiter</th><th>Funktion</th><th>Standort</th><th>Übermittlungsgrundlage</th></tr>
+                <tr><td>OVH SAS</td><td>Server-/DB-Hosting</td><td>Frankreich/Deutschland</td><td>EU</td></tr>
+                <tr><td>Backblaze Inc.</td><td>Medienspeicherung</td><td>USA</td><td>DPF</td></tr>
+                <tr><td>Expo / 650 Industries</td><td>Push-Benachrichtigungen</td><td>USA</td><td>DPF</td></tr>
+                <tr><td>SightEngine</td><td>Auto-Fotomoderation</td><td>Frankreich/EU</td><td>EU</td></tr>
+                <tr><td>Apple Inc.</td><td>APNs</td><td>USA</td><td>SCC</td></tr>
+                <tr><td>Google LLC</td><td>FCM</td><td>USA</td><td>SCC</td></tr>
+            </table>
+
+            <h3>6–7. INTERNATIONALE ÜBERMITTLUNG UND AUFBEWAHRUNG</h3>
+            <p>Backblaze und Expo (USA): DPF. Apple und Google (USA): SCC. Aktive Daten: solange das Konto besteht. Gelöschtes Konto: Anonymisierung innerhalb von 30 Tagen. Consent Log: unbefristet (Art. 7(1)). Sitzungen: bei Abmeldung deaktiviert.</p>
+
+            <h3>8. NUTZERRECHTE (Art. 15–22)</h3>
             <ul>
-                <li>Recht auf Auskunft, Berichtigung, Löschung</li>
-                <li>Recht auf Widerruf der Einwilligung</li>
-                <li>Widerspruchsrecht und Recht auf Datenübertragbarkeit</li>
+                <li>Auskunftsrecht (Art. 15), Berichtigungsrecht (Art. 16), Löschungsrecht (Art. 17)</li>
+                <li>Recht auf Datenübertragbarkeit (Art. 20) — JSON-Export</li>
+                <li>Widerspruchsrecht (Art. 21), Recht auf Einschränkung (Art. 18)</li>
                 <li>Beschwerderecht bei einer Aufsichtsbehörde</li>
             </ul>
+            <p>Kontakt: <a href="mailto:admin@im-in.net" style="color:#7C3AED">admin@im-in.net</a>. Antwort innerhalb von 30 Tagen.</p>
 
-            <h3>8–10. SICHERHEIT, MARKETING, ÄNDERUNGEN</h3>
-            <p>Technische und organisatorische Sicherheitsmaßnahmen. Marketing nur mit Einwilligung. Richtlinie kann aktualisiert werden.</p>
+            <h3>9. COOKIES UND AUTOMATISIERTE ENTSCHEIDUNGEN</h3>
+            <p>Die App verwendet <strong>keine</strong> Cookies. Automatische Fotomoderation über SightEngine (Art. 22 DSGVO). Entscheidungen anfechtbar.</p>
+
+            <h3>10. ALTERSBESCHRÄNKUNG</h3>
+            <p>Dienst nur für Personen ab <strong>18 Jahren</strong>. Geburtsdatum wird bei der Registrierung überprüft.</p>
+
+            <h3>11. ÄNDERUNGEN</h3>
+            <p>Benachrichtigung in der App. Erneute Einwilligung bei wesentlichen Änderungen. Vorherige Versionen archiviert.</p>
 
             <div class="contact-info">
-                <p><strong>11. KONTAKT</strong></p>
-                <p>E-Mail: admin@im-in.net</p>
-                <p>Letzte Aktualisierung: 11.04.2025</p>
+                <p><strong>13. KONTAKT</strong></p>
+                <p>E-Mail: <a href="mailto:admin@im-in.net" style="color:#7C3AED">admin@im-in.net</a></p>
+                <p>Adresse: Kyiv, Ukraine | Website: <a href="https://www.im-in.net" style="color:#7C3AED">www.im-in.net</a></p>
+                <p style="margin-top:0.8rem;font-size:0.85rem;color:#666;">Letzte Aktualisierung: 02.04.2026 | Version 2.0</p>
             </div>
         </div>
 
-        <!-- Italian -->
+        <!-- ==================== ITALIAN ==================== -->
         <div class="doc-content" id="doc-it">
-            <h2>INFORMATIVA SULLA PRIVACY E SUL TRATTAMENTO DEI DATI</h2>
+            <h2>INFORMATIVA SULLA PRIVACY E SUL TRATTAMENTO DEI DATI PERSONALI</h2>
+            <p>Versione 2.0 | Data di validità: 2 aprile 2026</p>
 
-            <h3>1. DISPOSIZIONI GENERALI</h3>
-            <p>Titolare del trattamento: Imprenditore Individuale Kravchenko Igor Oleksandrovych. Raccogliamo e trattiamo i Dati in conformità al GDPR e alle leggi ucraine sulla protezione dei dati.</p>
+            <h3>Cronologia versioni</h3>
+            <table class="version-table">
+                <tr><th>Versione</th><th>Data</th><th>Modifiche</th><th>Documento</th></tr>
+                <tr><td>1.0</td><td>11/04/2025</td><td>Versione iniziale</td><td><a href="privacy-v1.html?lang=it">Vedi</a></td></tr>
+                <tr><td>2.0</td><td>02/04/2026</td><td>Checklist GDPR completo: categorie dati, basi giuridiche, sub-responsabili, trasferimenti internazionali</td><td>Attuale</td></tr>
+            </table>
 
-            <h3>2. DATI TRATTATI</h3>
+            <h3>1. TITOLARE DEL TRATTAMENTO</h3>
+            <p><strong>Denominazione:</strong> Imprenditore Individuale Kravchenko Igor Oleksandrovych<br>
+            <strong>Email:</strong> <a href="mailto:admin@im-in.net" style="color:#7C3AED">admin@im-in.net</a> | <strong>Sito:</strong> <a href="https://www.im-in.net" style="color:#7C3AED">www.im-in.net</a></p>
+
+            <h3>2. DATI RACCOLTI</h3>
             <ul>
-                <li>Dati di registrazione: nome, data di nascita, email, password, foto profilo, telefono (opzionale)</li>
-                <li>Dati del dispositivo: indirizzo IP, tipo di dispositivo, sistema operativo, cookie</li>
-                <li>Geolocalizzazione: con permesso dell'Utente</li>
-                <li>Contenuti: foto, video, testi, messaggi vocali</li>
-            </ul>
-            <p><strong>Nota:</strong> L'App non è destinata a minori di 16 anni (18 per l'UE).</p>
-
-            <h3>3–6. FINALITÀ, COOKIE, CONSERVAZIONE, TRASFERIMENTI</h3>
-            <p>Trattamento per esecuzione del contratto, interesse legittimo e consenso. Cookie per personalizzazione. Dati conservati il tempo necessario. Nessun trasferimento senza consenso salvo obbligo di legge.</p>
-
-            <h3>7. DIRITTI DELL'UTENTE</h3>
-            <ul>
-                <li>Diritto di accesso, rettifica, cancellazione</li>
-                <li>Diritto di revocare il consenso</li>
-                <li>Diritto di opposizione e portabilità</li>
-                <li>Diritto di reclamo presso un'autorità di controllo</li>
+                <li><strong>Account:</strong> email, nome, cognome, telefono (opzionale), data di nascita, foto/avatar, biografia</li>
+                <li><strong>Tecnici:</strong> indirizzo IP, modello dispositivo, OS, push-token, sessioni (token, IP)</li>
+                <li><strong>Geolocalizzazione:</strong> coordinate (con consenso esplicito), ultima posizione nota</li>
+                <li><strong>Contenuto:</strong> eventi (nome, descrizione, coordinate, date), foto, video, audio, messaggi/chat</li>
+                <li><strong>Servizio:</strong> registro del consenso (consent log)</li>
             </ul>
 
-            <h3>8–10. SICUREZZA, MARKETING, MODIFICHE</h3>
-            <p>Misure di sicurezza tecniche e organizzative. Marketing solo con consenso. Informativa aggiornabile.</p>
+            <h3>3. BASE GIURIDICA (GDPR Art. 6)</h3>
+            <table class="sub-table">
+                <tr><th>Base giuridica</th><th>Articolo</th><th>Applicazione</th></tr>
+                <tr><td>Consenso</td><td>Art. 6(1)(a)</td><td>Geolocalizzazione, notifiche push, moderazione foto</td></tr>
+                <tr><td>Esecuzione del contratto</td><td>Art. 6(1)(b)</td><td>Creazione account, chat, eventi</td></tr>
+                <tr><td>Interesse legittimo</td><td>Art. 6(1)(f)</td><td>Sicurezza, prevenzione frodi, analisi</td></tr>
+            </table>
+
+            <h3>4. FINALITÀ DEL TRATTAMENTO</h3>
+            <p>Registrazione/autenticazione, creazione/visualizzazione eventi, messaggistica/chat, ricerca amici, visualizzazione mappa, notifiche push, moderazione contenuti (SightEngine).</p>
+
+            <h3>5. SUB-RESPONSABILI</h3>
+            <table class="sub-table">
+                <tr><th>Sub-responsabile</th><th>Funzione</th><th>Sede</th><th>Base di trasferimento</th></tr>
+                <tr><td>OVH SAS</td><td>Hosting server/DB</td><td>Francia/Germania</td><td>UE</td></tr>
+                <tr><td>Backblaze Inc.</td><td>Storage media</td><td>USA</td><td>DPF</td></tr>
+                <tr><td>Expo / 650 Industries</td><td>Notifiche push</td><td>USA</td><td>DPF</td></tr>
+                <tr><td>SightEngine</td><td>Moderazione foto auto</td><td>Francia/UE</td><td>UE</td></tr>
+                <tr><td>Apple Inc.</td><td>APNs</td><td>USA</td><td>SCC</td></tr>
+                <tr><td>Google LLC</td><td>FCM</td><td>USA</td><td>SCC</td></tr>
+            </table>
+
+            <h3>6–7. TRASFERIMENTI INTERNAZIONALI E CONSERVAZIONE</h3>
+            <p>Backblaze ed Expo (USA): DPF. Apple e Google (USA): SCC. Dati attivi: finché l'account esiste. Account eliminato: anonimizzazione entro 30 giorni. Consent log: indefinito (Art. 7(1)). Sessioni: disattivate al logout.</p>
+
+            <h3>8. DIRITTI DELL'UTENTE (Art. 15–22)</h3>
+            <ul>
+                <li>Accesso (Art. 15), Rettifica (Art. 16), Cancellazione (Art. 17)</li>
+                <li>Portabilità (Art. 20) — esportazione JSON</li>
+                <li>Opposizione (Art. 21), Limitazione del trattamento (Art. 18)</li>
+                <li>Reclamo presso un'autorità di controllo</li>
+            </ul>
+            <p>Contatto: <a href="mailto:admin@im-in.net" style="color:#7C3AED">admin@im-in.net</a>. Risposta entro 30 giorni.</p>
+
+            <h3>9. COOKIE E DECISIONI AUTOMATIZZATE</h3>
+            <p>L'app <strong>non utilizza</strong> cookie. Moderazione automatica foto tramite SightEngine (Art. 22 GDPR). Decisioni contestabili.</p>
+
+            <h3>10. RESTRIZIONE D'ETÀ</h3>
+            <p>Servizio riservato a persone di <strong>18 anni e oltre</strong>. Verifica della data di nascita alla registrazione.</p>
+
+            <h3>11. MODIFICHE</h3>
+            <p>Notifica nell'app. Nuovo consenso richiesto per modifiche significative. Versioni precedenti archiviate.</p>
 
             <div class="contact-info">
-                <p><strong>11. CONTATTI</strong></p>
-                <p>Email: admin@im-in.net</p>
-                <p>Ultimo aggiornamento: 11/04/2025</p>
+                <p><strong>13. CONTATTI</strong></p>
+                <p>Email: <a href="mailto:admin@im-in.net" style="color:#7C3AED">admin@im-in.net</a></p>
+                <p>Indirizzo: Kyiv, Ucraina | Sito: <a href="https://www.im-in.net" style="color:#7C3AED">www.im-in.net</a></p>
+                <p style="margin-top:0.8rem;font-size:0.85rem;color:#666;">Ultimo aggiornamento: 02/04/2026 | Versione 2.0</p>
             </div>
         </div>
 
-        <!-- Greek -->
+        <!-- ==================== GREEK ==================== -->
         <div class="doc-content" id="doc-el">
-            <h2>ΠΟΛΙΤΙΚΗ ΑΠΟΡΡΗΤΟΥ ΚΑΙ ΕΠΕΞΕΡΓΑΣΙΑΣ ΔΕΔΟΜΕΝΩΝ</h2>
+            <h2>ΠΟΛΙΤΙΚΗ ΑΠΟΡΡΗΤΟΥ ΚΑΙ ΕΠΕΞΕΡΓΑΣΙΑΣ ΠΡΟΣΩΠΙΚΩΝ ΔΕΔΟΜΕΝΩΝ</h2>
+            <p>Έκδοση 2.0 | Ημερομηνία ισχύος: 2 Απριλίου 2026</p>
 
-            <h3>1. ΓΕΝΙΚΕΣ ΔΙΑΤΑΞΕΙΣ</h3>
-            <p>Υπεύθυνος επεξεργασίας: Ατομικός Επιχειρηματίας Kravchenko Igor Oleksandrovych. Συλλέγουμε και επεξεργαζόμαστε Δεδομένα σύμφωνα με τον GDPR και τους ουκρανικούς νόμους προστασίας δεδομένων.</p>
+            <h3>Ιστορικό εκδόσεων</h3>
+            <table class="version-table">
+                <tr><th>Έκδοση</th><th>Ημερομηνία</th><th>Αλλαγές</th><th>Έγγραφο</th></tr>
+                <tr><td>1.0</td><td>11/04/2025</td><td>Αρχική έκδοση</td><td><a href="privacy-v1.html?lang=el">Προβολή</a></td></tr>
+                <tr><td>2.0</td><td>02/04/2026</td><td>Πλήρες GDPR checklist: κατηγορίες δεδομένων, νομικές βάσεις, υπο-εκτελούντες, διεθνείς μεταφορές</td><td>Τρέχον</td></tr>
+            </table>
 
-            <h3>2. ΔΕΔΟΜΕΝΑ ΠΟΥ ΕΠΕΞΕΡΓΑΖΟΜΑΣΤΕ</h3>
+            <h3>1. ΥΠΕΥΘΥΝΟΣ ΕΠΕΞΕΡΓΑΣΙΑΣ</h3>
+            <p><strong>Επωνυμία:</strong> Ατομικός Επιχειρηματίας Kravchenko Igor Oleksandrovych<br>
+            <strong>Email:</strong> <a href="mailto:admin@im-in.net" style="color:#7C3AED">admin@im-in.net</a> | <strong>Ιστοσελίδα:</strong> <a href="https://www.im-in.net" style="color:#7C3AED">www.im-in.net</a></p>
+
+            <h3>2. ΔΕΔΟΜΕΝΑ ΠΟΥ ΣΥΛΛΕΓΟΥΜΕ</h3>
             <ul>
-                <li>Δεδομένα εγγραφής: όνομα, ημερομηνία γέννησης, email, κωδικός, φωτογραφία προφίλ, τηλέφωνο (προαιρετικά)</li>
-                <li>Δεδομένα συσκευής: διεύθυνση IP, τύπος συσκευής, λειτουργικό σύστημα, cookies</li>
-                <li>Γεωτοποθεσία: με άδεια του Χρήστη</li>
-                <li>Περιεχόμενο: φωτογραφίες, βίντεο, κείμενα, φωνητικά μηνύματα</li>
-            </ul>
-            <p><strong>Σημείωση:</strong> Η Εφαρμογή δεν προορίζεται για παιδιά κάτω των 16 ετών (18 για την ΕΕ).</p>
-
-            <h3>3–6. ΣΚΟΠΟΙ, COOKIES, ΔΙΑΤΗΡΗΣΗ, ΜΕΤΑΦΟΡΕΣ</h3>
-            <p>Επεξεργασία για εκτέλεση σύμβασης, νόμιμο συμφέρον και συγκατάθεση. Cookies για εξατομίκευση. Δεδομένα που διατηρούνται όσο χρειάζεται. Χωρίς μεταφορά χωρίς συγκατάθεση εκτός αν απαιτείται από τον νόμο.</p>
-
-            <h3>7. ΔΙΚΑΙΩΜΑΤΑ ΧΡΗΣΤΗ</h3>
-            <ul>
-                <li>Δικαίωμα πρόσβασης, διόρθωσης, διαγραφής</li>
-                <li>Δικαίωμα ανάκλησης συγκατάθεσης</li>
-                <li>Δικαίωμα αντίρρησης και φορητότητας</li>
-                <li>Δικαίωμα υποβολής καταγγελίας σε εποπτική αρχή</li>
+                <li><strong>Λογαριασμός:</strong> email, όνομα, επώνυμο, τηλέφωνο (προαιρετικό), ημερομηνία γέννησης, φωτογραφία/avatar, βιογραφικό</li>
+                <li><strong>Τεχνικά:</strong> IP, μοντέλο συσκευής, OS, push-token, συνεδρίες (tokens, IP)</li>
+                <li><strong>Γεωτοποθεσία:</strong> συντεταγμένες (με ρητή συγκατάθεση), τελευταία γνωστή θέση</li>
+                <li><strong>Περιεχόμενο:</strong> εκδηλώσεις (τίτλος, περιγραφή, συντεταγμένες, ημερομηνίες), φωτογραφίες, βίντεο, ήχος, μηνύματα/chats</li>
+                <li><strong>Υπηρεσία:</strong> αρχείο συγκατάθεσης (consent log)</li>
             </ul>
 
-            <h3>8–10. ΑΣΦΑΛΕΙΑ, ΜΑΡΚΕΤΙΝΓΚ, ΑΛΛΑΓΕΣ</h3>
-            <p>Τεχνικά και οργανωτικά μέτρα ασφαλείας. Μάρκετινγκ μόνο με συγκατάθεση. Η πολιτική μπορεί να ενημερωθεί.</p>
+            <h3>3. ΝΟΜΙΚΗ ΒΑΣΗ (GDPR Αρ. 6)</h3>
+            <table class="sub-table">
+                <tr><th>Νομική βάση</th><th>Άρθρο</th><th>Εφαρμογή</th></tr>
+                <tr><td>Συγκατάθεση</td><td>Αρ. 6(1)(a)</td><td>Γεωτοποθεσία, push ειδοποιήσεις, εποπτεία φωτογραφιών</td></tr>
+                <tr><td>Εκτέλεση σύμβασης</td><td>Αρ. 6(1)(b)</td><td>Δημιουργία λογαριασμού, chats, εκδηλώσεις</td></tr>
+                <tr><td>Νόμιμο συμφέρον</td><td>Αρ. 6(1)(f)</td><td>Ασφάλεια, πρόληψη απάτης, ανάλυση</td></tr>
+            </table>
+
+            <h3>4. ΣΚΟΠΟΙ ΕΠΕΞΕΡΓΑΣΙΑΣ</h3>
+            <p>Εγγραφή/ταυτοποίηση, δημιουργία/προβολή εκδηλώσεων, μηνύματα/chats, εύρεση φίλων, χάρτης, push ειδοποιήσεις, εποπτεία περιεχομένου (SightEngine).</p>
+
+            <h3>5. ΥΠΟ-ΕΚΤΕΛΟΥΝΤΕΣ</h3>
+            <table class="sub-table">
+                <tr><th>Υπο-εκτελών</th><th>Λειτουργία</th><th>Τοποθεσία</th><th>Βάση μεταφοράς</th></tr>
+                <tr><td>OVH SAS</td><td>Φιλοξενία server/DB</td><td>Γαλλία/Γερμανία</td><td>ΕΕ</td></tr>
+                <tr><td>Backblaze Inc.</td><td>Αποθήκευση αρχείων</td><td>ΗΠΑ</td><td>DPF</td></tr>
+                <tr><td>Expo / 650 Industries</td><td>Push ειδοποιήσεις</td><td>ΗΠΑ</td><td>DPF</td></tr>
+                <tr><td>SightEngine</td><td>Αυτόματη εποπτεία φωτ.</td><td>Γαλλία/ΕΕ</td><td>ΕΕ</td></tr>
+                <tr><td>Apple Inc.</td><td>APNs</td><td>ΗΠΑ</td><td>SCC</td></tr>
+                <tr><td>Google LLC</td><td>FCM</td><td>ΗΠΑ</td><td>SCC</td></tr>
+            </table>
+
+            <h3>6–7. ΔΙΕΘΝΕΙΣ ΜΕΤΑΦΟΡΕΣ ΚΑΙ ΔΙΑΤΗΡΗΣΗ</h3>
+            <p>Backblaze και Expo (ΗΠΑ): DPF. Apple και Google (ΗΠΑ): SCC. Ενεργά δεδομένα: όσο υπάρχει ο λογαριασμός. Διαγραμμένος λογαριασμός: ανωνυμοποίηση εντός 30 ημερών. Consent log: αόριστα (Αρ. 7(1)). Συνεδρίες: απενεργοποιούνται κατά την αποσύνδεση.</p>
+
+            <h3>8. ΔΙΚΑΙΩΜΑΤΑ ΧΡΗΣΤΗ (Αρ. 15–22)</h3>
+            <ul>
+                <li>Πρόσβαση (Αρ. 15), Διόρθωση (Αρ. 16), Διαγραφή (Αρ. 17)</li>
+                <li>Φορητότητα (Αρ. 20) — εξαγωγή JSON</li>
+                <li>Αντίρρηση (Αρ. 21), Περιορισμός επεξεργασίας (Αρ. 18)</li>
+                <li>Καταγγελία σε εποπτική αρχή</li>
+            </ul>
+            <p>Επικοινωνία: <a href="mailto:admin@im-in.net" style="color:#7C3AED">admin@im-in.net</a>. Απάντηση εντός 30 ημερών.</p>
+
+            <h3>9. COOKIES ΚΑΙ ΑΥΤΟΜΑΤΟΠΟΙΗΜΕΝΕΣ ΑΠΟΦΑΣΕΙΣ</h3>
+            <p>Η εφαρμογή <strong>δεν χρησιμοποιεί</strong> cookies. Αυτόματη εποπτεία φωτογραφιών μέσω SightEngine (Αρ. 22 GDPR). Δυνατότητα αμφισβήτησης αποφάσεων.</p>
+
+            <h3>10. ΗΛΙΚΙΑΚΟΣ ΠΕΡΙΟΡΙΣΜΟΣ</h3>
+            <p>Η υπηρεσία είναι διαθέσιμη μόνο σε άτομα <strong>18 ετών και άνω</strong>. Επαλήθευση ημερομηνίας γέννησης κατά την εγγραφή.</p>
+
+            <h3>11. ΑΛΛΑΓΕΣ</h3>
+            <p>Ειδοποίηση μέσω εφαρμογής. Νέα συγκατάθεση για σημαντικές αλλαγές. Προηγούμενες εκδόσεις αρχειοθετούνται.</p>
 
             <div class="contact-info">
-                <p><strong>11. ΕΠΙΚΟΙΝΩΝΙΑ</strong></p>
-                <p>Email: admin@im-in.net</p>
-                <p>Τελευταία ενημέρωση: 11/04/2025</p>
+                <p><strong>13. ΕΠΙΚΟΙΝΩΝΙΑ</strong></p>
+                <p>Email: <a href="mailto:admin@im-in.net" style="color:#7C3AED">admin@im-in.net</a></p>
+                <p>Διεύθυνση: Κίεβο, Ουκρανία | Ιστοσελίδα: <a href="https://www.im-in.net" style="color:#7C3AED">www.im-in.net</a></p>
+                <p style="margin-top:0.8rem;font-size:0.85rem;color:#666;">Τελευταία ενημέρωση: 02/04/2026 | Έκδοση 2.0</p>
             </div>
         </div>
+
     </div>
 
     <div class="doc-footer">

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I'M IN — Угода користування / Terms of Use</title>
-    <meta name="description" content="Угода користування мобільним додатком I'M IN. Умови надання послуг, права та обов'язки користувачів.">
+    <meta name="description" content="Угода користування мобільним додатком I'M IN v2.0. Умови надання послуг, права та обов'язки користувачів.">
     <link rel="canonical" href="https://www.im-in.net/terms.html">
     <meta name="robots" content="index, follow">
     <meta property="og:type" content="article">
@@ -18,7 +18,7 @@
         "@type": "WebPage",
         "name": "Угода користування I'M IN",
         "url": "https://www.im-in.net/terms.html",
-        "description": "Угода користування мобільним додатком I'M IN",
+        "description": "Угода користування мобільним додатком I'M IN v2.0",
         "breadcrumb": {
             "@type": "BreadcrumbList",
             "itemListElement": [
@@ -40,6 +40,10 @@
         .lang-switcher { display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem; }
         .lang-switcher button { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: white; padding: 0.3rem 0.8rem; border-radius: 20px; cursor: pointer; font-size: 0.8rem; transition: all 0.2s; }
         .lang-switcher button:hover, .lang-switcher button.active { background: white; color: #7C3AED; }
+        .version-bar { max-width: 800px; margin: 1rem auto 0; padding: 0.75rem 1.5rem; background: #f3f0ff; border: 1px solid #DDD6FE; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: #5F5E63; flex-wrap: wrap; gap: 0.5rem; }
+        .version-bar strong { color: #7C3AED; }
+        .version-bar a { color: #7C3AED; text-decoration: none; font-weight: 500; }
+        .version-bar a:hover { text-decoration: underline; }
         .doc-container { max-width: 800px; margin: 2rem auto; padding: 2rem; background: white; border-radius: 16px; box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
         .doc-content { display: none; }
         .doc-content.active { display: block; }
@@ -51,9 +55,15 @@
         li { margin-bottom: 0.4rem; font-size: 0.95rem; color: #333; }
         .contact-info { background: #f3f0ff; padding: 1rem 1.5rem; border-radius: 10px; margin-top: 1.5rem; }
         .doc-footer { text-align: center; padding: 2rem; color: #999; font-size: 0.8rem; }
+        .version-table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: 0.9rem; }
+        .version-table th { background: #f3f0ff; color: #7C3AED; font-weight: 600; text-align: left; padding: 0.6rem 0.8rem; border-bottom: 2px solid #DDD6FE; }
+        .version-table td { padding: 0.5rem 0.8rem; border-bottom: 1px solid #f0f0f0; color: #333; }
+        .version-table a { color: #7C3AED; text-decoration: none; font-weight: 500; }
+        .version-table a:hover { text-decoration: underline; }
         @media (max-width: 600px) {
             .doc-container { margin: 1rem; padding: 1.5rem; }
             h2 { font-size: 1.1rem; }
+            .version-bar { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
@@ -72,14 +82,28 @@
         </div>
     </div>
 
+    <div class="version-bar">
+        <span><strong>Версія 2.0</strong> — чинна з 2 квітня 2026 р.</span>
+        <a href="terms-v1.html">Архів попередніх версій</a>
+    </div>
+
     <div class="doc-container">
         <!-- Ukrainian -->
         <div class="doc-content active" id="doc-uk">
             <h2>УГОДА КОРИСТУВАННЯ БЕЗКОШТОВНИМ ДОДАТКОМ</h2>
+            <p>Версія 2.0 | Дата набуття чинності: 2 квітня 2026 р.</p>
+
+            <h3>Історія версій</h3>
+            <table class="version-table">
+                <tr><th>Версія</th><th>Дата</th><th>Опис змін</th><th>Документ</th></tr>
+                <tr><td>1.0</td><td>11.04.2025</td><td>Початкова версія</td><td><a href="terms-v1.html?lang=uk">Переглянути</a></td></tr>
+                <tr><td>2.0</td><td>02.04.2026</td><td>Додано версійність, оновлено вікові обмеження (18+), уточнено обробку даних</td><td>Поточна</td></tr>
+            </table>
+
             <p>Ця Угода регулює відносини між ФОП Кравченко Ігор Олександрович ЄДРПОУ 2781501574 (далі – «Розробник» або «Ми») як власником мобільного додатку (далі – «Додаток») та фізичною особою (далі – «Користувач» або «Ви»), яка користується Додатком.</p>
 
             <h3>1. ТЕРМІНИ ТА ВИЗНАЧЕННЯ</h3>
-            <p>1.1. Додаток – мобільний додаток для операційної системи iOS, що надає можливість зберігати геодані (координати) з прив'язкою до фото, відео, аудіо та текстових коментарів (далі – «івенти»).</p>
+            <p>1.1. Додаток – мобільний додаток «I'M IN» для операційної системи iOS, що надає можливість зберігати геодані (координати) з прив'язкою до фото, відео, аудіо та текстових коментарів (далі – «івенти»).</p>
             <p>1.2. Івент – запис у Додатку, що містить фото, відео, аудіо та/або текстові коментарі, прив'язані до певної геолокації.</p>
             <p>1.3. Розробник – ФОП Кравченко Ігор Олександрович, який є власником та адміністратором Додатку.</p>
             <p>1.4. Контент – будь-які матеріали, розміщені Користувачем у Додатку.</p>
@@ -90,7 +114,7 @@
             <p>2.1. Ця Угода є юридично обов'язковим документом і регулює використання Додатку.</p>
             <p>2.2. Починаючи користуватися Додатком, Користувач автоматично приймає умови цієї Угоди.</p>
             <p>2.3. Додаток є безкоштовним для користування.</p>
-            <p>2.4. Розробник залишає за собою право періодично оновлювати й змінювати умови цієї Угоди.</p>
+            <p>2.4. Розробник залишає за собою право періодично оновлювати й змінювати умови цієї Угоди. У разі суттєвих змін Користувач буде повідомлений через Додаток і повинен буде надати повторну згоду.</p>
 
             <h3>3. СТАТУС КОРИСТУВАЧА</h3>
             <p>3.1. Незареєстрований Користувач може переглядати івенти, доступні у відкритому режимі.</p>
@@ -98,14 +122,15 @@
             <ul>
                 <li>створювати власні івенти;</li>
                 <li>коментувати, лайкати івенти;</li>
+                <li>обмінюватися повідомленнями з іншими користувачами;</li>
                 <li>керувати персональними налаштуваннями;</li>
                 <li>видаляти свій Обліковий запис у будь-який момент.</li>
             </ul>
 
             <h3>4. ВІКОВІ ОБМЕЖЕННЯ</h3>
-            <p>4.1. Користувачі з країн Європейського Союзу мають бути не молодші 18 років.</p>
-            <p>4.2. Для всіх інших країн мінімальний вік реєстрації становить 16 років.</p>
-            <p>4.3. Розробник залишає за собою право вимагати підтвердження віку.</p>
+            <p>4.1. Сервіс доступний виключно для осіб віком від <strong>18 років</strong>.</p>
+            <p>4.2. При реєстрації обов'язково вказується дата народження для верифікації віку.</p>
+            <p>4.3. Розробник залишає за собою право заблокувати або видалити обліковий запис, якщо буде встановлено, що Користувач не відповідає віковим вимогам.</p>
 
             <h3>5. РЕЄСТРАЦІЯ ТА ОБЛІКОВИЙ ЗАПИС</h3>
             <p>5.1. Для створення Облікового запису Користувач зобов'язаний надати дійсну адресу електронної пошти, ввести код підтвердження, вказати ім'я та дату народження.</p>
@@ -116,6 +141,7 @@
             <p>6.1. Користувач погоджується не використовувати Додаток для надсилання спаму, просування насильства, публікації незаконного контенту та розповсюдження шкідливого ПЗ.</p>
             <p>6.2. Контент належить Користувачеві, який його створив, але не має порушувати умови цієї Угоди.</p>
             <p>6.3. Розробник залишає за собою право блокувати або видаляти Облікові записи, що порушують Угоду.</p>
+            <p>6.4. Завантажені фотографії проходять автоматичну модерацію (SightEngine). Фото з забороненим контентом не публікуються.</p>
 
             <h3>7–9. ВИКОРИСТАННЯ, ПРАВА ТА ОБОВ'ЯЗКИ</h3>
             <p>Користувач може створювати, редагувати та видаляти власні івенти. Розробник забезпечує доступність Додатку та дотримується норм захисту персональних даних (GDPR, Закон України «Про захист персональних даних»).</p>
@@ -124,44 +150,66 @@
             <p>Усі права на програмний код, дизайн, логотип та інші елементи Додатку належать Розробнику. Контент Користувача належить Користувачеві.</p>
 
             <h3>11. ПРИПИНЕННЯ ДОСТУПУ</h3>
-            <p>Користувач може видалити свій Обліковий запис через налаштування. Після видалення всі дані видаляються або анонімізуються.</p>
+            <p>Користувач може видалити свій Обліковий запис через налаштування. Після видалення всі дані анонімізуються протягом 30 днів.</p>
 
-            <h3>12–14. ВІДПОВІДАЛЬНІСТЬ, ПРАВО, ПРИЙНЯТТЯ УМОВ</h3>
+            <h3>12. ОБРОБКА ПЕРСОНАЛЬНИХ ДАНИХ</h3>
+            <p>Детальна інформація про збір, обробку та захист персональних даних міститься у <a href="privacy.html" style="color:#7C3AED">Політиці конфіденційності</a>.</p>
+
+            <h3>13–14. ВІДПОВІДАЛЬНІСТЬ ТА ЗАСТОСОВНЕ ПРАВО</h3>
             <p>Угода регулюється законодавством України. Використовуючи Додаток, Ви приймаєте всі умови цієї Угоди.</p>
 
             <div class="contact-info">
                 <p><strong>15. КОНТАКТНА ІНФОРМАЦІЯ</strong></p>
                 <p>ФОП КРАВЧЕНКО ІГОР ОЛЕКСАНДРОВИЧ</p>
-                <p>E-mail: igor@im-in.net</p>
+                <p>E-mail: <a href="mailto:igor@im-in.net" style="color:#7C3AED">igor@im-in.net</a></p>
+                <p>Вебсайт: <a href="https://www.im-in.net" style="color:#7C3AED">www.im-in.net</a></p>
+                <p style="margin-top:0.8rem;font-size:0.85rem;color:#666;">Останнє оновлення: 02.04.2026 | Версія 2.0</p>
             </div>
         </div>
 
         <!-- English -->
         <div class="doc-content" id="doc-en">
             <h2>FREE MOBILE APPLICATION TERMS OF USE</h2>
-            <p>This Agreement governs the relationship between Individual Entrepreneur Kravchenko Igor Oleksandrovych (hereinafter "Developer" or "We") as the owner of the mobile application (hereinafter "App") and the individual (hereinafter "User" or "You") who uses the App.</p>
+            <p>Version 2.0 | Effective date: April 2, 2026</p>
+
+            <h3>Version History</h3>
+            <table class="version-table">
+                <tr><th>Version</th><th>Date</th><th>Description of Changes</th><th>Document</th></tr>
+                <tr><td>1.0</td><td>Apr 11, 2025</td><td>Initial version</td><td><a href="terms-v1.html?lang=en">View</a></td></tr>
+                <tr><td>2.0</td><td>Apr 2, 2026</td><td>Added versioning, updated age restrictions (18+), clarified data processing</td><td>Current</td></tr>
+            </table>
+
+            <p>This Agreement governs the relationship between Individual Entrepreneur Kravchenko Igor Oleksandrovych, Tax ID 2781501574 (hereinafter "Developer" or "We") as the owner of the mobile application (hereinafter "App") and the individual (hereinafter "User" or "You") who uses the App.</p>
 
             <h3>1. DEFINITIONS</h3>
-            <p>1.1. App – a mobile application for iOS that allows storing geodata (coordinates) linked to photos, videos, audio, and text comments (hereinafter "events").</p>
+            <p>1.1. App – the mobile application "I'M IN" for iOS that allows storing geodata (coordinates) linked to photos, videos, audio, and text comments (hereinafter "events").</p>
             <p>1.2. Event – a record in the App containing photos, videos, audio and/or text comments linked to a specific geolocation.</p>
-            <p>1.3. Content – any materials posted by the User in the App.</p>
-            <p>1.4. Privacy Settings – User-defined access conditions for their Content.</p>
-            <p>1.5. Account – a unique profile of a registered User.</p>
+            <p>1.3. Developer – Individual Entrepreneur Kravchenko Igor Oleksandrovych, owner and administrator of the App.</p>
+            <p>1.4. Content – any materials posted by the User in the App.</p>
+            <p>1.5. Privacy Settings – User-defined access conditions for their Content.</p>
+            <p>1.6. Account – a unique profile of a registered User.</p>
 
             <h3>2. GENERAL PROVISIONS</h3>
             <p>2.1. This Agreement is a legally binding document governing the use of the App.</p>
             <p>2.2. By using the App, the User automatically accepts the terms of this Agreement.</p>
             <p>2.3. The App is free to use.</p>
-            <p>2.4. The Developer reserves the right to periodically update and modify the terms of this Agreement.</p>
+            <p>2.4. The Developer reserves the right to periodically update and modify the terms of this Agreement. In case of significant changes, the User will be notified via the App and must provide re-consent.</p>
 
             <h3>3. USER STATUS</h3>
             <p>3.1. Unregistered Users can view publicly available events.</p>
-            <p>3.2. Registered Users have additional capabilities: creating events, commenting, liking, managing settings, and deleting their Account at any time.</p>
+            <p>3.2. Registered Users have additional capabilities:</p>
+            <ul>
+                <li>create their own events;</li>
+                <li>comment on and like events;</li>
+                <li>exchange messages with other users;</li>
+                <li>manage personal settings;</li>
+                <li>delete their Account at any time.</li>
+            </ul>
 
             <h3>4. AGE RESTRICTIONS</h3>
-            <p>4.1. Users from EU countries must be at least 18 years old to register.</p>
-            <p>4.2. For all other countries, the minimum registration age is 16 years.</p>
-            <p>4.3. The Developer reserves the right to require age verification.</p>
+            <p>4.1. The Service is available exclusively to individuals aged <strong>18 years and older</strong>.</p>
+            <p>4.2. Date of birth is required during registration for age verification.</p>
+            <p>4.3. The Developer reserves the right to block or delete an Account if the User is found to not meet age requirements.</p>
 
             <h3>5. REGISTRATION AND ACCOUNT</h3>
             <p>5.1. To create an Account, the User must provide a valid email address, enter a verification code, and specify their name and date of birth.</p>
@@ -172,6 +220,7 @@
             <p>6.1. The User agrees not to use the App for spam, promoting violence, publishing illegal content, or distributing malicious software.</p>
             <p>6.2. Content belongs to the User who created it but must not violate this Agreement.</p>
             <p>6.3. The Developer reserves the right to block or delete Accounts that violate the Agreement.</p>
+            <p>6.4. Uploaded photos undergo automated moderation (SightEngine). Photos with prohibited content are not published.</p>
 
             <h3>7–9. USAGE, RIGHTS AND OBLIGATIONS</h3>
             <p>Users can create, edit, and delete their own events. The Developer ensures App availability and complies with data protection regulations (GDPR, Ukrainian Data Protection Law).</p>
@@ -180,150 +229,205 @@
             <p>All rights to the source code, design, logo, and other App elements belong to the Developer. User Content belongs to the User.</p>
 
             <h3>11. ACCESS TERMINATION</h3>
-            <p>Users can delete their Account through settings. After deletion, all data is deleted or anonymized.</p>
+            <p>Users can delete their Account through settings. After deletion, all data is anonymized within 30 days.</p>
 
-            <h3>12–14. LIABILITY, APPLICABLE LAW, ACCEPTANCE</h3>
+            <h3>12. PERSONAL DATA PROCESSING</h3>
+            <p>Detailed information about the collection, processing, and protection of personal data is available in the <a href="privacy.html" style="color:#7C3AED">Privacy Policy</a>.</p>
+
+            <h3>13–14. LIABILITY AND APPLICABLE LAW</h3>
             <p>This Agreement is governed by the laws of Ukraine. By using the App, You accept all terms of this Agreement.</p>
 
             <div class="contact-info">
                 <p><strong>15. CONTACT INFORMATION</strong></p>
                 <p>Individual Entrepreneur KRAVCHENKO IGOR OLEKSANDROVYCH</p>
-                <p>Email: igor@im-in.net</p>
+                <p>Email: <a href="mailto:igor@im-in.net" style="color:#7C3AED">igor@im-in.net</a></p>
+                <p>Website: <a href="https://www.im-in.net" style="color:#7C3AED">www.im-in.net</a></p>
+                <p style="margin-top:0.8rem;font-size:0.85rem;color:#666;">Last updated: 02.04.2026 | Version 2.0</p>
             </div>
         </div>
 
         <!-- French -->
         <div class="doc-content" id="doc-fr">
             <h2>CONDITIONS D'UTILISATION DE L'APPLICATION MOBILE GRATUITE</h2>
-            <p>Le présent Accord régit les relations entre l'Entrepreneur Individuel Kravchenko Igor Oleksandrovych (ci-après « Développeur » ou « Nous ») en tant que propriétaire de l'application mobile (ci-après « Application ») et la personne physique (ci-après « Utilisateur » ou « Vous ») qui utilise l'Application.</p>
+            <p>Version 2.0 | Date d'effet : 2 avril 2026</p>
+
+            <h3>Historique des versions</h3>
+            <table class="version-table">
+                <tr><th>Version</th><th>Date</th><th>Modifications</th><th>Document</th></tr>
+                <tr><td>1.0</td><td>11/04/2025</td><td>Version initiale</td><td><a href="terms-v1.html?lang=fr">Voir</a></td></tr>
+                <tr><td>2.0</td><td>02/04/2026</td><td>Ajout du versionnage, mise à jour des restrictions d'âge (18+)</td><td>Actuel</td></tr>
+            </table>
+
+            <p>Le présent Accord régit les relations entre l'Entrepreneur Individuel Kravchenko Igor Oleksandrovych (ci-après « Développeur » ou « Nous ») en tant que propriétaire de l'application mobile « I'M IN » (ci-après « Application ») et la personne physique (ci-après « Utilisateur » ou « Vous ») qui utilise l'Application.</p>
 
             <h3>1. DÉFINITIONS</h3>
             <p>Application – application mobile pour iOS permettant de stocker des géodonnées liées à des photos, vidéos, audios et commentaires textuels (« événements »). Contenu – tout matériel publié par l'Utilisateur. Compte – profil unique d'un Utilisateur enregistré.</p>
 
             <h3>2. DISPOSITIONS GÉNÉRALES</h3>
-            <p>L'Application est gratuite. En utilisant l'Application, l'Utilisateur accepte automatiquement les conditions. Le Développeur se réserve le droit de modifier les conditions.</p>
+            <p>L'Application est gratuite. En utilisant l'Application, l'Utilisateur accepte automatiquement les conditions. Le Développeur se réserve le droit de modifier les conditions avec notification et re-consentement.</p>
 
             <h3>3–4. STATUT ET ÂGE</h3>
-            <p>Utilisateurs UE : minimum 18 ans. Autres pays : minimum 16 ans. Les utilisateurs enregistrés peuvent créer des événements, commenter et gérer leur profil.</p>
+            <p>Service réservé aux personnes de <strong>18 ans et plus</strong>. Vérification de la date de naissance à l'inscription. Les utilisateurs enregistrés peuvent créer des événements, commenter, échanger des messages et gérer leur profil.</p>
 
             <h3>5–6. INSCRIPTION ET CONTENU INTERDIT</h3>
-            <p>L'inscription nécessite un email valide, un code de vérification, un nom et une date de naissance. Le spam, la violence, le contenu illégal et les logiciels malveillants sont interdits.</p>
+            <p>L'inscription nécessite un email valide, un code de vérification, un nom et une date de naissance. Le spam, la violence, le contenu illégal et les logiciels malveillants sont interdits. Les photos sont soumises à une modération automatique (SightEngine).</p>
 
-            <h3>7–14. DROITS, PROPRIÉTÉ INTELLECTUELLE, RESPONSABILITÉ</h3>
-            <p>Le Développeur respecte le RGPD et les lois ukrainiennes sur la protection des données. L'Utilisateur peut supprimer son Compte à tout moment. Cet Accord est régi par les lois de l'Ukraine.</p>
+            <h3>7–14. DROITS, PROPRIÉTÉ INTELLECTUELLE, DONNÉES, RESPONSABILITÉ</h3>
+            <p>Le Développeur respecte le RGPD et les lois ukrainiennes sur la protection des données. L'Utilisateur peut supprimer son Compte à tout moment (anonymisation sous 30 jours). Voir la <a href="privacy.html?lang=fr" style="color:#7C3AED">Politique de confidentialité</a>. Accord régi par les lois de l'Ukraine.</p>
 
             <div class="contact-info">
                 <p><strong>15. COORDONNÉES</strong></p>
                 <p>Entrepreneur Individuel KRAVCHENKO IGOR OLEKSANDROVYCH</p>
-                <p>Email : igor@im-in.net</p>
+                <p>Email : <a href="mailto:igor@im-in.net" style="color:#7C3AED">igor@im-in.net</a></p>
+                <p style="margin-top:0.8rem;font-size:0.85rem;color:#666;">Dernière mise à jour : 02/04/2026 | Version 2.0</p>
             </div>
         </div>
 
         <!-- Spanish -->
         <div class="doc-content" id="doc-es">
             <h2>TÉRMINOS DE USO DE LA APLICACIÓN MÓVIL GRATUITA</h2>
-            <p>Este Acuerdo regula la relación entre el Empresario Individual Kravchenko Igor Oleksandrovych (en adelante "Desarrollador" o "Nosotros") como propietario de la aplicación móvil (en adelante "Aplicación") y la persona física (en adelante "Usuario" o "Usted") que utiliza la Aplicación.</p>
+            <p>Versión 2.0 | Fecha de vigencia: 2 de abril de 2026</p>
+
+            <h3>Historial de versiones</h3>
+            <table class="version-table">
+                <tr><th>Versión</th><th>Fecha</th><th>Cambios</th><th>Documento</th></tr>
+                <tr><td>1.0</td><td>11/04/2025</td><td>Versión inicial</td><td><a href="terms-v1.html?lang=es">Ver</a></td></tr>
+                <tr><td>2.0</td><td>02/04/2026</td><td>Añadido versionado, actualización restricciones de edad (18+)</td><td>Actual</td></tr>
+            </table>
+
+            <p>Este Acuerdo regula la relación entre el Empresario Individual Kravchenko Igor Oleksandrovych (en adelante "Desarrollador" o "Nosotros") como propietario de la aplicación móvil "I'M IN" (en adelante "Aplicación") y la persona física (en adelante "Usuario" o "Usted") que utiliza la Aplicación.</p>
 
             <h3>1. DEFINICIONES</h3>
             <p>Aplicación – aplicación móvil para iOS que permite almacenar geodatos vinculados a fotos, videos, audios y comentarios de texto ("eventos"). Contenido – cualquier material publicado por el Usuario. Cuenta – perfil único de un Usuario registrado.</p>
 
             <h3>2. DISPOSICIONES GENERALES</h3>
-            <p>La Aplicación es gratuita. Al usar la Aplicación, el Usuario acepta automáticamente las condiciones. El Desarrollador se reserva el derecho de modificar las condiciones.</p>
+            <p>La Aplicación es gratuita. Al usar la Aplicación, el Usuario acepta automáticamente las condiciones. El Desarrollador se reserva el derecho de modificar las condiciones con notificación y re-consentimiento.</p>
 
             <h3>3–4. ESTADO Y EDAD</h3>
-            <p>Usuarios UE: mínimo 18 años. Otros países: mínimo 16 años. Los usuarios registrados pueden crear eventos, comentar y gestionar su perfil.</p>
+            <p>Servicio exclusivo para personas de <strong>18 años o más</strong>. Verificación de fecha de nacimiento en el registro. Los usuarios registrados pueden crear eventos, comentar, intercambiar mensajes y gestionar su perfil.</p>
 
             <h3>5–6. REGISTRO Y CONTENIDO PROHIBIDO</h3>
-            <p>El registro requiere email válido, código de verificación, nombre y fecha de nacimiento. Están prohibidos el spam, la violencia, el contenido ilegal y el software malicioso.</p>
+            <p>El registro requiere email válido, código de verificación, nombre y fecha de nacimiento. Están prohibidos el spam, la violencia, el contenido ilegal y el software malicioso. Las fotos pasan por moderación automática (SightEngine).</p>
 
-            <h3>7–14. DERECHOS, PROPIEDAD INTELECTUAL, RESPONSABILIDAD</h3>
-            <p>El Desarrollador cumple con el RGPD y las leyes ucranianas de protección de datos. El Usuario puede eliminar su Cuenta en cualquier momento. Este Acuerdo se rige por las leyes de Ucrania.</p>
+            <h3>7–14. DERECHOS, PROPIEDAD INTELECTUAL, DATOS, RESPONSABILIDAD</h3>
+            <p>El Desarrollador cumple con el RGPD y las leyes ucranianas de protección de datos. El Usuario puede eliminar su Cuenta en cualquier momento (anonimización en 30 días). Ver la <a href="privacy.html?lang=es" style="color:#7C3AED">Política de Privacidad</a>. Acuerdo regido por las leyes de Ucrania.</p>
 
             <div class="contact-info">
                 <p><strong>15. INFORMACIÓN DE CONTACTO</strong></p>
                 <p>Empresario Individual KRAVCHENKO IGOR OLEKSANDROVYCH</p>
-                <p>Email: igor@im-in.net</p>
+                <p>Email: <a href="mailto:igor@im-in.net" style="color:#7C3AED">igor@im-in.net</a></p>
+                <p style="margin-top:0.8rem;font-size:0.85rem;color:#666;">Última actualización: 02/04/2026 | Versión 2.0</p>
             </div>
         </div>
 
         <!-- German -->
         <div class="doc-content" id="doc-de">
             <h2>NUTZUNGSBEDINGUNGEN DER KOSTENLOSEN MOBILEN ANWENDUNG</h2>
-            <p>Diese Vereinbarung regelt die Beziehung zwischen dem Einzelunternehmer Kravchenko Igor Oleksandrovych (nachfolgend „Entwickler" oder „Wir") als Eigentümer der mobilen Anwendung (nachfolgend „App") und der natürlichen Person (nachfolgend „Nutzer" oder „Sie"), die die App nutzt.</p>
+            <p>Version 2.0 | Gültig ab: 2. April 2026</p>
+
+            <h3>Versionshistorie</h3>
+            <table class="version-table">
+                <tr><th>Version</th><th>Datum</th><th>Änderungen</th><th>Dokument</th></tr>
+                <tr><td>1.0</td><td>11.04.2025</td><td>Erstversion</td><td><a href="terms-v1.html?lang=de">Ansehen</a></td></tr>
+                <tr><td>2.0</td><td>02.04.2026</td><td>Versionierung hinzugefügt, Altersbeschränkung aktualisiert (18+)</td><td>Aktuell</td></tr>
+            </table>
+
+            <p>Diese Vereinbarung regelt die Beziehung zwischen dem Einzelunternehmer Kravchenko Igor Oleksandrovych (nachfolgend „Entwickler" oder „Wir") als Eigentümer der mobilen Anwendung „I'M IN" (nachfolgend „App") und der natürlichen Person (nachfolgend „Nutzer" oder „Sie"), die die App nutzt.</p>
 
             <h3>1. DEFINITIONEN</h3>
             <p>App – mobile Anwendung für iOS zur Speicherung von Geodaten, die mit Fotos, Videos, Audio und Textkommentaren verknüpft sind („Events"). Inhalte – alle vom Nutzer veröffentlichten Materialien. Konto – einzigartiges Profil eines registrierten Nutzers.</p>
 
             <h3>2. ALLGEMEINE BESTIMMUNGEN</h3>
-            <p>Die App ist kostenlos. Durch die Nutzung akzeptiert der Nutzer automatisch die Bedingungen. Der Entwickler behält sich das Recht vor, die Bedingungen zu ändern.</p>
+            <p>Die App ist kostenlos. Durch die Nutzung akzeptiert der Nutzer automatisch die Bedingungen. Der Entwickler behält sich das Recht vor, die Bedingungen mit Benachrichtigung und erneuter Einwilligung zu ändern.</p>
 
             <h3>3–4. STATUS UND ALTER</h3>
-            <p>EU-Nutzer: mindestens 18 Jahre. Andere Länder: mindestens 16 Jahre. Registrierte Nutzer können Events erstellen, kommentieren und ihr Profil verwalten.</p>
+            <p>Dienst nur für Personen ab <strong>18 Jahren</strong>. Geburtsdatum wird bei der Registrierung überprüft. Registrierte Nutzer können Events erstellen, kommentieren, Nachrichten austauschen und ihr Profil verwalten.</p>
 
             <h3>5–6. REGISTRIERUNG UND VERBOTENE INHALTE</h3>
-            <p>Die Registrierung erfordert eine gültige E-Mail, einen Bestätigungscode, Name und Geburtsdatum. Spam, Gewalt, illegale Inhalte und Schadsoftware sind verboten.</p>
+            <p>Die Registrierung erfordert eine gültige E-Mail, einen Bestätigungscode, Name und Geburtsdatum. Spam, Gewalt, illegale Inhalte und Schadsoftware sind verboten. Fotos werden automatisch moderiert (SightEngine).</p>
 
-            <h3>7–14. RECHTE, GEISTIGES EIGENTUM, HAFTUNG</h3>
-            <p>Der Entwickler hält die DSGVO und ukrainische Datenschutzgesetze ein. Nutzer können ihr Konto jederzeit löschen. Diese Vereinbarung unterliegt ukrainischem Recht.</p>
+            <h3>7–14. RECHTE, GEISTIGES EIGENTUM, DATEN, HAFTUNG</h3>
+            <p>Der Entwickler hält die DSGVO und ukrainische Datenschutzgesetze ein. Nutzer können ihr Konto jederzeit löschen (Anonymisierung innerhalb von 30 Tagen). Siehe <a href="privacy.html?lang=de" style="color:#7C3AED">Datenschutzrichtlinie</a>. Vereinbarung unterliegt ukrainischem Recht.</p>
 
             <div class="contact-info">
                 <p><strong>15. KONTAKTINFORMATIONEN</strong></p>
                 <p>Einzelunternehmer KRAVCHENKO IGOR OLEKSANDROVYCH</p>
-                <p>E-Mail: igor@im-in.net</p>
+                <p>E-Mail: <a href="mailto:igor@im-in.net" style="color:#7C3AED">igor@im-in.net</a></p>
+                <p style="margin-top:0.8rem;font-size:0.85rem;color:#666;">Letzte Aktualisierung: 02.04.2026 | Version 2.0</p>
             </div>
         </div>
 
         <!-- Italian -->
         <div class="doc-content" id="doc-it">
             <h2>CONDIZIONI D'USO DELL'APPLICAZIONE MOBILE GRATUITA</h2>
-            <p>Il presente Accordo regola i rapporti tra l'Imprenditore Individuale Kravchenko Igor Oleksandrovych (di seguito "Sviluppatore" o "Noi") in qualità di proprietario dell'applicazione mobile (di seguito "App") e la persona fisica (di seguito "Utente" o "Lei") che utilizza l'App.</p>
+            <p>Versione 2.0 | Data di validità: 2 aprile 2026</p>
+
+            <h3>Cronologia versioni</h3>
+            <table class="version-table">
+                <tr><th>Versione</th><th>Data</th><th>Modifiche</th><th>Documento</th></tr>
+                <tr><td>1.0</td><td>11/04/2025</td><td>Versione iniziale</td><td><a href="terms-v1.html?lang=it">Vedi</a></td></tr>
+                <tr><td>2.0</td><td>02/04/2026</td><td>Aggiunto versionamento, aggiornate restrizioni d'età (18+)</td><td>Attuale</td></tr>
+            </table>
+
+            <p>Il presente Accordo regola i rapporti tra l'Imprenditore Individuale Kravchenko Igor Oleksandrovych (di seguito "Sviluppatore" o "Noi") in qualità di proprietario dell'applicazione mobile "I'M IN" (di seguito "App") e la persona fisica (di seguito "Utente" o "Lei") che utilizza l'App.</p>
 
             <h3>1. DEFINIZIONI</h3>
             <p>App – applicazione mobile per iOS per archiviare geodati collegati a foto, video, audio e commenti testuali ("eventi"). Contenuto – qualsiasi materiale pubblicato dall'Utente. Account – profilo unico di un Utente registrato.</p>
 
             <h3>2. DISPOSIZIONI GENERALI</h3>
-            <p>L'App è gratuita. Utilizzando l'App, l'Utente accetta automaticamente le condizioni. Lo Sviluppatore si riserva il diritto di modificare le condizioni.</p>
+            <p>L'App è gratuita. Utilizzando l'App, l'Utente accetta automaticamente le condizioni. Lo Sviluppatore si riserva il diritto di modificare le condizioni con notifica e nuovo consenso.</p>
 
             <h3>3–4. STATO ED ETÀ</h3>
-            <p>Utenti UE: minimo 18 anni. Altri paesi: minimo 16 anni. Gli utenti registrati possono creare eventi, commentare e gestire il profilo.</p>
+            <p>Servizio riservato a persone di <strong>18 anni e oltre</strong>. Verifica della data di nascita alla registrazione. Gli utenti registrati possono creare eventi, commentare, scambiarsi messaggi e gestire il profilo.</p>
 
             <h3>5–6. REGISTRAZIONE E CONTENUTI VIETATI</h3>
-            <p>La registrazione richiede email valida, codice di verifica, nome e data di nascita. Sono vietati spam, violenza, contenuti illegali e software dannoso.</p>
+            <p>La registrazione richiede email valida, codice di verifica, nome e data di nascita. Sono vietati spam, violenza, contenuti illegali e software dannoso. Le foto vengono sottoposte a moderazione automatica (SightEngine).</p>
 
-            <h3>7–14. DIRITTI, PROPRIETÀ INTELLETTUALE, RESPONSABILITÀ</h3>
-            <p>Lo Sviluppatore rispetta il GDPR e le leggi ucraine sulla protezione dei dati. L'Utente può eliminare il proprio Account in qualsiasi momento. Questo Accordo è regolato dalle leggi dell'Ucraina.</p>
+            <h3>7–14. DIRITTI, PROPRIETÀ INTELLETTUALE, DATI, RESPONSABILITÀ</h3>
+            <p>Lo Sviluppatore rispetta il GDPR e le leggi ucraine sulla protezione dei dati. L'Utente può eliminare il proprio Account in qualsiasi momento (anonimizzazione entro 30 giorni). Vedi l'<a href="privacy.html?lang=it" style="color:#7C3AED">Informativa sulla privacy</a>. Accordo regolato dalle leggi dell'Ucraina.</p>
 
             <div class="contact-info">
                 <p><strong>15. INFORMAZIONI DI CONTATTO</strong></p>
                 <p>Imprenditore Individuale KRAVCHENKO IGOR OLEKSANDROVYCH</p>
-                <p>Email: igor@im-in.net</p>
+                <p>Email: <a href="mailto:igor@im-in.net" style="color:#7C3AED">igor@im-in.net</a></p>
+                <p style="margin-top:0.8rem;font-size:0.85rem;color:#666;">Ultimo aggiornamento: 02/04/2026 | Versione 2.0</p>
             </div>
         </div>
 
         <!-- Greek -->
         <div class="doc-content" id="doc-el">
             <h2>ΟΡΟΙ ΧΡΗΣΗΣ ΔΩΡΕΑΝ ΕΦΑΡΜΟΓΗΣ ΓΙΑ ΚΙΝΗΤΑ</h2>
-            <p>Η παρούσα Συμφωνία ρυθμίζει τη σχέση μεταξύ του Ατομικού Επιχειρηματία Kravchenko Igor Oleksandrovych (εφεξής «Προγραμματιστής» ή «Εμείς») ως ιδιοκτήτη της εφαρμογής κινητού (εφεξής «Εφαρμογή») και του φυσικού προσώπου (εφεξής «Χρήστης» ή «Εσείς») που χρησιμοποιεί την Εφαρμογή.</p>
+            <p>Έκδοση 2.0 | Ημερομηνία ισχύος: 2 Απριλίου 2026</p>
+
+            <h3>Ιστορικό εκδόσεων</h3>
+            <table class="version-table">
+                <tr><th>Έκδοση</th><th>Ημερομηνία</th><th>Αλλαγές</th><th>Έγγραφο</th></tr>
+                <tr><td>1.0</td><td>11/04/2025</td><td>Αρχική έκδοση</td><td><a href="terms-v1.html?lang=el">Προβολή</a></td></tr>
+                <tr><td>2.0</td><td>02/04/2026</td><td>Προστέθηκε ιστορικό εκδόσεων, ενημέρωση ηλικιακού ορίου (18+)</td><td>Τρέχον</td></tr>
+            </table>
+
+            <p>Η παρούσα Συμφωνία ρυθμίζει τη σχέση μεταξύ του Ατομικού Επιχειρηματία Kravchenko Igor Oleksandrovych (εφεξής «Προγραμματιστής» ή «Εμείς») ως ιδιοκτήτη της εφαρμογής κινητού «I'M IN» (εφεξής «Εφαρμογή») και του φυσικού προσώπου (εφεξής «Χρήστης» ή «Εσείς») που χρησιμοποιεί την Εφαρμογή.</p>
 
             <h3>1. ΟΡΙΣΜΟΙ</h3>
             <p>Εφαρμογή – εφαρμογή κινητού για iOS για αποθήκευση γεωδεδομένων συνδεδεμένων με φωτογραφίες, βίντεο, ήχο και σχόλια κειμένου («εκδηλώσεις»). Περιεχόμενο – οποιοδήποτε υλικό δημοσιεύεται από τον Χρήστη. Λογαριασμός – μοναδικό προφίλ εγγεγραμμένου Χρήστη.</p>
 
             <h3>2. ΓΕΝΙΚΕΣ ΔΙΑΤΑΞΕΙΣ</h3>
-            <p>Η Εφαρμογή είναι δωρεάν. Χρησιμοποιώντας την Εφαρμογή, ο Χρήστης αποδέχεται αυτομάτως τους όρους. Ο Προγραμματιστής διατηρεί το δικαίωμα τροποποίησης των όρων.</p>
+            <p>Η Εφαρμογή είναι δωρεάν. Χρησιμοποιώντας την Εφαρμογή, ο Χρήστης αποδέχεται αυτομάτως τους όρους. Ο Προγραμματιστής διατηρεί το δικαίωμα τροποποίησης με ειδοποίηση και νέα συγκατάθεση.</p>
 
             <h3>3–4. ΚΑΤΑΣΤΑΣΗ ΚΑΙ ΗΛΙΚΙΑ</h3>
-            <p>Χρήστες ΕΕ: ελάχιστο 18 ετών. Άλλες χώρες: ελάχιστο 16 ετών. Οι εγγεγραμμένοι χρήστες μπορούν να δημιουργούν εκδηλώσεις, να σχολιάζουν και να διαχειρίζονται το προφίλ τους.</p>
+            <p>Υπηρεσία μόνο για άτομα <strong>18 ετών και άνω</strong>. Επαλήθευση ημερομηνίας γέννησης κατά την εγγραφή. Οι εγγεγραμμένοι χρήστες μπορούν να δημιουργούν εκδηλώσεις, να σχολιάζουν, να ανταλλάσσουν μηνύματα και να διαχειρίζονται το προφίλ τους.</p>
 
             <h3>5–6. ΕΓΓΡΑΦΗ ΚΑΙ ΑΠΑΓΟΡΕΥΜΕΝΟ ΠΕΡΙΕΧΟΜΕΝΟ</h3>
-            <p>Η εγγραφή απαιτεί έγκυρο email, κωδικό επαλήθευσης, όνομα και ημερομηνία γέννησης. Απαγορεύεται το spam, η βία, το παράνομο περιεχόμενο και το κακόβουλο λογισμικό.</p>
+            <p>Η εγγραφή απαιτεί έγκυρο email, κωδικό επαλήθευσης, όνομα και ημερομηνία γέννησης. Απαγορεύεται spam, βία, παράνομο περιεχόμενο και κακόβουλο λογισμικό. Οι φωτογραφίες υποβάλλονται σε αυτόματη εποπτεία (SightEngine).</p>
 
-            <h3>7–14. ΔΙΚΑΙΩΜΑΤΑ, ΠΝΕΥΜΑΤΙΚΗ ΙΔΙΟΚΤΗΣΙΑ, ΕΥΘΥΝΗ</h3>
-            <p>Ο Προγραμματιστής συμμορφώνεται με τον GDPR και τους ουκρανικούς νόμους προστασίας δεδομένων. Ο Χρήστης μπορεί να διαγράψει τον Λογαριασμό του ανά πάσα στιγμή. Η Συμφωνία διέπεται από τους νόμους της Ουκρανίας.</p>
+            <h3>7–14. ΔΙΚΑΙΩΜΑΤΑ, ΠΝΕΥΜΑΤΙΚΗ ΙΔΙΟΚΤΗΣΙΑ, ΔΕΔΟΜΕΝΑ, ΕΥΘΥΝΗ</h3>
+            <p>Ο Προγραμματιστής συμμορφώνεται με τον GDPR και τους ουκρανικούς νόμους προστασίας δεδομένων. Ο Χρήστης μπορεί να διαγράψει τον Λογαριασμό (ανωνυμοποίηση εντός 30 ημερών). Δείτε την <a href="privacy.html?lang=el" style="color:#7C3AED">Πολιτική Απορρήτου</a>. Η Συμφωνία διέπεται από τους ουκρανικούς νόμους.</p>
 
             <div class="contact-info">
                 <p><strong>15. ΣΤΟΙΧΕΙΑ ΕΠΙΚΟΙΝΩΝΙΑΣ</strong></p>
                 <p>Ατομικός Επιχειρηματίας KRAVCHENKO IGOR OLEKSANDROVYCH</p>
-                <p>Email: igor@im-in.net</p>
+                <p>Email: <a href="mailto:igor@im-in.net" style="color:#7C3AED">igor@im-in.net</a></p>
+                <p style="margin-top:0.8rem;font-size:0.85rem;color:#666;">Τελευταία ενημέρωση: 02/04/2026 | Έκδοση 2.0</p>
             </div>
         </div>
     </div>
